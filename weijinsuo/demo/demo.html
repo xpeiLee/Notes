@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-COMPATIBLE" content="IE=5">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--一些属性为文档兼容模式声明，表示如果在ie浏览器下则使用那个ie的标准来渲染当前文档-->
+
+    <!--视口的作用，在移动浏览器中，当前页面宽短会超出设备屏幕，浏览器内部会虚拟一个页面容器，将页面容器缩放到屏幕这么大，然后展示。
+
+    目前大多数手机的视口（承载页面的容器）大多是980
+    width=device-width视口的宽度可以通多meta标签来设置，此属性是为移动端而设的，当前值表示在移动端的宽度为屏幕的宽度initial-scale=1（表示不缩放）
+    user-scalable:是否允许用户自行缩放（值：yes/no; 1/0）
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--条件注释 条件注释的作用是判断当前条件，如果当前条件满足时，就会执行注释中的html代码，不满足时会当注释忽略掉-->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--htmlshiv.js让低版本的浏览器可以识别html5的新标签，如header，section，nav等-->
+    <!--respond.js让低版本的浏览器可以兼容媒体查询的功能-->
+
+    <style>
+        .container{
+            /*width: 100%;*/
+            height: 100px;
+            background-color: blue;
+        }
+        [class^="col-md"]{
+            border-right: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>你好，世界！</h1>
+<div class="container">
+
+</div>
+<div class="row">
+    <div class="col-md-1 col-sm-1 col-xs-1">col-md-1</div>
+    <div class="col-md-1 col-sm-1 col-xs-1">col-md-1</div>
+    <div class="col-md-1 col-sm-1 col-xs-1">col-md-1</div>
+    <div class="col-md-1 col-sm-1 col-xs-1">col-md-1</div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-4">col-md-4</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

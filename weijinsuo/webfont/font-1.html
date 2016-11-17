@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--不使用它们提供的style.css文件-->
+    <style>
+        /*声明了一个字体*/
+        @font-face {
+            font-family: 'ooo';
+            src:  url('fonts/fcfont.eot?gyj5h0');
+            src:  url('fonts/fcfont.eot?gyj5h0#iefix') format('embedded-opentype'),
+            url('fonts/fcfont.ttf?gyj5h0') format('truetype'),
+            url('fonts/fcfont.woff?gyj5h0') format('woff'),
+            url('fonts/fcfont.svg?gyj5h0#fcfont') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .icon-logo{
+            font-family: "ooo";
+            font-size: 50px;
+            color: #678;
+        }
+        .icon-logo::before{
+            content: '\e900';
+        }
+        span{
+            font-family: "ooo";
+        }
+    </style>
+</head>
+<body>
+<p class="icon-lo icon-logo"></p>
+
+<span>&#xe900;</span>
+
+</body>
+</html>

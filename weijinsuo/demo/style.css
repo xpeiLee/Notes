@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'fcfont';
+  src:  url('fonts/fcfont.eot?cxlmkr');
+  src:  url('fonts/fcfont.eot?cxlmkr#iefix') format('embedded-opentype'),
+    url('fonts/fcfont.ttf?cxlmkr') format('truetype'),
+    url('fonts/fcfont.woff?cxlmkr') format('woff'),
+    url('fonts/fcfont.svg?cxlmkr#fcfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'fcfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+  content: "\e900";
+}
+.icon-weijinsuo:before {
+  content: "\61";
+}
+
