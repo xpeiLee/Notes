@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;margin: 0;}
+        div{
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color:darkolivegreen;
+            position: absolute;
+        }
+        #run1{
+            top: 200px;
+            background-color: red;
+            width: 200px;
+            height: 200px;
+
+        }
+    </style>
+</head>
+<body>
+<button id="btn200">btn200</button>
+<button id="btn500">btn500</button>
+<div id="run"></div>
+<div id="run1"></div>
+<script>
+    function $(obj) { return document.getElementById(obj);}
+    var run = $("run");
+    var run1 = $("run1");
+    $("btn200").onclick = function () {
+        animate(run,203,20);
+    }
+    $("btn500").onclick = function () {
+        animate(run,500,20);
+    }
+
+    //    封装匀速运动
+    function animate(obj,endPoint,ms) {
+        clearInterval(obj.timer);
+//        到底应该是正数还是负数
+        var speed = endPoint > obj.offsetLeft ? 10 : -10;
+//        步长  ？ obj.offsetleft - endpoint
+        obj.timer = setInterval(function () {
+            var result = endPoint - obj.offsetLeft;
+            if(Math.abs(result) <= 10){
+                //如果差值小于等于10的话说明剩下最后一步没走了
+                clearInterval(obj.timer);
+                obj.style.left = endPoint + "px";
+
+            }else {
+
+                obj.style.left = obj.offsetLeft + speed + "px";
+
+            }
+
+            
+        },ms);
+        
+    }
+
+</script>
+</body>
+</html>

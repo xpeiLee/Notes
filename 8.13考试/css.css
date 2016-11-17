@@ -1,0 +1,408 @@
+@charset "UTF-8";
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+a{
+    text-decoration: none;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+body {
+    font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+    height: 9999px;
+}
+.bnbar {
+    height: 60px;
+    background: url("images/816bar.jpg") no-repeat center 0 #FD4F09;
+}
+.topbanner{
+    height: 40px;
+    font-size: 12px;
+    color: #b0b0b0;
+    background: #333;
+}
+.container{
+    width: 1226px;
+    margin: 0 auto;
+}
+.topbanner .container .topnav,.topinfo {
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+}
+.topbanner .sep{
+    margin: 0 .5em;
+    color: #424242;
+}
+.topbanner a{
+    color: #b0b0b0;
+}
+.topbanner a:hover{
+    color: #fff;
+}
+.topbanner .container .topcart{
+    width: 120px;
+    margin-left: 15px;
+    position: relative;
+}
+.topbanner .container .topcart a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #b0b0b0;
+    background: #424242;
+}
+
+.topbanner .container .topcart .cartnum{
+    margin-left: -4px;
+}
+.topbanner .container .topcart .iconfont{
+    position: absolute;
+    top:50%;
+    margin-top: -7px;
+    left:10px;
+    width: 23px;
+    height: 16px;
+    background: url("images/gouwuche.png")no-repeat;
+}
+.topbanner .container .topcart .cartmenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 316px;
+    padding: 15px 0 0;
+    color: #424242;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-top: none;
+    text-align: center;
+    line-height:96px;
+    overflow: hidden;
+    z-index:10;
+}
+.header{
+    height:100px;
+    position: relative;
+}
+.header .hlogo{
+    width: 62px;
+    margin-top: 22px;
+}
+.header .hlogo a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: url("images/mi-logo.png") no-repeat center center #ff6700;
+}
+.header .doodle a{
+    display: block;
+    margin-left: 7px;
+    width: 165px;
+    height: 100px;
+    background: url("images/dafuweng.gif")no-repeat center center;
+}
+.header .hnav ul {
+    padding-top: 12px;
+}
+.header .hnav li{
+    float: left;
+    font-size: 16px;
+}
+.header .hnav ul li .xm a{
+    display: block;
+    padding: 26px 10px 38px;
+    color: #333;
+}
+/*.header .hnav li a:hover{*/
+    /*color: #ff6700;*/
+/*}*/
+.header .hsearch{
+    width: 296px;
+    margin-top: 25px;
+    position: relative;
+}
+.header .hsearch input{
+    float: left;
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 48px;
+    outline: 0;
+}
+.header .hsearch button{
+    position: absolute;
+    right:0;
+    width: 52px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    background: url("images/btn.png")no-repeat;
+    cursor: pointer;
+}
+.header .hsearch button:hover{
+    border: none;
+    background-image: url("images/btn1.png");
+    top:-1px
+}
+.header .hsearch .hwords{
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    text-align: right;
+}
+.header .hsearch .hwords a{
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575
+}
+.header .hsearch .keywords{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    z-index: 20;
+    width: 243px;
+    border: 1px solid #ff6700;
+    border-top: 0;
+    background: #fff;
+    display: none;
+}
+.header .hsearch .keywords a{
+    display: block;
+    margin: 0 15px;
+    padding:6px 0;
+    font-size: 12px;
+    color: #424242;
+}
+.header .hsearch .keywords a .result{
+    color: #b0b0b0;
+    float: right;
+}
+/*.header .white{*/
+    /*height: 229px;*/
+    /*width: 100%;*/
+    /*background: #fff;*/
+    /*position: absolute;*/
+    /*top:100px;*/
+    /*left:0;*/
+    /*z-index: 70;*/
+    /*display: none;*/
+/*}*/
+.header .navmenu{
+    height: 229px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 71;
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    /*overflow: hidden;*/
+    display: none;
+}
+.header .navmenu ul li{
+    font-size: 12px;
+    position: relative;
+    float: left;
+    width: 180px;
+    padding: 35px 12px 0;
+    text-align: center;
+}
+.header .navmenu ul li .figure{
+    width: 160px;
+    height: 110px;
+    margin: 0 auto 16px;
+}
+.header .navmenu ul li .figure img{
+    width: 160px;
+    height: 110px;
+}
+.header .hnav ul#hnavul li .navmenu ul li .title a{
+    color: #333;
+    line-height: 20px;
+}
+
+.header .navmenu ul li p{
+    line-height: 20px;
+    color: #ff6700;
+}
+.header .navmenu ul li span{
+    display: inline-block;
+    height: 100px;
+    width: 1px;
+    background-color: #E0E0E0;
+    position: absolute;
+    top:35px;
+    right: 0;
+}
+.home{
+    margin-bottom: 26px;
+    position: relative;
+}
+.home .site{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 21;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+}
+.home .site ul{
+    height: 420px;
+    background: rgba(0,0,0,0.6);
+    padding: 20px 0;
+}
+.home .site ul li a{
+    color: #fff;
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    background: url("images/jiao.png")no-repeat 201px center;
+}
+.home .w-slider {
+    width: 1226px;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+}
+.home .slider {
+    width: 100%;
+    height: 100%;
+
+}
+.home .slider-main {
+    width: 2452px;
+    height: 460px;
+}
+.home .slider-main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1226px;
+    height: 460px;
+}
+.home .slider-main-img img {
+    width: 100%;
+}
+.home .slider-ctrl {
+    position: absolute;
+    bottom:20px;
+    right:30px;
+}
+.home .slider-ctrl-con {
+    float: left;
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    border-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    text-align: left;
+    overflow: hidden;
+    background: rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+.home .current {
+    background: rgba(255,255,255,0.4);
+    border-color: rgba(0,0,0,0.4);
+}
+.home .slider-ctrl-prev,
+.home .slider-ctrl-next {
+    position: absolute;
+    top: 50%;
+    z-index: 40;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.home .slider-ctrl-prev {
+    left: 234px;
+    background: url(images/icon-slides.png) no-repeat -84px 50%
+}
+.home .slider-ctrl-prev:hover{
+    background: url(images/icon-slides.png) no-repeat 0 50%
+}
+.home .slider-ctrl-next {
+    right: 0;
+    background: url(images/icon-slides.png) no-repeat -125px 50%
+}
+.home .slider-ctrl-next:hover{
+    background: url(images/icon-slides.png) no-repeat -43px 50%
+}
+.home #ctrl i {
+    display: inline-block;
+
+}
+.home .sub{
+    margin-top: 14px;
+}
+
+.home .sub .channel{
+    width: 234px;
+}
+.home .sub .channel ul {
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    background: #5f5750;
+    overflow: hidden;
+}
+.home .sub .channel ul li{
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 82px;
+    padding: 0 3px
+}
+.home .sub .channel ul li a{
+    display: block;
+    padding-top: 18px;
+    color: rgba(255,255,255,0.7);
+    width: 70px;
+    height: 50px;
+}
+.home .sub .promo{
+    width: 978px;
+    margin-left: 14px;
+}
+.home .sub .promo ul li{
+    float: left;
+    margin-left: 15px;
+}
+.home .sub .promo ul li:first-child{
+    margin-left: 0px;
+}
+.home .sub .promo ul li img{
+    width: 316px;
+    height: 170px;
+}
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>(1)盲人用户如何知道当前浏览区域就是网站主导航</h2>
+<div id="mainNav" role="navigation">
+
+    <a href="http://news.qq.com" target="_blank">新闻</a>
+    <a href="http://v.qq.com" target="_blank">视频</a>
+    <a href="http://entq.qq.com" target="_blank">娱乐</a>
+</div>
+<h2>(2)如何让盲人用户知道我们使用的标签是用来模拟标准的标签</h2>
+<!--用无序列表模拟一个select-->
+<div class="dropDwon">
+    <a href="javascript:;" aria-owns="questions-list" aria-expanded="false">选择提示问题</a>
+    <ul id="questions-list" role="listbox">
+        <li role="option"><a href="javascript:;">我妈妈的名字是</a> </li>
+        <li role="option"><a href="javascript:;">我孙子是谁</a> </li>
+        <li role="option"><a href="javascript:;">我爸爸的名字是</a> </li>
+        <li role="option"><a href="javascript:;">我爱人的名字是</a> </li>
+    </ul>
+</div>
+
+</body>
+</html>

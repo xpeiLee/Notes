@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var btn2 = document.getElementById("btn2");
+            btn2.onclick =  function () {
+                var btn1 = document.getElementById("btn1");
+                if (btn1.disabled){
+                    btn1.disabled = false;
+                }else {
+                    btn1.disabled = true;
+                }
+//                btn1.disabled = !btn1.disabled;
+
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn1" >按钮1</button>
+<button id="btn2">按钮2</button>
+</body>
+</html>

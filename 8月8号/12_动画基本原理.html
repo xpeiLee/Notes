@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: darkslategrey;
+            position: absolute;
+
+            left:0;
+            top:50px;
+
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击</button>
+<div id="run"></div>
+
+<script>
+    function $(obj) {return document.getElementById(obj); }
+    //从当前位置移动left值为400
+    var  runbox = $("run");
+// 匀速运动 动画的基本原理 盒子的  offsetleft + 步长
+    var timer = null;
+    $("btn").onclick = function () {
+//        clearInterval(timer);
+        timer = setInterval(function () {
+            if (runbox.offsetLeft > 400) {
+                clearInterval(timer);
+            }else {
+                runbox.style.left = runbox.offsetLeft + 10 + "px";
+            }
+
+
+
+        },20);
+
+    }
+
+//    function oldYunSun() {
+//        var timer = null;
+//        var num = 0;
+//        $("btn").onclick = function () {
+//            clearInterval(timer);
+//            timer = setInterval(function () {
+//                num+=10;
+//                runbox.style.left = num + "px";
+//                if (num > 400){
+//                    clearInterval(timer);
+////                num = 0;
+//                }
+//            },30);
+//        }
+//
+//    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+        border: 2px solid red;
+        margin: 100px;
+    }
+</style>
+<body>
+<div class="box">
+文字内容文字内容文字内容 文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容
+    文字内容文字内容文字内容 文字内容文字内容文字内容文字内容文字内容文字内容文字内容文文字内容文字内容文字内容 文字内容文字内容文字内容文字内容文字内容文字内容文字内容文文字内容文字内容文字内容 文字内容文字内容文字内容文字内容文字内容文字内容文字内容文文字内容文字内容文字内容 文字内容文字内容文字内容文字内容文字内容文字内容文字内容文
+</div>
+</body>
+</html>
+<script>
+    var box = document.getElementsByTagName("div")[0];
+    console.log("offsetwidth" + box.offsetWidth);
+    console.log("clientWidth" + box.clientWidth);
+    console.log("scrollWidth" + box.scrollWidth);
+
+    console.log("offsetHeight" + box.offsetHeight);
+    console.log("clientHeight" + box.clientHeight);
+    console.log("scrollHeight" + box.scrollHeight);
+
+//    clientWidth = width + padding;
+//    scrollWidth = width + padding;
+//    offsetwidth = width + padding + border;
+</script>

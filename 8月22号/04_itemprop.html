@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+
+</ul>
+<script>
+    var data = {
+        01:{
+            name:"张三1",
+            age:18
+        },
+        02:{
+            name:"李四",
+            age:19
+        },
+        03:{
+            name:"旺财",
+            age:30
+        }
+    }
+    var list = document.getElementById("list");
+    for (var key in data){
+        var item = data[key];
+        var liEle = document.createElement("li");
+//        liEle.innerHTML = item.name;
+        /*
+        * createTextNode 创建一个文本节点
+        *
+        * */
+        liEle.appendChild(document.createTextNode(item.name));
+
+        liEle.setAttribute('data-name',item.name);
+        liEle.setAttribute('data-age',item.age);
+        list.appendChild(liEle);
+//        //给li绑定一个onclick事件
+        liEle.onclick = function () {
+            alert(this.innerText);
+        }
+//        liEle.onclick = function () {
+//            alert("ssbb");
+//        }
+        //通过监听的方法给事件源绑定事件，方法不会被覆盖
+        liEle.addEventListener("click",function () {
+//            alert(this.innerText);
+            console.log(this.dataset);
+            console.log(this.dataset["age"]);
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

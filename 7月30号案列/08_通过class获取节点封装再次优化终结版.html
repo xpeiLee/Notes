@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            function myGetElementsByClass(clasName, id) {
+                //判断浏览器是否支持 getElementsByClassName()
+                if (document.getElementsByClassName) {
+                    if (id) {
+                        return $(id).getElementsByClassName(clasName);
+                    } else {
+                        return document.getElementsByClassName(clasName);
+                    }
+                }
+                //如果浏览器不支持的话,获取document下面全部的元素节点
+                var doms;
+                if (id) {
+//                    *通配符
+                    doms = $(id).getElementsByTagName("*");
+                } else {
+                    doms = document.getElementsByTagName("*");
+                }
+                var arr = [];
+                for (var i = 0; i < doms.length; i++) {
+                    var classNames = doms[i].className.split(" ");
+                    for (var m = 0; m < classNames.length; m++) {
+                        if (classNames[m] == clasName) {
+                            arr.push(doms[i]);
+                        }
+                    }
+                }
+                return arr;
+            }
+            var demos = myGetElementsByClass("demo","box");
+//            for(var)
+//            alert(demos.length);
+            for (var i = 0; i < demos.length; i++) {
+                demos[i].style.backgroundColor = "black";
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div class="demo test"></div>
+<div id="box">
+    <div class="demo"></div>
+    <div class="demo"></div>
+</div>
+<div></div>
+
+</body>
+</html>

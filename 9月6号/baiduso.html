@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #sug {
+        width: 300px;
+        background-color: lightGreen;
+        margin: 50px auto;
+    }
+    
+    #sug input {
+        margin: 10px 10px;
+    }
+    
+    #list ul {
+        padding-left: 0;
+        margin-top: -10px;
+        list-style: none;
+    }
+    
+    #list ul li {
+        background-color: lightGray;
+        line-height: 30px;
+        cursor: pointer;
+        height: 30px;
+        padding-left: 20px;
+    }
+    
+    #list ul li.current {
+        background-color: lightGreen;
+    }
+    </style>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="sug">
+        <div>
+            <input type="text" id="keyWord" autocomplete=off/>
+            <input type="button" value="查询一下" id="btn">
+        </div>
+        <div id="list">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+    $('#keyWord').keyup(function(e) {
+        var kd = $('#keyWord').val();
+        var url = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + kd;
+        getDataByUrl(url);
+    });
+
+    function getDataByUrl(url) {
+        $.ajax({
+            type: "get",
+            async: true,
+            url: url,
+            dataType: "jsonp",
+            jsonp: "cb",
+            /*jsonp传递给请求处理的程序或页面，用以获得jsonp回调函数的参数名(默认是callback)*/
+            jsonpCallback: "callback",
+            /*jsonpCallback是指定jsonp回调函数的名称，默认为jQuery110203079211851099395_1473152187252*/
+            success: function(data) {
+                // console.log(data);
+                var tag = '<ul>';
+                for (var i = 0; i < data.s.length; i++) {
+                    var item = data.s[i];
+                    tag += '<li>' + data.s[i] + '</li>';
+                }
+                tag += '</ul>';
+                $('#list').html(tag);
+                $('li').hover(function(){
+                	$(this).addClass('current');
+                },function(){
+                	$(this).removeClass('current');
+                });
+
+            },
+            error: function() {
+
+            }
+        });
+    }
+})
+</script>
+
+</html>

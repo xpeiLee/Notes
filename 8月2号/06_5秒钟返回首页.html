@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo"><a href="http://www.baidu.com"> 本页面将在5秒后关闭</a></div>
+</body>
+</html>
+<script>
+    /*
+    * setInterval 来实现
+    * */
+//    var count = 5;
+    //    var time = setInterval(function () {
+    //        count--;
+    //        var demo = document.getElementById("demo");
+    //        demo.innerHTML = "<a href='http://www.baidu.com'>本页面将在"+count+"秒后返回首页</a>";
+    //        if (count <= 0){
+    //            // 页面重定向
+    //            window.location.href = "http://www.baidu.com";
+    //            clearInterval(time);
+    //            count = 5;
+    //        }
+    //
+    //    },1000);
+    var count = 6;
+    setTimeout(goIndex,0);
+
+//    goIndex();
+    function goIndex() {
+        count--;
+        var demo = document.getElementById("demo");
+        demo.innerHTML = "<a href='http://www.baidu.com'>本页面将在"+count+"秒后返回首页</a>";
+
+        if (count <= 1){
+            window.location.href = "http://www.baidu.com";
+            count = 6;
+        }else {
+            setTimeout(goIndex,1000);
+        }
+    }
+</script>

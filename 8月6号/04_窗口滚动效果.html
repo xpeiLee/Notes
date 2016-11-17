@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 3000px;
+            width: 300%;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    window.onscroll = function () {
+//        console.log(11);
+        //谷歌浏览器 和没有声明 DTD  <DOCTYPE	>
+//        console.log(document.body.scrollTop);
+//        console.log(document.body.scrollLeft);
+            //除了ie6,7,8最新的浏览器都认识
+//        console.log(window.pageXOffset);
+//        console.log(window.pageYOffset);
+//        ie认识
+//        console.log(document.documentElement.scrollTop);
+                console.log(document.documentElement.scrollLeft);
+        //获取窗口滚动的scrollTop
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+        console.log(scrollTop);
+    }
+</script>
+
+</body>
+</html>

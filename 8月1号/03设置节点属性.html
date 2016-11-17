@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="demo" class="box"></div>
+<script>
+    /*#####################给标签设置属性############################*/
+    var divDemo = document.getElementById("demo");
+
+    /*
+     * setAttribute 给标签设置属性，“class” 属性的名字 “sb”属性的值
+     * */
+    divDemo.setAttribute("class", "sb");
+    /*
+     * getAttribute("class") 获取属性名为class的值
+     *
+     * */
+    alert(divDemo.getAttribute("class"));
+    divDemo.setAttribute("title", "我要吃鼠标");
+    /*
+    *removeAttribute("id") 删除名字为id的属性
+    * */
+    divDemo.removeAttribute("id");
+    divDemo.removeAttribute("class");
+    divDemo.removeAttribute("title")
+
+</script>
+
+</body>
+</html>

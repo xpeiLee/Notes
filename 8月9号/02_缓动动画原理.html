@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">开始</button>
+<div id="box"></div>
+
+<script>
+    //    leader = leader + (target- leader)/10
+
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+
+    var target = 400;
+    var leader = 0;
+    var timer = null;
+    btn.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            leader = leader + (target -leader)/10;
+            box.style.left = leader + "px";
+
+        }, 30);
+    }
+
+</script>
+</body>
+</html>

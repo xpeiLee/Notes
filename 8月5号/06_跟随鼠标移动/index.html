@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #img{
+            width: 200px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<img src="images/img.jpg" alt="" id="img"/>
+
+<script>
+    var img = document.getElementById("img");
+    var leaderX = 0,targetX = 0,leaderY = 0,targetY = 0;
+    document.onclick = function (event) {
+        var event = event || window.event;
+        targetX = event.clientX - img.offsetWidth/2;
+        targetY = event.clientY - img.offsetHeight/2;
+    }
+
+    setInterval(function () {
+        leaderX = leaderX + (targetX - leaderX)/10;
+        leaderY = leaderY + (targetY - leaderY)/10;
+        img.style.left = leaderX + "px";
+        img.style.top = leaderY + "px";
+
+    },10);
+    
+</script>
+
+</body>
+</html>

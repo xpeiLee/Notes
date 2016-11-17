@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <label>
+        <input type="email" name="" id="input1"/>
+    </label>
+    <input type="submit"/>
+
+</form>
+<script>
+    var input1 = document.getElementById("input1");
+    input1.oninvalid = function () {
+//        alert("sssssssbbbbb");
+        //自定消息输出窗口
+        alert(this.setCustomValidity("2b输出了！！"));
+    }
+</script>
+
+</body>
+</html>

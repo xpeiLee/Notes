@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fun() {
+        //this指向的是函数的调用者 或者 是事件的调用者
+        // 这个this指向的是window
+        alert(this);
+    }
+    fun();
+    function fn() {
+        //添加了new关键字 this指向新的对象
+        alert(this);
+    }
+    var a = new  fn();
+
+    function again() {
+        this.x = 10;
+    }
+    again();
+    console.log(window.x);
+
+
+    function person(num) {
+        this.num = num;
+    }
+
+    var demo = new person(10);
+    var demo1 = new person(100);
+
+    console.log(demo.num);
+    console.log(demo1.num);
+
+</script>
+
+</body>
+</html>

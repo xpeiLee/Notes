@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器 - 伪类</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        section:nth-child(3) {
+            /*color: red !important;*/
+            /*font-size: 50px;*/
+        }
+
+        /*E:only-child 以它的父级作参考，父级元素只有一个子元素，多一个都不行*/
+        section:nth-of-type(4) li:first-child span:only-child {
+            /*color: red !important;*/
+            background-color: red;
+        }
+
+        /*E:nly-of-type 以父级元素作参考，父级元素中的子元素该类型(E)只能有一个*/
+        section:nth-of-type(4) li:nth-child(2) span:only-of-type {
+            color: red;
+        }
+
+        section:nth-of-type(5) li:nth-child(n) {
+            /*
+            2n
+            */
+            color: red;
+        }
+
+        /*
+        *E:first-of-type 以父级元素为参考，从父级元素的子类元素中，从子类选出类型为E的第一个元素
+        */
+        section:nth-of-type(7) p:first-of-type {
+            color: #1a53a1;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        section:nth-of-type(7) h1:first-of-type {
+            color: red;
+        }
+
+        section:nth-of-type(8) > div p:last-child {
+            color: #002b36;
+            font-size: 50px;
+            font-weight: 700;
+
+        }
+
+        section:nth-of-type(8) > div div:last-of-type {
+            color: red;
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        /*
+        以父级元素为参考，E:only-of-type ,父级元素的子元素集合中该类型只能有一个，如果有一个那么这一个元素被选中，如果有多个则选不中任何一个
+        */
+        section:nth-of-type(9) > div p:only-of-type {
+            color: #264c66;
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        /*E:empty 表示元素没有任何内容才被选中 E:empty 表示元素没有任何内容才被选中 E:empty 表示元素没有任何内容才被选中*/
+        section:nth-last-of-type(3) p:empty {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        /*结合锚点进行使用，处于当前锚点的元素会被选中*/
+        section:target {
+            background-color: red;
+        }
+
+        /*css3是伪元素 css2是伪类*/
+        section:last-child p::after {
+            content: "★";
+            color: red;
+        }
+
+        section:last-child p::before {
+            content: "☆";
+            color: teal;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-伪类选择器</header>
+    <section id="demo1">
+        <header>简介</header>
+        <div class="wrap-box">
+            aaaaaaaaa
+        </div>
+    </section>
+    <section id="demo2">
+        <header>E:first-child</header>
+        <div class="wrap-box">
+            E:first-child以父级元素参考，从父级元素的子元素集合中取出第一个子元素，如果该元素的类型等于E那么该元素被选中，否则NO
+        </div>
+    </section>
+    <section id="demo3">
+        <header>E:last-child</header>
+        <div class="wrap-box">
+            E:last-child以父级元素参考，从父级元素的子元素集合中取出最后一个子元素，如果该元素的类型等于E那么该元素被选中，否则NO
+
+        </div>
+    </section>
+    <section>
+        <header>E:only-child</header>
+        <div class="wrap-box">
+            <ul>
+                <li>
+                    <span>我是span</span>
+                    <!--<p>我是一个段落</p>-->
+
+                </li>
+                <li>
+                    <span>我是span</span>
+                    <!--<span>我是span</span>-->
+                    <p>我是p</p>
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-child(n)</header>
+        <div class="wrap-box">
+            <p>n的取值为大于等于1，当N作为系数时N的取值可以为0 比如2n+1</p>
+
+            <ul>
+                <li>
+                    <span>我是span</span>
+                </li>
+                <li>
+                    <span>我是span</span>
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-last-child(n)</header>
+        <div class="wrap-box">
+
+        </div>
+    </section>
+    <section>
+        <header>E:first-of-type</header>
+        <div class="wrap-box">
+            <span>我是一个span</span>
+            <p>段落1</p>
+            <p>段落2</p>
+            <h1>我是一级标题</h1>
+            <p>段落1</p>
+        </div>
+    </section>
+    <section>
+        <header>E:last-of-type</header>
+        <div class="wrap-box">
+            <div>我是div1</div>
+            <div>我是div2</div>
+            <div>我是div3</div>
+            <div>我是div4</div>
+            <p>我是一个p</p>
+            <div>我是div5</div>
+            <p>我是一个段落p</p>
+        </div>
+    </section>
+    <section>
+        <header>E:only-of-type</header>
+        <div class="wrap-box">
+            <p>我是段落p</p>
+            <span>我是一个span</span>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-of-type(n)</header>
+        <div class="wrap-box">
+            E:nth-of-type(n) 以父级元素为参考，从父级元素中找出类型为E的元素集合，然后从集合中取出第n个元元素
+
+        </div>
+    </section>
+    <section>
+        <header>E:nth-last-of-type(n)</header>
+        <div class="wrap-box">
+            E:nth-of-type(n) 以父级元素为参考，从父级元素中找出类型为E的元素集合，然后从集合中从后面取出第n个元元素
+        </div>
+    </section>
+    <section>
+        <header>E:empty</header>
+        <div class="wrap-box">
+            <span>E:empty 表示元素没有任何内容才被选中</span>
+            <span>E:empty 表示元素没有任何内容才被选中</span>
+            <span>E:empty 表示元素没有任何内容才被选中</span>
+            <p>sbbbbbb</p>
+            <p></p>
+        </div>
+    </section>
+    <section>
+        <header>E:target</header>
+        <div class="wrap-box">
+            <a href="#demo1">demo1</a>
+            <a href="#demo2">demo2</a>
+            <a href="#demo3">demo3</a>
+        </div>
+    </section>
+    <section>
+        <header>E:after</header>
+        <div class="wrap-box">
+            <p>p</p>
+            <span>span</span>
+            <p>p</p>
+            <span>span</span>
+            <p>p</p>
+            <span>span</span>
+        </div>
+    </section>
+</div>
+</body>
+</html>

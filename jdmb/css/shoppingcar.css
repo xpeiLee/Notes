@@ -1,0 +1,333 @@
+@charset "UTF-8";
+body{
+    background-color: #fff;
+
+}
+.jd_topbar{
+    width: 100%;
+    height: 44px;
+    background:#efefef url("../images/header-bg.png") repeat-x 0 0;
+    border-bottom: 1px solid #bfbfbf;
+
+    background-color: #F7F7F7;
+}
+.jd_topbar .icon_back{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top:12px;
+    background: url("../images/sprites.png") no-repeat -20px 0;
+    background-size:200px 200px;
+    float: left;
+}
+.jd_topbar div{
+    /*float: left;*/
+    text-align: center;
+    line-height:44px;
+    font-size: 18px;
+    margin: 0 60px;
+}
+
+.jd_topbar .icon_menu{
+    float: right;
+    width: 20px;
+    height: 20px;
+
+    background: url("../images/sprites.png") no-repeat -60px 0;
+    background-size:200px 200px;
+    margin: 12px 10px 0 10px
+}
+
+/*安全提示*/
+.jd_safe{
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    line-height:36px;
+    font-size: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.jd_safe p{
+    position: relative;
+    display: inline-block;
+}
+.jd_safe p::before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url("../images/safe_icon.png") no-repeat;
+    background-size: 18px 18px;
+    position: absolute;
+    left:-20px;
+    top:10px;
+}
+
+.jd_zy{
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    margin-top:11px;
+}
+.jd_zy a{
+    float: left;
+    width: 17px;
+    height: 17px;
+    background: url("../images/shop-icon.png") no-repeat -1px -1px;
+    background-size: 50px 100px;
+    margin:10px 5px 0 10px;
+}
+.jd_zy span{
+    line-height: 36px;
+}
+.jd_zy span em{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url("../images/buy-logo.png") no-repeat;
+    background-size: 20px 20px;
+    margin: 9px 10px 0 0;
+}
+.jd_zy i {
+    float: right;
+    color:red;
+    line-height: 36px;
+    margin-right: 15px;
+}
+
+.jd_shop_con{
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+.jd_shop_con .quan{
+    width: 18px;
+    height: 18px;
+    background: url("../images/shop-icon.png") no-repeat -1px -1px;
+    background-size: 50px 100px;
+    position: absolute;
+    top:30px;
+    left:10px;
+}
+.jd_shop_con .con_product{
+    margin-top:10px;
+    padding:0 10px 10px 40px;
+}
+.jd_shop_con .con_product img{
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right:10px;
+    display: block;
+}
+.jd_shop_con .con_product .con_product_box{
+    padding-left: 90px;
+}
+.jd_shop_con .con_product .con_product_box .name{
+    height: 30px;
+    line-height: 15px;
+    font-size: 13px;
+    overflow: hidden;
+    display: block;
+}
+.jd_shop_con .con_product .con_product_box p{
+    margin-top: 5px;
+}
+.jd_shop_con .con_product .con_product_box .option{
+    width: 100%;
+    height: 24px;
+    margin-top:5px;
+}
+.jd_shop_con .con_product .con_product_box .option .change_box{
+    float: left;
+
+}
+.jd_shop_con .con_product .con_product_box .option .change_box .change_box_left{
+    width: 32px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    display: inline-block;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    text-align: center;
+    float: left;
+}
+.jd_shop_con .con_product .con_product_box .option .change_box input{
+    width: 32px;
+    height: 24px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-left: 14px;
+    float: left;
+}
+.jd_shop_con .con_product .con_product_box .option .change_box .change_box_right{
+    width: 32px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    display: inline-block;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    text-align: center;
+    float: right;
+}
+/*删除盒子*/
+.jd_shop_con .con_product .con_product_box .option .delete_box{
+    float: right;
+}
+.jd_shop_con .con_product .con_product_box .option .delete_box_top{
+    width: 20px;
+    height: 5px;
+    background: url("../images/delete_up.png") no-repeat;
+    background-size:20px 5px;
+margin-right: 3px;
+}
+.jd_shop_con .con_product .con_product_box .option .delete_box_bom{
+    width: 20px;
+    height: 18px;
+    background: url("../images/delete_down.png") no-repeat;
+    background-size:20px 18px;
+    margin-top: -2px;
+}
+
+.jd_amount{
+    position: fixed;
+    left:0;
+    bottom:0;
+    height: 65px;
+    background-color: rgba(0,0,0,.8);
+    width: 100%;
+}
+.jd_amount .amount_check{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 100%;
+}
+
+.jd_check_box{
+    width: 18px;
+    height: 18px;
+    background: url("../images/shop-icon.png") no-repeat 0px 0px;
+    background-size: 50px 100px;
+    position: absolute;
+    top:0px;
+    left:10px;
+}
+.jd_amount .amount_check .quanxuan{
+    position: absolute;
+    top:0;
+    left: 40px;
+    color: #fff;
+}
+.jd_amount .amount_check .amount_info{
+    margin-left:8px;
+    position: absolute;
+    left:70px;
+    top:-10px;
+    color: #fff;
+    font-size: 15px;
+}
+.jd_amount .amount_check .amount_info .other{
+    font-size:12px;
+}
+.jd_amount .amount_submit{
+    height: 65px;
+    width: 120px;
+    text-align: center;
+    line-height:65px;
+    color:#fff;
+    background-color: red;
+    font-size: 18px;
+    position: absolute;
+    top:0px;
+    right: 0;
+}
+
+.check_box[checked]{
+    background-position: -25px 0;
+}
+
+
+.jd_win{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+
+}
+.jd_win_box{
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    opacity: 0;
+}
+.jd_win_box .jd_win_box_con{
+    line-height:70px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin: 0 20px;
+}
+.jd_win_box .jd_win_box_btn{
+    padding: 10px 20px;
+}
+.jd_win_box .jd_win_box_btn .cancle{
+    height: 36px;
+    width: 45%;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    line-height:36px;
+    border-radius: 4px;
+    font-size: 16px;
+    float: left;
+    background-color: teal;
+    color: #fff;
+}
+.jd_win_box .jd_win_box_btn .submit{
+    height: 36px;
+    width: 45%;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    background-color: #f15353;
+    color: #fff;
+    text-align: center;
+    line-height:36px;
+    border-radius: 4px;
+    font-size: 16px;
+    float: right;
+}
+
+/*@keyframes viewDown {*/
+/*0% , 60% , 75% , 90% , 100%{*/
+    /*animation-timing-function: cubic-bezier(0.215,0.61,0.355,1);*/
+/*}*/
+    /*0%{*/
+        /*opacity: 0;*/
+        /*transform: translate3d(0px,-3000px,0px);*/
+        /*-webkit-transform: translate3d(0px,-3000px,0px);*/
+    /*}*/
+    /*60%{*/
+        /*opacity:0.6;*/
+        /*transform: translate3d(0px,25px,0px);*/
+        /*-webkit-transform: translate3d(0px,25px,0px);*/
+    /*}*/
+    /*75%{*/
+        /*transform: translate3d(0px,-10px,0px);*/
+        /*-webkit-transform: translate3d(0px,-10px,0px);*/
+    /*}*/
+    /*100%{*/
+        /*opacity:1;*/
+        /*transform: none;*/
+        /*-webkit-transform: none;*/
+    /*}*/
+/*}*/
+/*.viewDown{*/
+    /*animation-name: viewDown;*/
+    /*animation-duration: 1s;*/
+/*}*/

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            color: black;
+            content: attr(data-brief);
+        }
+        div::after{
+            width: 200px;
+            height: 200px;
+            color: black;
+            content: attr(data-brief);
+        }
+    </style>
+</head>
+<body>
+<div data-brief="hehehehhe"></div>
+
+</body>
+</html>

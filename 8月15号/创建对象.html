@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var  obj = new Object();
+    obj.name = "李四";
+    console.log(obj.name);
+
+    var obj1 = {};
+    obj1.name = "张sir";
+    console.log(obj1.name);
+
+
+    function Car(name,speed) {
+        this.name = name;
+        this.speed = speed;
+
+    }
+    Car.prototype.run = function () {
+        alert("速度30KM" + this.speed);
+    }
+    var obj2 = Object.create(Car.prototype);
+    obj2.name = "wang sir";
+    console.log(obj2.name);
+</script>
+</body>
+</html>

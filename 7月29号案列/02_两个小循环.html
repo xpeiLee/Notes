@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*===================求1-100的和=========================*/
+    var sum = 0;
+    for (var i = 0; i <= 100; i++) {
+        sum += i;
+    }
+    console.log("sum = " + sum);
+    //while循环
+    /*
+     * while(条件语句){
+     *   执行语句
+     *  }
+     *  只要条件为真，就会一直执行花括号里边的内容
+     *
+     *
+     *
+     * */
+    var m = 1;
+    var sum1 = 0;
+    while (m <= 100) {
+        sum1 += m;
+        m++;
+    }
+    console.log("sum1 = " + sum1);
+    /*
+     * do{
+     * 执行语句
+     * }while(条件语句);
+     * do while 里边执行语句至少被执行一次
+     *执行顺序是 第一次先执行执行语句，执行完毕后进行条件判断是否进行第二次循环，如果条件为真的话就进行第二次循环，直达条件为真，循环结束。
+     * */
+    var n = 1;
+    var sum2 = 0;
+    do {
+        sum2+=n;
+        n++;
+    }while(n <= 100);
+    console.log("sum2 = " + sum2);
+    var a = 0;
+    do{
+        console.log("我们是最棒的 ！！！");
+        a++;
+    }while (a < 2);
+
+</script>
+
+</body>
+</html>

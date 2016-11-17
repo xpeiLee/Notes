@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            text-align: center;
+        }
+        #container div{
+            margin-bottom:20px ;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        #container div span:nth-child(1){
+            color: red;
+        }
+        #container img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function Product() {
+        this.name = "";
+        this.time = "";
+        this.price = "";
+        this.desc = "";
+        this.nr = "";
+        this.img = ""
+    }
+    Product.prototype.bindDom = function () {
+        var str = "";
+        str += "<div><h1>"+this.name+"</h1>";
+        str += "<p>"+this.time+" <span>"+this.price+"</span> <span>"+this.desc+"</span></p></div>";
+        str += "<p>"+this.nr+"</p>";
+        str += "<img src='"+this.img+"'/>";
+        return str ;
+    }
+    window.onload = function () {
+        var products = [{name:"曝郭富城曾秘恋气质美女 移情方媛而分手",time:"2015年12月10日01:34",price:"新浪娱乐",desc:"微博",nr:"35岁的音乐才女方皓玟，传曾与郭富城借由IG隔空传情，没想到郭富城之后竟变心回头吃26岁性感型的方媛",img:"img/bg.jpg"}]
+        var str = "";
+        for(var i = 0; i< products.length;i++){
+            var product = new Product();
+            product.name = products[i].name;
+            product.desc = products[i].desc;
+            product.price = products[i].price;
+            product.time = products[i].time;
+            product.nr = products[i].nr;
+            product.img = products[i].img;
+            str += product.bindDom();
+        }
+        var container = document.getElementById("container");
+        container.innerHTML = str;
+
+    }
+
+</script>
+<div id="container">
+
+</div>
+</body>
+</html>

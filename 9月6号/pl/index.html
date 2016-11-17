@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .comment {
+        background-color: #678;
+        width: 600px;
+        height: 160px;
+    }
+    
+    .comment div img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .left {
+        float: left;
+        width: 80px;
+        height: 80px;
+        background-color: lightBlue;
+    }
+    
+    .right {
+        float: right;
+        width: 520px;
+        height: 80px;
+    }
+    
+    #container {
+        margin: 30px auto;
+        width: 600px;
+    }
+    
+    #container ul {
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    #more {
+        background-color: lightGray;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    </style>
+    <script type="text/javascript" src='jquery-1.11.2.js'></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#more').click(function() {
+            var last = $('#last').val();
+            var url = './data.php?last=' + last + '&amount=5';
+
+            $.ajax({
+                type: 'get',
+                async: true,
+                url: url,
+                dataType: 'json',
+                success: function(data) {
+                    // alert(data);
+                    // console.log(data);
+                    if (data == 1) {
+                        $('#more').html('没有更多数据').unbind('click');
+                        return;
+                    }
+                    $.each(data, function(inx, obj) {
+                        var nickname = obj.nickname;
+                        var content = obj.content;
+                        var time = obj.time;
+                        var imgpath = obj.imgpath;
+                        var tag = '';
+                        tag += '<li class="comment"><div class="left"> <img src="' + imgpath + '"></div><div class="right"><h4>' + nickname + '</h4><div>' + content + '</div></div></li>';
+                        var $tag = $(tag);
+
+                        $("#contentList").append($tag);
+                       
+                    });
+                    /*修改下次请求数据的位置*/
+                    var now = parseInt($('#last').val()) + 5;
+                    $('#last').val(now);
+
+
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+
+            });
+
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="contentList">
+            <li class="comment">
+                <div class="left">
+                    <img src="http://a.hiphotos.baidu.com/image/h%3D360/sign=fd0a5bf8a586c9171703543ff93c70c6/a50f4bfbfbedab646b8ff2c0f536afc379311e34.jpg" alt="" />
+                </div>
+                <div class="right">
+                    <h4>爱因斯坦</h4>
+                    <div>
+                        阿尔伯特·爱因斯坦（1879.3.14-1955.4.18）犹太裔物理学家。他于1879年出生于德国乌尔姆市的一个犹太人家庭（父母均为犹太人)，1900年毕业于苏黎世联邦理工学院，入瑞士国籍。1905年，获苏黎世大学哲学博士学位，爱因斯坦提出光子假设，成功解释了光电效应，因此获得1921年诺贝尔物理奖，创立狭义相对论。
+                    </div>
+                </div>
+            </li>
+            <br/>
+            <li class="comment">
+                <div class="left">
+                    <img src="http://a.hiphotos.baidu.com/image/h%3D360/sign=fd0a5bf8a586c9171703543ff93c70c6/a50f4bfbfbedab646b8ff2c0f536afc379311e34.jpg" alt="" />
+                </div>
+                <div class="right">
+                    <h4>爱因斯坦</h4>
+                    <div>
+                        阿尔伯特·爱因斯坦（1879.3.14-1955.4.18）犹太裔物理学家。他于1879年出生于德国乌尔姆市的一个犹太人家庭（父母均为犹太人)，1900年毕业于苏黎世联邦理工学院，入瑞士国籍。1905年，获苏黎世大学哲学博士学位，爱因斯坦提出光子假设，成功解释了光电效应，因此获得1921年诺贝尔物理奖，创立狭义相对论。
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="more">加载更多</div>
+        <input type="hidden" id="last" value="0" />
+    </div>
+</body>
+
+</html>

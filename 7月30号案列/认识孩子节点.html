@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li>1</li>
+    <!--啊啊啊啊-->
+    <li>2</li>
+    <li>3</li>
+    <!--aaaaass-->
+</ul>
+
+<script>
+    var ulBox = document.getElementById("ul");
+//    childNodes 会把换行当做节点来算 但ie6,7,8不会
+    var childrens = ulBox.childNodes;
+    for (var i = 0; i < childrens.length; i++){
+//        元素节点nodetype这是系统的方法，返回一个节点的类型， notetype = 1是元素节点
+        if (childrens[i].nodeType == 1){
+            childrens[i].innerHTML = "这是第"+i+"次遍历";
+        }
+
+    }
+//    alert(childrens.length);
+    //children只当前元素的子节点的元素节点，ie8里边注释节点也会被计算进去
+    var children = ulBox.children;
+//    alert(children.length);
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display: inline-block;
+            transition: all 0.5s;
+        }
+
+        .rotateDiv{
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        var toggle = true;
+        $(function () {
+            $("div").on("click",function () {
+//               if(toggle){
+//                   $(this).addClass("rotateDiv");
+//
+//               }else {
+//                   $(this).removeClass("rotateDiv");
+//               }
+//                toggle = !toggle;
+
+                $(this).toggleClass("rotateDiv");
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div>
+    <img src="zhuan.jpg" alt="">
+</div>
+
+</body>
+</html>

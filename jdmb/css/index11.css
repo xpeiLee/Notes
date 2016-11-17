@@ -1,0 +1,314 @@
+@charset "UTF-8";
+body{
+    background-color: #f5f5f5;
+}
+.jd-layout{
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    /*height: 100%;*/
+    /*background-color: red;*/
+    min-height: 500px;
+    position: relative;
+}
+/*搜索头部*/
+.jd-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 40px;
+    z-index: 999;
+}
+/*搜索头部样式*/
+.jd-header .jdheader-box{
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: rgba(201,21,35,0);
+    height: 40px;
+    position: relative;
+}
+/*logo*/
+.jd-header .jdheader-box .icon-logo{
+    width: 60px;
+    height: 30px;
+    background-position: 0 -109px;
+    position: absolute;
+    top:9px;
+    left: 10px;
+}
+.jd-header form{
+    width: 100%;
+    height: 40px;
+    padding-left: 75px;
+    padding-right: 55px;
+}
+/*搜索按钮*/
+.jd-header form .icon-search{
+    background-position: -60px -109px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top:10px;
+    left:85px;
+}
+.jd-header form input{
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 5px;
+    padding-left: 30px;
+}
+.jd-header .login{
+    width: 50px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top:0;
+    right: 3px;
+}
+
+/*轮播图*/
+.jd_banner{
+    width: 100%;
+
+    height: 311px;
+    overflow: hidden;
+    position: relative;
+}
+@media (max-width:414px) {
+    .jd_banner{height: 205px;}
+}
+.jd_banner ul:first-child{
+    width: 800%;
+
+}
+.jd_banner ul:first-child li{
+    position: absolute;
+    top:0;
+    left:0;
+    /*width: 720px;*/
+    /*height: 311px;*/
+    width: 100%;
+    float: left;
+}
+.jd_banner ul:first-child li img{
+    width: 100%;
+}
+/*点*/
+.jd_banner ul:last-child{
+    width: 130px;
+    height: 6px;
+    position: absolute;
+    left:50%;
+    margin-left: -65px;
+    bottom:10px;
+}
+.jd_banner ul:last-child li {
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    float: left;
+    margin-left: 10px;
+    color: transparent;
+    cursor: pointer;
+    font-size: 0;
+}
+.jd_banner ul:last-child li.now{
+    background-color: #fff;
+}
+/*导航栏*/
+.jd-nav{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 3.125%;
+}
+.jd-nav a{
+    width: 25%;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+}
+.jd-nav a img{
+    display: inline-block;
+    width: 58px;
+    height: 58px;
+    margin: 5px auto;
+}
+.jd-nav a span{
+    display: block;
+}
+
+/*秒杀*/
+.jd_product{
+
+}
+
+.jd_product .jd_product_box{
+    box-shadow: 0 0 1px 1px #e0e0e0;
+    background-color: #fff;
+    margin-top: 10px;
+}
+/*处理每个section上面的盒子*/
+.jd_product .jd_product_box .product_top{
+    height: 32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jd_secondkill{
+
+}
+.jd_secondkill_kill .jd_secondkill_left{
+    float: left;
+}
+.jd_secondkill .jd_secondkill_left .sk_icon{
+    background: url("../images/seckill-icon.png") no-repeat ;
+    background-size: 16px 20px;
+    width: 16px;
+    height: 20px;
+    float: left;
+    margin-left: 8px;
+    margin-top: 6px;
+}
+.jd_secondkill .jd_secondkill_left .sk_name{
+    font-size: 15px;
+    color:#ca1327;
+    font-weight: inherit;
+    margin-left:8px;
+    margin-top: 6px;
+    float: left;
+}
+.jd_secondkill .jd_secondkill_left .sk_time{
+    float: left;
+    margin-left: 8px;
+    margin-top:6px;
+}
+.jd_secondkill .jd_secondkill_left .sk_time .sk_num{
+    display: inline-block;
+    width: 14px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    background-color: #333;
+    color: #fff;
+}
+.jd_secondkill .jd_secondkill_left .sk_time .sk_str{
+    width: 5px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+}
+.jd_secondkill .jd_secondkill_right{
+    float: right;
+}
+.jd_secondkill .jd_secondkill_right a{
+    margin-right: 5px;
+    line-height:32px;
+}
+.jd_secondkill .jd_secondkill_right i{
+display: inline-block;
+width: 7px;
+height: 12px;
+background: url("../images/sprites.png") no-repeat -186px -51px;
+background-size:200px 200px;
+margin: 11px 10px 0 0;
+float: right;
+}
+.jd_product .product_bom{
+
+    width: 100%;
+}
+.jd_product .product_bom ul{
+    width: 100%;
+}
+.jd_product .product_bom ul li{
+    width: 33.3333%;
+    float: left;
+}
+.jd_product .product_bom ul li a{
+    display: inline-block;
+    width: 100%;
+    padding: 0 15%;
+    background-color: #fff;
+}
+.jd_product .product_bom ul li a img{
+    width: 100%;
+}
+.jd_product .product_bom ul li+li{
+    border-left: 1px solid #e0e0e0;
+}
+.jd_product .product_bom ul li .new-price {
+    display: block;
+    color: #ed5657;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+}
+.jd_product .product_bom ul li .old-price {
+    color: #888;
+    font-size: 10px;
+    margin: 5px 0 12px 0;
+    text-align: center;
+    display: block;
+    text-decoration: line-through;
+}
+/*超值购*/
+.jd_czg{
+    border-bottom: 1px solid #e0e0e0;
+}
+.jd_product .jd_czg .product_bom .p_left{
+    width: 50%;
+    float: left;
+}
+.jd_product .jd_czg .product_bom .p_right{
+    width: 50%;
+    float: right;
+    border-left: 1px solid #e0e0e0;
+}
+.jd_product .jd_czg .product_bom a:nth-of-type(2){
+    border-bottom: 1px solid #e0e0e0;
+}
+.jd_product .jd_czg img{
+    width: 100%;
+}
+/*热门活动*/
+.jd_rmhd{
+    border-bottom: 1px solid #e0e0e0;
+}
+.jd_product .jd_rmhd .product_bom .p_right{
+    width: 50%;
+    float: right;
+}
+.jd_product .jd_rmhd .product_bom .p_left{
+    width: 50%;
+    float: left;
+}
+
+.jd_product .jd_rmhd img{
+    width: 100%;
+}
+.jd_product .jd_czg h4,.jd_product .jd_rmhd h4{
+    position: relative;
+    font-size: 15px;
+    font-weight: inherit;
+    margin-left:15px;
+    margin-top: 9px;
+}
+.jd_product .jd_czg h4::before,.jd_product .jd_rmhd h4::before{
+    content: "";
+    width: 0;
+    height: 15px;
+    border: 2px solid #ca1327;
+    position: absolute;
+    top:3px;
+    left:-8px;
+}

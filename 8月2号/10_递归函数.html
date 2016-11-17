@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    *：0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+    *
+    * 假设我们要求第n个数 n>2 f(n) = f(n-1) + f(n-2) n=0 f(0) = 0;f(1)=f(2) =1
+    *
+    * f(5) = f(4) +ｆ(3) = f(3)+f(2) + f(3) = f(2) +ｆ(1) + f(2) + f(2) + f(1)
+    *
+    * 函数自己调自己的函数叫递归函数
+    * 递归函数必须要有一个很明晰的结束条件，如果没有明晰结束条件，就是一个死循环
+    * */
+    function fn(n) {
+        if(n==0){
+            return 0;
+        }
+
+        if(n == 1 || n ==2){
+            return 1;
+        }
+        return fn(n-1) + fn(n-2);
+    }
+    alert(fn(5));
+
+</script>
+
+</body>
+</html>

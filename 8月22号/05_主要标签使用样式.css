@@ -1,0 +1,88 @@
+@charset "UTF-8";
+body{
+    /*通用css部分*/
+    font: 12px/1.5 "宋体";
+    width: 1024px;
+    background-color: #fff;
+    margin:0 auto;
+    padding:0;
+}
+header{
+    padding: 20px 30px;
+}
+nav > ul{
+    list-style: none;
+    margin:0 auto;
+
+    height: 42px;
+    padding:0 5px;
+    background-color: #c0c0c0;
+    border-radius: 5px;
+}
+nav > ul > li{
+    float: left;
+    height: 100%;
+}
+nav > ul > li a{
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: none;
+    padding:12px 20px;
+    display: block;
+    color: white;
+}
+nav > ul > li a:hover{
+    font-weight: 700;
+    background-color: #e0e0e0;
+}
+main{
+    position: relative;
+}
+main section{
+    padding:20px;
+    margin-right: 220px;
+}
+main > section > article {
+    border-bottom: 1px solid #e0e0e0;
+
+}
+main aside section{
+    /*margin-top: 30px;*/
+    margin-right: 0;
+    padding:0;
+    margin-bottom: 15px;
+}
+main > aside {
+    width: 220px;
+    position: absolute;
+    top:0;
+    right:0;
+    margin-top: 50px;
+}
+footer{
+    /*border-top: 1px solid #d1d7dc;*/
+    margin: 0 auto;
+    height: 80px;
+    padding: 0 10px;
+    color: #b0b0b0;
+    font: 12px/1.5 "宋体";
+    /*text-align: left;*/
+}
+footer .links{
+    list-style:none;
+    border-bottom: 1px solid #d3d3d3;
+    /*margin: 10px;*/
+    height:18px;
+}
+.links li{
+    display: inline-block;
+}
+.links > li + li:before{
+    content: "|";
+}
+.copyright{
+    height:20px;
+    margin: 0 0 0 50px;
+    font-size:18px;
+    text-align: center;
+}

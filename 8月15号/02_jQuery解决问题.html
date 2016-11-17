@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{
+            height: 200px;
+            background: pink;
+            margin-bottom:10px;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#demo").click(function () {
+                $("div").show("slow").html("我是内容");
+            });
+        });
+
+        $(function () {
+            alert("sssss");
+//            $("#demo").click(function () {
+//                $("div").show("slow").html("我是内容");
+//            });
+        });
+    </script>
+
+</head>
+<body>
+<input type="button" value="按钮" id="demo"/>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

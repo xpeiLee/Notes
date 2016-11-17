@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        nav {
+            width: 900px;
+            height: 35px;
+            border: 1px solid #cccccc;
+            margin: 100px auto;
+        }
+
+        nav li {
+            width: 100px;
+            box-sizing: border-box;
+            height: 35px;
+            border-right: 1px dashed #ccc;
+            float: left;
+            text-align: center;
+            line-height: 35px;
+            position: relative;
+        }
+        nav li ins{
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            top: 35px;
+            left: 0;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+
+            /*去掉最后一个盒子的右边框*/
+            $("nav li:last").css("border", 0);
+
+            /*jquery自带隐式迭代*/
+            $("nav li").append("<ins></ins>");
+
+            var colors  = new Array("red","orange","yellow","green","skyblue","blue","purple","black","grey");
+
+            $("nav li ins").each(function (index,ele) {
+//                /*jquery写法*/
+//                $(ele).css("background-color",colors[index]);
+//
+//                /*js写法*/
+//                ele.style.backgroundColor = colors[index];
+
+                var that = $(this);
+                that.css("background-color",colors[index]);
+            });
+            $("nav li").mouseenter(function () {
+                /*让li对应的ins跑上去*/
+                $(this).children("ins").stop().animate({top:0},200);
+                var index = $(this).index();
+
+                $("audio").get(index).load(); //加载
+                $("audio")[index].play(); //播放
+
+            }).mouseleave(function () {
+                /*鼠标离开的时候让色块下来*/
+                $(this).children("ins").stop().animate({top:35},200);
+            });
+
+//            window.onkeydown = function () {
+//
+//            }
+//            $(window).keypress (function (event) {
+//                var keyCode = event.keyCode;
+//                if (keyCode === 13){
+//                    alert("哥哥你敲了回车键");
+//                }
+//                var num = 0;
+//                if (keyCode >= 49 && keyCode <= 57){
+//                    num = keyCode - 49;
+////                    列如 你在键盘上敲了一个1 对应的num 0
+//                    $("nav li").eq(num).triggerHandler("mouseenter");
+////                    事件触发
+//                }
+//            }).keyup(function (event) {
+//                var keyCode = event.keyCode;
+//                if (keyCode === 13){
+//                    alert("哥哥你敲了回车键");
+//                }
+//                var num = 0;
+//                if (keyCode >= 49 && keyCode <= 57) {
+//                    num = keyCode - 49;
+////                    列如 你在键盘上敲了一个1 对应的num 0
+//                    $("nav li").eq(num).triggerHandler("mouseleave");
+////                    事件触发
+//                }
+//            });
+
+            $(window).on("keypress keyup",function (event) {
+                var keyCode = event.keyCode;
+                if (keyCode === 13){
+                    alert("哥哥你敲了回车键");
+                }
+                var num = 0;
+                if (keyCode >= 49 && keyCode <= 57) {
+                    num = keyCode - 49;
+                    if (event.type == "keypress"){
+                        $("nav li").eq(num).triggerHandler("mouseenter");
+                    }else {
+                        $("nav li").eq(num).triggerHandler("mouseleave");
+                    }
+                }
+            })
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+</nav>
+
+<audio src="music/1.ogg"></audio>
+<audio src="music/2.ogg"></audio>
+<audio src="music/3.ogg"></audio>
+<audio src="music/4.ogg"></audio>
+<audio src="music/5.ogg"></audio>
+<audio src="music/6.ogg"></audio>
+<audio src="music/7.ogg"></audio>
+<audio src="music/8.ogg"></audio>
+<audio src="music/9.ogg"></audio>
+
+</body>
+</html>

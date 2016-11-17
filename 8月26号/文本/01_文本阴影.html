@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+            background-color: #f7f7f7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #ddd;
+            background-color: #fff;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            /*line-height: ;*/
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+        section:nth-child(2) span{
+            color: #ccc;
+            font-size: 50px;
+            /*text-shadow 第一个参数水平方向的位移 第二个参数垂直方向 第三个参数阴影的宽*/
+            text-shadow:2px 2px 8px #f00;
+        }
+        section:nth-child(3) .box{
+            width: 100px;
+            height: 200px;
+            border: 1px solid #ccc;
+            /*换行模式，break-all 允许把单词切开 keep-all只能以单词换行不能把单词切开 中文只能以空格切*/
+            word-break: keep-all;
+        }
+        section:nth-child(3) .white-space{
+            width: 100px;
+            height: 200px;
+            border: 1px solid red;
+            white-space: pre;
+
+        }
+        section:nth-child(3) .pre-wrap{
+            width: 100px;
+            height: 200px;
+            border: 1px solid red;
+            white-space: pre-wrap;
+        }
+        section:nth-child(3) .pre-line{
+            width: 100px;
+            height: 200px;
+            border:1px solid teal;
+            white-space:pre-line;
+        }
+        section:nth-child(3) .no-wrap{
+            width: 100px;
+            height: 200px;
+            border:1px solid teal;
+            white-space:nowrap;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-文本</header>
+    <section>
+        <header>文本阴影</header>
+        <div class="wrap-box">
+            <p>文字阴影</p>
+        </div>
+            <span>文字阴影</span>
+    </section>
+    <section>
+        <header>文本换行</header>
+        <div class="wrap-box">
+            <p class="box">
+                我是一些文字 http://www.baidu.com helloooooooooooooooooooo 我是中国人 为谁都 会死 的死
+            </p>
+            <p class="box2 white-space">
+                                        我是一些文字
+                        我用的是pre
+
+                      一些文字
+
+            </p>
+            <p class="box2 pre-wrap">
+                我是一些文字
+                我用的是pre-wrap
+
+                一些文字
+
+            </p>
+            <p class="box2 pre-line">
+                我是  一些  文字
+                我    用的  是  preline
+
+
+
+                一些  文字
+
+            </p>
+            <p class="box2 no-wrap">
+                                                        我是一些  文字
+                我用的是no-wrap<br/>
+                一些  文字
+
+            </p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

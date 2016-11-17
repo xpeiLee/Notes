@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .myProgress{
+            background-color: teal;
+            color: red;;
+            height:5px;
+            border-radius: 5px;
+        }
+        .myProgress::-webkit-progress-bar{
+            background-color: teal;
+            border-radius: 5px;
+        }
+        .myProgress::-webkit-progress-value{
+            background-color: red;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<h2>DataList</h2>
+<form action="#" autocomplete="on">
+    <input type="text" list="teachers"/>
+    <datalist id="teachers">
+        <option value="段誉"></option>
+        <option value="陈冠希"></option>
+        <option value="宋喆"></option>
+    </datalist>
+
+    <h2>NOAutoComplete</h2>
+    <input type="text" />
+    <datalist id="students">
+        <option value="梅赛德斯奔驰"></option>
+        <option value="BMW"></option>
+        <option value="揽胜"></option>
+    </datalist>
+    <input type="submit"/>
+
+    <h2>Right Menu</h2> <!--火狐支持 FireFoxOnly-->
+    <menu>
+        <!--<command type="command"  label="publish"/>-->
+        <li>11</li>
+        <li>222</li>
+        <li>333</li>
+    </menu>
+    <h2>details (opera,chrome,and safari )</h2>
+    <details>
+        <summary> html5</summary>
+        hellljdkafkaskfkadkfkajskjfasjkdfasdkjfkadskjfkasdkjfkadskjfadsjklfklasdklf
+    </details>
+
+    <p>显示度量值：</p>
+    <meter value="8" min="0" max="10"></meter><br>
+    <meter value="0.6">60%</meter>
+    <p><b>注释：</b>Internet Explorer 不支持 meter 标签。</p>
+
+    <h2>progress</h2>
+    <progress value="75" max="100" class="myProgress">3/4complete</progress>
+    <h3>修改progress的样式</h3>
+    <progress value="75" max="100" class="myProgress">3/4complete</progress>
+</form>
+
+
+</body>
+</html>

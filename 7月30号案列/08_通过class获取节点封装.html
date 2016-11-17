@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            border:1px solid #ccc;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+        function myGetElementsByClass(clasName) {
+            //判断浏览器是否支持 getElementsByClassName()
+            if(document.getElementsByClassName){
+                return document.getElementsByClassName(clasName);
+            }
+            //如果浏览器不支持的话,获取document下面全部的元素节点
+            var doms = document.getElementsByTagName("*");
+            var arr = [];
+            for(var i = 0; i < doms.length;i++){
+                if (doms[i].className == clasName){
+                    arr.push(doms[i]);
+                }
+            }
+            return arr;
+        }
+
+        var demos = myGetElementsByClass("demo");
+//            for(var)
+//            alert(demos.length);
+            for(var i = 0; i < demos.length;i++){
+                demos[i].style.backgroundColor = "black";
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div class="demo test"></div>
+<div class="demo"></div>
+<div class="demo"></div>
+<div></div>
+
+</body>
+</html>

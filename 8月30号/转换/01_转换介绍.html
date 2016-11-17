@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3伸缩布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        .wrapper .flex-img {
+            width: 100%;
+        }
+
+        section .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            transition: all 1s;
+        }
+
+        section:nth-of-type(1):hover .rotate{
+            transform: rotate(45deg);
+        }
+
+        section:nth-of-type(2):hover .scale{
+            transform: scale(0.5);
+        }
+
+        section:nth-of-type(3):hover .translate{
+            transform: translate(400px) rotate(45deg) scale(1.5);
+        }
+
+        section:nth-of-type(4):hover .skew{
+            transform: skew(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-转换</header>
+    <section>
+        <header>旋转</header>
+        <div class="wrap-box">
+            <div class="box rotate"></div>
+        </div>
+    </section>
+    <section>
+        <header>缩放</header>
+        <div class="wrap-box">
+        <div class="box scale"></div>
+        </div>
+    </section>
+    <section>
+        <header>移动</header>
+        <div class="wrap-box">
+            <div class="box translate"></div>
+        </div>
+    </section>
+
+    <section>
+        <header>倾斜</header>
+        <div class="wrap-box">
+            <div class="box skew"></div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

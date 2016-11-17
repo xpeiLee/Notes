@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 312px;
+            height: 441px;
+            border:1px solid red;
+            margin: 100px auto;
+
+            perspective: 100px;
+
+            /*perspective-origin: 100px 400px;*/
+
+        }
+        .box img{
+            transition: all 1s;
+            transform-origin: left;
+
+        }
+
+        .box:hover img{
+            transform: rotateY(80deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="pk1.png" alt=""/>
+</div>
+
+</body>
+</html>

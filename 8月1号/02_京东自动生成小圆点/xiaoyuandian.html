@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+    *{margin: 0;padding: 0;}
+    ul{list-style: none;}
+    .box{
+    width: 730px;
+    height: 454px;
+    overflow: hidden;
+    margin: 100px auto;
+    position: relative;
+    }
+    #circle{
+    position: absolute;
+    left:40%;
+    bottom: 10px;
+    }
+    #circle li{
+    float: left;
+    margin-left: 5px;
+    }
+    #circle span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    background-color: rgba(0,0,0,.7);
+    color: #fff;;
+
+    }
+    #circle .current{
+    background-color: red;
+
+    }
+    </style>
+    <script>
+        window.onload=function () {
+            var sliderul=document.getElementById("slider");
+            var imgs =sliderul.getElementsByTagName("img");
+            var circle =document.getElementById("circle");
+            for(var i=0;i<imgs.length;i++){
+                var newLi=document.createElement("li");
+                circle.appendChild(newLi);
+                var newSpan=document.createElement("span");
+                newLi.appendChild(newSpan);
+                newSpan.innerHTML=i+1;
+                if(i == 0){
+                    newSpan.className="current"
+                }
+                newSpan.index =i;
+                newSpan.onmouseover=function () {
+                    var spans = document.getElementsByTagName("span");
+                    for(var j=0; j<spans.length;j++){
+                        spans[j].className = "";
+                        imgs[j].parentNode.style.display = "none";
+                    }
+                    this.className = "current";
+                    imgs[this.index].parentNode.style.display = "block";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul id="slider">
+        <li><img src="images/11.jpg" alt=""></li>
+        <li><img src="images/22.jpg" alt=""></li>
+        <li><img src="images/33.jpg" alt=""></li>
+        <li><img src="images/44.jpg" alt=""></li>
+        <li><img src="images/55.jpg" alt=""></li>
+        <li><img src="images/66.jpg" alt=""></li>
+    </ul>
+    <ul id="circle"></ul>
+</div>
+</body>
+</html>

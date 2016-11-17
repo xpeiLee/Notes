@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .scroll{
+            width: 400px;
+            height: 8px;
+            background-color: #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        .bar{
+            width: 10px;
+            height: 22px;
+            background-color: #369;
+            position: absolute;
+            left:0;
+            top:-7px;
+            cursor: pointer;
+        }
+        .mask{
+            width: 0;
+            height: 100%;
+            background-color: #369;
+            position: absolute;
+            left:0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="scrollbar" class="scroll">
+    <div id="bar" class="bar"></div>
+    <div class="mask"></div>
+</div>
+<div id="demo"></div>
+<script>
+    var scrollBar = document.getElementById("scrollbar");
+    var bar = scrollBar.children[0];
+    var mask = scrollBar.children[1];
+    var demoDiv = document.getElementById("demo");
+//    鼠标按下
+    bar.onmousedown = function (event) {
+        var event = event || window.event;
+        var leftVal = event.clientX - this.offsetLeft;
+        var that = this;
+        document.onmousemove = function (event) {
+            var event = event || window.event;
+//            console.log(event.screenX);
+            that.style.left = event.clientX - leftVal +"px";
+            var val = parseInt(that.style.left);
+            if (val < 0){
+                that.style.left = 0;
+            }else if (val >390){
+                that.style.left = 390 + "px";
+            }
+//            mask.style.width = that.offsetLeft + "px";
+            mask.style.width = that.style.left;
+            demoDiv.innerHTML = "已经走了："+parseInt(parseInt(that.style.left)/390*100) + "%";
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+        }
+    }
+    //鼠标抬起
+    document.onmouseup = function () {
+        document.onmousemove = null;
+//        弹起鼠标不做任何处理 ，清空掉document的onmousemove事件
+
+    }
+</script>
+</body>
+</html>

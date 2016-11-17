@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function outFun() {
+        var num = 10;
+        function innerFun(){
+            console.log(num);
+        }
+        return innerFun;// 不带括号
+    }
+    var obj = outFun(); //带括号的
+//    obj =  function innerFun(){console.log(num); }
+    obj();
+
+</script>
+
+</body>
+</html>

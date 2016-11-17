@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px auto;
+            color: black;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("div").bind("mouseenter ", function (e) {
+                $("div").bind("mouseenter mouseleave",function(e) {
+                    var w = $(this).width();
+                    var h = $(this).height();
+                    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+                    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+                    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+                    var eventType = e.type;
+                    var dirName = new Array('上方','右侧','下方','左侧');
+                    if(e.type == 'mouseenter'){
+                        $("div").html(dirName[direction]+'进入');
+                    }else{
+                        $('div').html(dirName[direction]+'离开');
+                    }
+                });
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*li{*/
+            /*color: red;*/
+            /*font-size: 18px;*/
+        /*}*/
+        /*#b03{*/
+            /*font-size: 50px;*/
+            /*background-color: #000;*/
+        /*}*/
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //id选择器
+//            js
+//            var demo = document.getElementById("demo");
+//            demo.style.color = "blue";
+            //设置被选择元素的样式
+
+            //通过id选额器给选中的元素加载样式
+//            $("#demo").css("color","blue");
+//            $("#b03").css("background-color","red");
+//            $("#b03").css("margin-top","10px");
+
+            //组合的
+            /*  $("#b03").css({"background-color":"red","margin-top":"10px"});*/
+
+            //获取单个属性对应的值
+            // var bg = $("#b03").css("background-color");
+            //获取多个属性对应的值，返回的是一个对象
+//            var bg = $("#b03").css(["background-color","font-size"]);
+//            console.log(bg);
+//            console.log(bg["font-size"] + bg["background-color"]);
+//            for(var key in bg){
+//                console.log(key);
+//            }
+
+            //类选择器
+//            $(".box").css("background-color","red");
+            //标签选择器
+//            $("li").css("font-size","30px");
+            //通配符选择器
+//            $("*").css("font-size","30px");
+
+//            var defaultFontSize = $("#demo").css("font-size");
+//            alert(defaultFontSize);
+
+//            $("#demo").css("font-size","8px");
+
+//            var defaultFontSize = $("#demo").css("font-size");
+//            alert(defaultFontSize);
+            //并集选择器
+//            $(".list,div").css("color","red");
+
+            //交集选择器
+
+            $("li#b03").css("font-size","50px");
+
+        });
+
+    </script>
+</head>
+<body>
+<ul id="demo" class="list">
+    <li class="box1">兄弟很多1</li>
+    <li class="box">兄弟很多2</li>
+    <li id="b03">兄弟很多3</li>
+    <li class="box">兄弟很多4</li>
+    <li>兄弟很多5</li>
+    <li>兄弟很多6</li>
+    <li>兄弟很多7</li>
+</ul>
+<div>我是div</div>
+<div>我是div</div>
+<div>我是div</div>
+
+</body>
+</html>

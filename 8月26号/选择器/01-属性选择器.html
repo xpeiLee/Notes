@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3-属性选择器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+            background-color: #f7f7f7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #ddd;
+            background-color: #fff;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            /*line-height: ;*/
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            border: 1px dashed teal;
+        }
+
+        /*
+        *属性选择器 e[type="value"]
+        *选择e元素属性值type=value的元素标签
+        */
+        form input[type="text"] {
+            width: 200px;
+            height: 200px;
+        }
+
+        form input[type="password"] {
+            color: teal;
+            border: 1px dotted red;
+        }
+
+        /*.attr1 {*/
+
+        /*}*/
+        /*.download{*/
+            /*color: red;*/
+        /*}*/
+        .attr1 a[href="./a.rmvb"]{
+            color: yellow;
+        }
+
+        .attr1 a[href="./b.rmvb"]{
+            color: pink;
+        }
+        /*E[attr~=attr]表示的是一个单独的属性值，属性值里边有多个属性值的话只要有一个等于attr = attr*/
+        .attr2 a[class~="download"]{
+            color: red;
+        }
+        /*
+        E[attr|=attr] 表示的是一个单独的属性值，要么这个是以"-"分割的
+        */
+        .attr3 a[class|="download"]{
+            font-size: 30px;
+            color: #0066A1;
+        }
+
+        /*E[attr*=val] 表示的是属性值里边只要包含val字符串即可,不管在什么位置，任意*/
+        .attr4 a[class*="dow"]{
+            font-size: 50px;
+            color: red;
+
+        }
+        /*E[attr^=val]表示的是属性值里边包含val并且以val开头*/
+        .attr5 a[class^="movie"]{
+            font-size: 60px;
+            color: red;
+        }
+        /*E[attr$=val]表示的是属性值里边包含val并且以val结尾*/
+        .attr6 a[class$="2"]{
+            font-size: 60px;
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-属性选择器</header>
+    <section>
+        <header>简介</header>
+        <div class="wrap-box">
+            <form action="">
+                <ul>
+                    <li>姓名:<input type="text"/></li>
+                    <li>密码:<input type="password"/></li>
+                    <li>
+                        <label id="sex">性别:
+                            <input type="radio" name="sex"/>男
+                            <input type="radio" name="sex"/>女
+                        </label>
+                    </li>
+                    <li>兴趣: <input type="checkbox" name="" id=""/>写代码</li>
+                    <li><input type="submit" value="提交"/></li>
+
+                </ul>
+            </form>
+        </div>
+    </section>
+    <section class="attr1">
+        <header>E[attr]</header>
+        <a href="./a.rmvb" class="downloadmovie download ">下载</a>
+        <a href="./b.rmvb" class="download downloadmoive">下载</a>
+        <a href="./a.mp3" class="download downmusic">下载</a>
+        <a href="./c.mp4" class="download downloadMP4">下载</a>
+    </section>
+    <section class="attr2">
+        <header>E[type~=attr]</header>
+        <a href="./a.rmvb" class="downloadmovie download ">下载</a>
+        <a href="./b.rmvb" class="ownload downloadmoive">下载</a>
+        <a href="./a.mp3" class="ownload downmusic">下载</a>
+        <a href="./c.mp4" class="ownload downloadMP4">下载</a>
+    </section>
+
+    <section class="attr3">
+        <header>E[type|=attr]</header>
+        <a href="./a.rmvb" class="download">下载</a>
+        <a href="./b.rmvb" class="download-moive">下载</a>
+        <a href="./c.mp4" class="download download-MP4">下载</a>
+    </section>
+
+    <section class="attr4">
+        <header>E[type*=attr]</header>
+        <a href="./a.rmvb" class="download">下载</a>
+        <a href="./b.rmvb" class="download-moive">下载</a>
+        <a href="./c.mp4" class="download download-MP4">下载</a>
+    </section>
+    <section class="attr5">
+        <header>E[type^=attr]</header>
+        <a href="./a.rmvb" class="download">下载</a>
+        <a href="./b.rmvb" class="moviedownload">下载</a>
+        <a href="./c.mp4" class="mp4download download">下载</a>
+    </section>
+    <section class="attr6">
+        <header>E[type$=attr]</header>
+        <a href="./a.rmvb" class="download1">下载</a>
+        <a href="./b.rmvb" class="moviedownload2">下载</a>
+        <a href="./c.mp4" class="mp4download download3">下载</a>
+    </section>
+</div>
+
+</body>
+</html>

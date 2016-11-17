@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/jqm-demos.css">
+    <link rel="stylesheet" href="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css">
+    <style>
+
+        #mylist li a{
+            width: 200px;
+            color: red !important;
+        }
+    </style>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://cdn.rawgit.com/jquery/jquery-ui/1.10.4/ui/jquery.ui.datepicker.js"></script>
+    <script id="mobile-datepicker" src="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.js"></script>
+
+</head>
+
+<body>
+
+<h2>Filter</h2>
+<div data-demo-html="true" id="mylist">
+    <ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..." data-inset="true">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Banana</a></li>
+        <li><a href="#">Cherry</a></li>
+        <li><a href="#">Cranberry</a></li>
+        <li><a href="#">Grape</a></li>
+        <li><a href="#">Orange</a></li>
+    </ul>
+</div>
+<h2>Filter</h2>
+<br/>
+<br/>
+<br/>
+<br/>
+<div data-demo-html="true">
+    <ul data-role="listview" data-count-theme="b" data-inset="true">
+        <li><a href="#">Inbox <span class="ui-li-count">12</span></a></li>
+        <li><a href="#">Outbox <span class="ui-li-count">0</span></a></li>
+        <li><a href="#">Drafts <span class="ui-li-count">4</span></a></li>
+        <li><a href="#">Sent <span class="ui-li-count">328</span></a></li>
+        <li><a href="#">Trash <span class="ui-li-count">62</span></a></li>
+    </ul>
+</div>
+
+
+<h2>Inline Datepicker</h2>
+
+<div data-demo-html="true">
+    <input type="text" data-role="date" data-inline="true"/>
+</div>
+
+
+</body>
+</html>

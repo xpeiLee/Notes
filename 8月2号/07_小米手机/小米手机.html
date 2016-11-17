@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .xiaomi{
+            width: 512px;
+            height: 400px;
+            overflow: hidden;
+            margin: 50px auto;
+            border: 1px solid #e00;
+            position: relative;
+        }
+        .xiaomi span {
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            cursor: pointer;
+            left: 0;
+        }
+        .xiaomi .top{
+            top: 0;
+        }
+        .xiaomi .bottom{
+            bottom: 0;
+        }
+        #pic{
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) { return document.getElementById(id);}
+            var num = 0;
+            var time = null;
+            $("picup").onmouseover = function () {  
+                // 预防频繁创建time，第一次清空不了任何timer 因为我们刚开始还没创建所以就清空但是对我们程序没有任何影响
+                clearInterval(time);
+               time = setInterval(function () {
+
+                   num-=3;
+//                   console.log(num);
+                   if (num >= -1070){
+                       $("pic").style.top = num+"px";
+                   }else {
+//                       不需要定时器的时候需要把它关闭
+                       clearInterval(time);
+                   }
+                },30);
+            }
+            $("picup").onmouseout = function () {
+                clearInterval(time);
+
+            }
+            $("picdown").onmouseover = function () {
+                clearTimeout(time);
+              time = setInterval(function () {
+                  num+=3;
+                  console.log(num);
+                  if (num < 0){
+                      $("pic").style.top = num+"px";
+                  }else {
+                      clearInterval(time);
+                  }
+              },100);
+                
+            }
+            $("picdown").onmouseout = function () {
+                clearInterval(time);
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div class="xiaomi">
+    <img src="mi.png" alt="" id="pic">
+    <span class="top" id="picup"></span>
+    <span class="bottom" id="picdown"></span>
+</div>
+</body>
+</html>

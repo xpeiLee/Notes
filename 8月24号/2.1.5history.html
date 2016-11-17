@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="2.1.4多媒体API.html">我要看视频</a>
+<button>前进</button>
+<button>后退</button>
+<button>刷新</button>
+
+<script>
+    (function () {
+        var btnF = document.querySelector("button");
+        var btnB = document.querySelectorAll("button")[1];
+        var btnR = document.querySelectorAll("button")[2];
+
+        btnF.addEventListener("click",function () {
+//            前进
+            window.history.forward();
+        });
+        btnB.addEventListener("click",function () {
+//            后退
+            window.history.back();
+        });
+
+        btnR.addEventListener("click",function () {
+            /*刷新 ,如果里边不传参数的话就是刷新当前页面*/
+            window.history.go();
+
+        });
+
+
+    })();
+</script>
+
+</body>
+</html>

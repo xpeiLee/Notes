@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $("li").css("font-size",function (i,v) {
+            console.log(i + "       "+ v);
+            if(i == 2){
+                return "80px";
+            }
+
+            if (i==1){
+                return "50px";
+            }
+
+        })
+
+            $("li").css("background-color",function (i,v) {
+                console.log(i + "       "+ v);
+                if(i == 2){
+                    return "red";
+                }
+
+                if (i==1){
+                    return "blue";
+                }
+
+            })
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是li01</li>
+    <li>我是li02</li>
+    <li>我是li03</li>
+    <li>我是li04</li>
+    <li>我是li05</li>
+    <li>我是li06</li>
+</ul>
+</body>
+</html>

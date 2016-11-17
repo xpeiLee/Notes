@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById("box");
+//            获取下面的兄弟
+//            var div = box.nextElementSibling; //ie 6,7,8不认识
+//            div.style.backgroundColor = "red";
+
+
+//            获取上面的兄弟
+//            var preDiv = box.previousElementSibling;//ie 6,7,8不认识
+//            preDiv.style.height =  "30px";
+//            preDiv.style.border = "1px solid #ccc";
+//            preDiv.style.margin = "50px";
+//
+//
+//            var ieDiv = box.previousSibling;//ie 6 7 8认识 也是获取上面面的兄弟
+//            ieDiv.style.width  = "300px";
+//            ieDiv.style.height = "200px";
+//            ieDiv.style.border = "1px dotted red";
+            //              除了ie 6,7,8,都认识          只有ie 6,7,8认识
+//            box.previousElementSibling 必须写前面
+            var div = box.previousElementSibling || box.previousSibling  ;
+            div.style.width  = "300px";
+            div.style.height = "200px";
+            div.style.border = "1px dotted red";
+
+            var box1 = document.getElementById("box1").firstElementChild;
+            box1.style.color = "blue";
+            var box2 = document.getElementById("box1").lastElementChild;
+            box2.style.color = "orange";
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="spec0"></div>
+<div class="spec"></div>
+<div class="spec1" id="box"></div>
+<div class="spec2" id="box1">
+    <div>one</div>
+    <div>two</div>
+</div>
+</body>
+</html>

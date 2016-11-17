@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 278px;
+            height: 181px;
+            border: 1px solid #d2e1f1;
+            margin: 100px auto;
+        }
+
+        .dt {
+            padding-left: 10px;
+            line-height: 30px;
+            color: #0873c0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .dd {
+            padding-left: 10px;
+        }
+
+        .dd-t .icon {
+            width: 50px;
+            height: 50px;
+            float: left;
+            background: url(astroIcon.png) no-repeat;
+            margin-right: 10px;
+
+        }
+
+        .yunshi {
+
+        }
+
+        .start-b {
+            display: inline-block;
+            width: 80px;
+            height: 13px;
+            background: url(yunshi.png) no-repeat left top;
+            position: relative;
+
+        }
+
+        .start-t {
+            display: inline-block;
+            width: 30px;
+            height: 13px;
+            background: url(yunshi.png) no-repeat left bottom;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var contentArr = ["这几天你的火气有些大，需要留意和家人的相处。若是过于强调自我立场，固执己见，可能会引发许多矛盾和摩擦。财务状况也陷入了混乱，避免和他人产生财物交集，以免赔了夫人又折兵.", "你和家人伴侣之间的火药味越来越厉害，近期需要小心，沟通时避免太过固执强势。对财务可能产生一些新的点子，家人给你带来一些宽阔的思路，让你从负面想法中走出。", "你需要留意职场人际，不知不觉某些话语可能得罪了他人，留下话柄。工作上火气攻心，也可能会影响你的健康状况，小心头痛，感冒，发烧，与一些急性病症的来袭。"];
+            var yunz = [4, 6, 4];
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $("sel").onchange = function () {
+//                alert(this.value);
+                $("y-icon").style.backgroundPosition = "0 " + (this.value - 1) * (-50) + "px";
+                $("content").innerHTML = contentArr[this.value - 1];
+                $("start-t").style.width = yunz[this.value - 1] * 8 + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="dt">星座运势</div>
+    <div class="dd">
+        <div class="dd-t">
+            <div class="icon" id="y-icon"></div>
+            <div class="right">
+                <select name="" id="sel">
+                    <option value="1">白羊座 03.21-04.19</option>
+                    <option value="2">金牛座 04.20-05.20</option>
+                    <option value="3">双子座 05.21-06.21</option>
+                </select>
+                <div class="yunshi">
+                    今日运势:<span class="start-b" id="start-b">
+                    <span class="start-t" id="start-t"></span>
+                </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="dd-b" id="content">
+            感情上火药味增加了，你需要开始留意沟通问题，不要过于急躁。但与此同时你也很享受沟通带来的精...[详细]
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

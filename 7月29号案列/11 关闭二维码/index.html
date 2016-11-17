@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 194px;
+            position: relative;
+        }
+        #×{
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top:0;
+            left:-15px;
+            background-color: #ccc;
+            text-align: center;
+            line-height:15px;
+            border: 1px solid #aaa;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var x = document.getElementById("×");
+            x.onclick = function () {
+                this.parentNode.style.display = "none";
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="images/taobao.png" alt="">
+        <span id="×">×</span>
+    </div>
+</body>
+</html>

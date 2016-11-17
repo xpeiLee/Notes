@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 5px dashed red;
+            padding: 50px;
+            background-color: yellow;
+            background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+
+            /*从content开始向外剪切背景*/
+            /*background-clip: content-box;*/
+            /*background-clip: border-box;*/
+            background-clip: padding-box;
+            /*background-clip 可以修改背景区域*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

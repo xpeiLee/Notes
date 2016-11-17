@@ -1,0 +1,82 @@
+/**
+ * Created by Administrator on 2016/9/24.
+ */
+function Content() {
+this.a = "";
+this.b = "";
+this.c = "";
+this.d = "";
+this.e = "";
+this.f = "";
+this.g = "";
+this.h = "";
+}
+Content.prototype.bindContent = function () {
+    var str = "";
+    str += '<div class="panel news">';
+    str += '<div class="list">';
+    str += '<ul>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag4"></i>'+this.a;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag4"></i>'+this.b;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag11"></i>'+this.c;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag0"></i>'+this.d;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag0"></i>'+this.e;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag0"></i>'+this.f;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#">';
+    str += '<i class="flag flag"></i>'+this.g;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '<li class="lite">';
+    str += '<h2>';
+    str += '<a href="#" >';
+    str += '<i class="flag flag0"></i>'+this.h;
+    str += '</a>';
+    str += '</h2>';
+    str += '</li>';
+    str += '</ul>';
+    str += '</div>';
+    str += '<div class="more">';
+    str += '<a href="#"><span class="gochannel">进入新闻频道</span></a>';
+    str += '</div>';
+    str += '</div>';
+    return str;
+}

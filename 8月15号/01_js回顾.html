@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{
+            height: 200px;
+            background: pink;
+            margin-bottom:10px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById("demo1").onclick = function () {
+                //让div展示出来
+                //给div一个文本内容
+
+                var divs = document.getElementsByTagName("div");
+                for(var i = 0; i < divs.length; i++){
+                    divs[i].style.display = "block";
+                    divs[i].innerText = "我是内容";
+                }
+
+            }
+            alert("aaaaaa");
+
+        }
+
+//写多个onload后面的会覆盖掉前面的
+//        window.onload = function () {
+//            alert("我是第二个onload");
+//        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="demo"/>
+<div></div>
+<div></div>
+<div></div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body::before{
+    content: "css注入内容";
+    font-size: 80px;
+}
+body::after{
+    content: "大爷的";
+    font-size: 80px;
+}

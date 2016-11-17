@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #gf{
+            position: relative;
+            left:0;
+            top:0;
+        }
+        #father{
+            position: relative;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="gf">
+    <div id="father">
+        <div id="son"></div>
+    </div>
+</div>
+
+<script>
+    var son = document.getElementById("son");
+//    alert(son.parentNode.id);
+    /*
+    * parentNode 返回当前的亲父亲盒子
+    *
+    * offsetParent 返回父亲盒子
+    * 如果当前盒子所有父亲的盒子中没有定位的盒子，那么offsetParent 返回body
+    * 如果当前盒子的所有父亲盒子中有定位的盒子，那么那么offsetParent返回里当前盒子最近的父类定位盒子
+    *
+    * */
+    alert(son.offsetParent.tagName);
+    alert(son.offsetParent.id);
+    var father = son.offsetParent;
+    father.innerHTML = "爸爸";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //第一种方式创建对象
+//    var obj = new Object(); //生命了一个对象
+//    obj.name = "刘德华";
+//    obj.sex = "男";
+//
+//    var obj1 = new Object();
+//    obj1.name = "刘德华";
+//    obj1.sex = "女";
+//
+//
+//    alert(obj1.name);
+//    alert(obj.sex);
+//    alert(obj1.sex);
+    //第二种方式创建对象
+    var obj = {};//声明对象
+    obj.name = "贝克汉姆"; // 属性
+    obj.age = 35;
+    obj.showName = function () {
+        //声明方法
+        alert("俺是贝克汉姆！！");
+    }
+    obj.showAge = function () {
+        alert("俺今年35岁");
+    }
+
+    console.log(obj.name);
+    console.log(obj.age);//调用属性
+
+    obj.showName();// 调用方法
+    obj.showAge();
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

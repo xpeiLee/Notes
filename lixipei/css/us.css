@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.movie li .fl h3{
+    color: darkred;
+}
+.movie li .fl h4{
+    margin-top: 3px;
+    color: black;
+}
+.movie li .fl p{
+    margin-top: 5px;
+}
+.movie li .fl p:nth-child(3){
+    color: #C9C9C9;
+}
+.movie li .fl p:nth-child(4){
+    color: #B2B2B2;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            btn.onclick= function () {
+//                alert("click");
+                var liBox = document.createElement("li");
+                liBox.style.color = "red";
+                liBox.innerHTML = "添加盒子";
+                var ulBox = document.getElementsByTagName("ul")[0];
+                //添加子节点 appendChild 添加孩子   放到盒子的 最后面。
+//                ulBox.appendChild(liBox);
+                var lis = document.getElementsByTagName("li");
+                ulBox.insertBefore(liBox,null);
+//                alert("aaaa");
+
+//                ulBox.removeChild(lis[lis.length - 1]);
+                var boxs = ulBox.cloneNode();
+                ulBox.parentNode.appendChild(boxs);
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+</ul>
+<button>添加节点</button>
+
+</body>
+</html>

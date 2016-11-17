@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#">
+    <!--required 给表单配合使用，验证表单是否有内容，提交的时候不能为空-->
+    <label>
+        text: <input type="text" autofocus required/>
+    </label>
+
+
+    <label>
+        email:
+        <input type="email" value="feng@iluckly.com" required/>
+    </label>
+
+    <label>
+        date: <input type="date" min="2016-08-22" max="2017-08-22"/>
+    </label>
+    <label>
+        <!--step 步长-->
+        range: <input type="range" min="0" max="20" step="10"/>
+    </label>
+    <br/>
+    <br/>
+    <br/>
+    <label>
+        search <input type="search" placeholder="哥哥，关键词"/>
+    </label>
+
+
+    <label>
+        color： <input type="color">
+    </label>
+
+    <label>
+        tel: <input type="tel" placeholder="(010) 888-8888" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" required>
+    </label>
+    <label>
+        number:
+        <input type="number" step ="2" min="-5" max="10" value="0"/>
+    </label>
+    <label>
+        <input type="url"/>
+    </label>
+    <label>
+        time: <input type="time"/>
+    </label>
+    <label>
+        datetime: <input type="datetime"/>
+    </label>
+    <label>
+        提交: <input type="submit"/>
+    </label>
+</form>
+
+</body>
+</html>

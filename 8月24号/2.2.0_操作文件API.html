@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <!--multiple文件多选-->
+        <input type="file" id="input_file"  multiple/>
+        <button class="btn btn_default">选择文件</button>
+        <button class="btn btn_default">读取文件列表</button>
+        <ul id="filelist">
+        </ul>
+    </form>
+</div>
+<script>
+    (function () {
+        var inputFile = document.querySelector("#input_file");
+        var btnSelect = document.querySelector("button");
+        var btnRed = document.querySelectorAll("button")[1];
+        var fileList = document.querySelector("#filelist");
+//        btnSelect.addEventListener("click",function (e) {
+//            inputFile.click();
+//            e.preventDefault();
+//        });
+        //点击过后，我们要拿到我们读取的文件的属性
+//        btnRed.addEventListener("click",function (e) {
+//            var files = inputFile.files;
+//            for (var i = 0; i < files.length; i++){
+//                var li = document.createElement("li");
+//                li.innerHTML = "<h5>"+files[i].name +"</h5>" +
+//                                "<p>"+ files[i].lastModifiedDate.toDateString() +"   " +
+//                                files[i].lastModifiedDate.toLocaleTimeString() + "   " +
+//                                (files[i].size/1024).toFixed(2)+"kb"+"</p>";
+//                fileList.appendChild(li);
+//                  阻止默认事件
+//                e.preventDefault();
+//            }
+//        });
+//        选择完成自动获取
+        inputFile.addEventListener("change",function () {
+            var files = inputFile.files;
+            for (var i = 0; i < files.length; i++){
+                var li = document.createElement("li");
+                li.innerHTML = "<h5>"+files[i].name +"</h5>" +
+                        "<p>"+ files[i].lastModifiedDate.toDateString() +"   " +
+                        files[i].lastModifiedDate.toLocaleTimeString() + "   " +
+                        (files[i].size/1024).toFixed(2)+"kb"+"</p>";
+                fileList.appendChild(li);
+//                阻止默认事件
+//                e.preventDefault();
+            }
+        });
+        
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>

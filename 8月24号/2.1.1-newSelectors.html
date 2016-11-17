@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header{
+            color: teal;
+            /*font-weight: 700;*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="page-header"><h1>新选择器</h1></header>
+    <p>这是一个段落</p>
+    <ul>
+        <li class="item">item1</li>
+        <li class="item">item2</li>
+        <li class="item">item3</li>
+        <li class="item">item4</li>
+        <li class="item">item5</li>
+        <li class="item">item6</li>
+        <li class="item">item7</li>
+        <li class="item">item8</li>
+        <li class="item">item9</li>
+        <li class="item">item10</li>
+    </ul>
+</div>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    $(function () {
+//        var item = document.getElementsByClassName('item');
+//        console.log(item);
+
+//        var item = $(".item");
+//        $.each(item,function (index,v) {
+//            console.log(index);
+//            console.log(v);
+//
+//        });
+//        item.each(function (index,v) {
+//            console.log(index);
+//            console.log(v);
+//        });
+//        console.log(item);
+        //只会拿到最先出现的dom对象
+        var firstItem = document.querySelector(".item");
+        console.log(firstItem);
+//        拿到全部的返回的也是一个数组
+//        var items = document.querySelectorAll(".item");
+//        console.log(items);
+//        for (var key in items){
+////            items.item(key) = items[key]
+//            items[key].addEventListener("click",function () {
+//                alert($(this).text())
+//            });
+//        }
+        var $items = $(".item");
+        $items.on("click",function () {
+           alert($(this).html());
+        });
+        (function () {
+            alert("bbbbb");
+        })();
+    });
+    (function () {
+        alert("sssss");
+    })();
+</script>
+
+</body>
+</html>

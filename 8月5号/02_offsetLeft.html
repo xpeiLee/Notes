@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding: 0;}
+        #yeye{
+            margin: 50px;
+            background-color: red;
+            position: relative;
+        }
+        #father{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            padding: 100px;
+            margin: 50px;
+            position: relative;
+            border: 20px solid black;
+
+        }
+        #son{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            border: 30px solid darkslategrey;
+
+        }
+    </style>
+</head>
+<body>
+<div id="yeye">
+    <div id="father">
+        <div id="son"></div>
+    </div>
+</div>
+<script>
+    var yeye = document.getElementById("yeye");
+    var father = document.getElementById("father");
+    var son = document.getElementById("son");
+
+    /*
+    * offsetLeft 如果当前盒子的父类都没有定位的话 offsetleft取值为当前的边框距body边框的距离
+    *
+    *offsetLeft 如果当前盒子的父类中有定位的盒子 0ffsetleft取值为当前盒子的左边框距离定位的左边框的距离
+    * offsetLeft 如果父类的盒子中有多个定位的以最近定位的盒子为准 如果有边框不包括边框
+    * */
+    console.log(son.offsetLeft);
+
+</script>
+
+</body>
+</html>

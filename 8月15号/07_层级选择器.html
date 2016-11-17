@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+//            $("li").css("font-size","50px");
+
+            //后代选择器
+//            $(".wrap li ul li").css("font-size","50px");
+            //子代选择器
+//            $(".wrap > ul  > li > ul").css("font-size","50px");
+            //紧邻选择器
+//            $(".wrap+div").css("font-size","50px");
+            //兄弟选择器 从.liitem后面的兄弟中找满足 兄弟是li的元素
+//            $(".liitem~.li08").css("font-size","50px");
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li>我是01个li
+            <ul>
+                <li>孩子很多1
+                    <span>spans1</span><span>spans2</span><span>spans3</span>
+                </li>
+                <li>孩子很多2</li>
+                <li>孩子很多3</li>
+            </ul>
+        </li>
+        <li>我是02个li</li>
+        <li>我是03个li</li>
+        <li>我是04个li</li>
+        <li class="liitem">我是05个li</li>
+        <li>我是06个li</li>
+        <li>我是07个li</li>
+        <li class="li08">我是08个li</li>
+        <li>我是09个li</li>
+        <li>我是10个li</li>
+    </ul>
+</div>
+<p>我是一个段落p</p>
+<div>我是div</div>
+<div>我是div</div>
+</body>
+</html>

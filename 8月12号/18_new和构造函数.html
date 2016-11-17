@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age) {
+        //构造函数就是一个普通的函数
+        //为了和普通函数区别第一个字母大写
+        this.name = name;
+        this.age = age;
+        this.showName = function () {
+            alert("我的名字是"+name);
+        }
+        this.showAge = function () {
+            alert("我的年龄是"+age);
+        }
+    }
+
+    var demo = new Person("小明",20);
+    var demo1 = new Person("大明",35);
+    alert(demo.name);
+
+    alert(demo.showName);
+    alert(demo1.showName);
+    alert(demo.showName == demo1.showName );
+
+    var arr = [];
+//    arr.run = function () {
+    //
+    //    };
+    Array.prototype.run = function () {
+        alert("run");
+    }
+    arr.run();
+
+    var arr1 = [];
+
+    arr1.run();
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="data.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        aside{
+            background-color: #e0e0e0;
+            float: left;
+            height: 100%;
+            width: 220px;
+
+        }
+        article{
+            background-color: #fff;
+            height: 100%;
+            margin-left: 220px;
+            padding: 20px;
+            overflow: scroll;
+        }
+        article > p{
+            line-height:30px;
+            font-size: 20px;
+        }
+        ul{
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        ul > li{
+            font-size: 18px;
+            line-height: 50px;
+            margin: 5px 0;
+            text-align: center;
+            cursor: pointer;
+        }
+        ul > li::before{
+            content: "★";
+            margin-right: 5px;
+            color: teal;
+        }
+        ul > li:hover{
+            background-color: #c0c0c0;
+        }
+        
+    </style>
+</head>
+<body>
+
+<aside>
+    <ul id="list"></ul>
+</aside>
+<article>
+    <p id="content"></p>
+</article>
+<script>
+    (function () {
+        var list = document.querySelector("#list");
+        var content = document.querySelector("#content");
+        //先展示数据
+        for(var title in data){
+            var liEle = document.createElement("li");
+            liEle.setAttribute("data-title",title);
+            liEle.innerHTML = title;
+            list.appendChild(liEle);
+            //为每个li注册事件
+            liEle.addEventListener("mouseover",function () {
+
+//                content.innerHTML = data[this.dataset["title"]];
+
+                content.innerHTML = data[this.dataset.title];
+                //支持历史状态操作
+                history.pushState(this.dataset.title, 'title useless','?t='+this.dataset.title);
+
+            });
+
+        }
+/*
+* 在历史状态中后退触发改事件
+* */
+        window.addEventListener("popstate",function (e) {
+            console.log(e);
+            content.innerHTML = data[e.state];
+
+        });
+
+
+        content.innerHTML = data["五环之歌"];
+
+
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!--创建一个日期对象-->
+    var date = new Date();
+    console.log(date);
+    /*#########unix时间########*/
+    //返回unix时间戳 这个比较常用
+
+    var mss = date.getTime(); //毫秒
+    console.log(mss);
+//    这个不常用
+    var msss = date.valueOf();
+    console.log(msss);
+//    直接使用
+    console.log(Date.now());
+    console.log(+new Date());
+</script>
+
+</body>
+</html>

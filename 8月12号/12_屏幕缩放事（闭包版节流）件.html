@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo"></div>
+<button id="btn">尽情的按吧</button>
+<script>
+    var num = 0;
+    var num1 = 0;
+    var demo = document.getElementById("demo");
+    var btn = document.getElementById("btn");
+    btn.onclick = throtttle1();
+//    btn.onclick = throtttle1(); <==> function () {
+    //clearInterval(timer);
+   // timer = setTimeout(function () {
+     //   console.log(num1++);
+     //   demo.innerHTML = "很开心为您响应" + num1;
+    //},500);
+    //}
+    function throtttle1() {
+        var timer = null;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                // num1 = num1 + 1 <==> num1++
+//                console.log(num1++);
+                demo.innerHTML = "很开心为您响应" + ++num1;
+            },500);
+
+        }
+    }
+    //普通写法
+//    var timer = null;
+//    window.onresize = throttle;
+//    function throttle() {
+//        clearInterval(timer);
+//        timer = setTimeout(function () {
+//            num++;
+//            demo.innerHTML = window.innerWidth || document.documentElement.clientWidth;//得到屏幕的宽
+//            console.log(num);
+//        },500);
+//
+//    }
+
+    window.onresize = function () {
+
+    };
+
+    //闭包的写法
+    window.onresize = throtttle();
+    function throtttle() {
+        var timer = null;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                num++;
+            demo.innerHTML = window.innerWidth || document.documentElement.clientWidth;//得到屏幕的宽
+            console.log(num);
+            },500);
+
+        }
+    }
+
+
+</script>
+</body>
+</html>

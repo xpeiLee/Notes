@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height:200px;
+            margin: 100px auto;
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById("box");
+            box.innerHTML = parseInt(Math.random()*100)%200+50;
+
+        }
+    </script>
+</head>
+<body>
+
+<div id="box"></div>
+
+</body>
+</html>

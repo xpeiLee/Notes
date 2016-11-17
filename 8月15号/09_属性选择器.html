@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //属性选择器
+//            $("a[href]").css("color","red");
+
+            //选择href属性值为www.163.com的所有a标签
+//            $("a[href='www.163.com']").css("font-size","50px");
+
+            //选中href内容不是 'http://www.baidu.com' 没有href也会被选上
+//            $("a[href != 'http://www.baidu.com']").css("font-size","50px");
+            //选中a 中href以http开头的
+//            $("a[href^='http']").css("font-size","50px");
+            //选中href中以cn结束的
+//            $("a[href$='cn']").css("font-size","50px");
+
+            //选中a标签中 href中包含si的
+//            $("a[href*='si']").css("font-size","50px");
+            //属性的交集选择器
+            $("a[href][title*='的'][id]").css("font-size","50px");
+        });
+
+    </script>
+</head>
+<body>
+<div class="divItem">
+    <a href="http://www.baidu.com">百度</a>
+    <a href="www.163.com" title="我的大网易" id="box">网易</a>
+    <a href="http://www.sina.cn">新浪</a>
+    <a href="" title="的">我没有href</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 320px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            height: 330px;
+            overflow: hidden;
+        }
+
+        .bt span {
+            width: 79px;
+            height: 30px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-bottom: 1px solid red;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+            margin-left: -1px;
+        }
+        .bb li{
+            height: 300px;
+            background-color: #aaa;
+            list-style-type: none;
+        }
+        li.show{
+           display: block;
+        }
+        li.lihidden{
+            display: none;
+        }
+        .box .spancurrent{
+            background-color: #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+        .clearfix:before,.clearfix:after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function  $(id) {return document.getElementById(id);}
+            function fn(bid) {
+                var spans = $(bid).getElementsByTagName("span");
+                var liss = $(bid).getElementsByTagName("li");
+                for(var i = 0,len = spans.length;i < len;i++){
+                    spans[i].index = i;
+                    spans[i].onmouseover = function () {
+                        // 排他性原理，包括自己全部干掉
+                        for(var j = 0,len =spans.length;j < len;j++ ){
+                            spans[j].className = "";
+                            liss[j].className = "lihidden";
+                        }
+                        //再让自己复活
+                        spans[this.index].className = "spancurrent";
+                        liss[this.index].className = "show";
+                    }
+                }
+
+            }
+            fn("box1");
+            fn("box2");
+            fn("box3");
+
+        }
+    </script>
+</head>
+<body>
+
+
+<div class="box" id="box1">
+    <div class="bt clearfix" id="bt">
+        <span class="spancurrent">热门</span>
+        <span>商品优选</span>
+        <span>新机尝试</span>
+        <span>高性价比</span>
+    </div>
+    <div class="bb" id="bb">
+        <ul>
+            <li>热门模块</li>
+            <li>商品优选模块</li>
+            <li>新机尝试模块</li>
+            <li>高性价比模块</li>
+        </ul>
+    </div>
+</div>
+
+<div class="box" id="box2">
+    <div class="bt clearfix" id="bt">
+        <span class="spancurrent">热门</span>
+        <span>商品优选</span>
+        <span>新机尝试</span>
+        <span>高性价比</span>
+    </div>
+    <div class="bb" id="bb">
+        <ul>
+            <li>热门模块</li>
+            <li>商品优选模块</li>
+            <li>新机尝试模块</li>
+            <li>高性价比模块</li>
+        </ul>
+    </div>
+</div>
+
+<div class="box" id="box3">
+    <div class="bt clearfix" id="bt">
+        <span class="spancurrent">热门</span>
+        <span>商品优选</span>
+        <span>新机尝试</span>
+        <span>高性价比</span>
+    </div>
+    <div class="bb" id="bb">
+        <ul>
+            <li>热门模块</li>
+            <li>商品优选模块</li>
+            <li>新机尝试模块</li>
+            <li>高性价比模块</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+    <style type="text/css">
+    #div1 {
+        background-color: lightGreen;
+        width: 300px;
+        height: 500px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin: 100px auto;
+    }
+    
+    #div1 select {
+        margin-left: 80px;
+        margin-top: 10px;
+        height: 30px;
+    }
+    
+    #div1 input {
+        height: 30px;
+    }
+    
+    #div1 div {
+        width: 300px;
+        background-color: lightBlue;
+        border: 1px solid red;
+    }
+    
+    #div1 div ul li {
+        list-style-type: none;
+        padding-left: 10px;
+    }
+    </style>
+    <script type="text/javascript" src="template.js"></script>
+    <script type="text/javascript" id="arttemp">
+{{each weather as value}}
+<div>
+<span>{{value.date}}</span>
+<ul>
+<li>白天天气:{{value.info.day[1]}}</li>
+</ul>
+<ul>
+<li>夜间天气:{{value.info.night[1]}}</li>
+</ul>
+</div>
+{{/each}}
+
+    </script>
+    <script type="text/javascript">
+    function weather(data) {
+    	    document.getElementById('info').innerHTML = '';
+        var weatherInfo = data;
+	var html = template('arttemp', weatherInfo);
+	document.getElementById('info').innerHTML = html;
+
+    }
+
+    window.onload = function() {
+        var city = document.getElementById('city');
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function() {
+            var cityCode = city.value;
+
+            // var dateTime = new Date();
+            var url = 'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&_jsonp=weather&code=' + cityCode;
+            var script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+
+        });
+
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <select id="city">
+            <option value="101180101">郑州</option>
+            <option value="101010100">北京</option>
+            <option value="101020100">上海</option>
+            <option value="101280101">广州</option>
+            <option value="101280601">深圳</option>
+        </select>
+        <input type="button" id="btn" value="查询" />
+        <div id="info"></div>
+    </div>
+</body>
+
+</html>

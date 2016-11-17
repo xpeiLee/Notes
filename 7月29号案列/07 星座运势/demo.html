@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 350px;
+            height: 250px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        .dt {
+            padding-left: 10px;
+            line-height: 30px;
+            font-weight: 700;
+            color: #036;
+
+        }
+        .dd{
+            padding: 10px;
+        }
+        .dd-t{
+            overflow: hidden;
+        }
+
+        .icon{
+            width: 50px;
+            height: 50px;
+            float: left;
+            background: url(astroIcon.png) no-repeat ;
+            margin-right: 10px;
+        }
+        .yunshi{
+            width: 80px;
+            height: 13px;
+            display: inline-block;
+            background: url(yunshi.png) no-repeat left top;
+            position: relative;
+
+        }
+        .start {
+            width: 0;
+            height: 13px;
+            position: absolute;
+            top:0;
+            left: 0;
+            background: url(yunshi.png) no-repeat left  bottom;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            alert("9"*8);
+            function $(id) {
+                return document.getElementById(id);
+
+            }
+
+            var arr = [10, 6, 9];
+            var textArr = ["白羊座内容", "金牛座内容", "双子座内容"]
+
+
+            var sel = document.getElementById("sel");
+            sel.onchange = function () {
+
+                $("ico").style.backgroundPosition = "0 "+ (-this.value*50)+"px";
+                $("content").innerHTML = textArr[this.value];
+                $("star").style.width = arr[this.value]*8 + "px";
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div class="box">
+    <div class="dt">星座运势</div>
+    <div class="dd">
+        <div class="dd-t">
+            <div class="icon" id="ico"></div>
+            <div class="right">
+                <select name="" id="sel">
+                    <option value="0">白羊座 0.21-04.29 </option>
+
+                    <option value="1">金牛座 04.20-05.29</option>
+                </select>
+                <div>今日运势：<span class="yunshi">
+                    <span class="start" id="star"></span>
+                </span></div>
+            </div>
+        </div>
+        <div class="dd-b" id="content">工作上的进展越来越顺利，既有一定财富的目标，也对职场上的运作游刃有余。然而你可能在与上司相...[详细]</div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

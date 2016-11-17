@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="jquery-1.11.1.min.js"></script>-->
+    <script>
+        //        $(document).ready(function () {
+        //            alert("我是第一个弹框");
+        //        })
+        //        $(document).ready(function () {
+        //            alert("我是第二个弹框");
+        //        })
+        //
+        //        $(document).ready(function () {
+        //            alert("我是第三个弹框");
+        //        })
+
+        //        window.onload = function () {
+        //            alert("我是第一个弹框");
+        //        }
+        //window.onload = function () {
+        //    alert("我是第二个弹框");
+        //}
+
+        var jQUery = function (dom) {
+            var obj = {
+                ready: function (func) {
+                    //判断onload有没有被赋值(或者说有没有这个事件)
+                    //1.有的话接收一个新函数，接着调用一个旧的函数，在调用一个新函数
+                    //2.没有直接赋值给onload
+                    if (typeof dom.onload === "function") {
+                        var oldFunc = dom.onload;
+                        dom.onload = function () {
+
+                            oldFunc(); //调用旧函数
+                            func();//调用新函数
+                        }
+                    } else {
+                        dom.onload = func; // window.onlaod = function (){ alert("第一次弹框")};
+                    }
+                }
+            };
+            return obj;
+        }
+        jQUery(window).ready(function () {
+            alert("第一次弹框");
+        });
+        jQUery(window).ready(function () {
+            alert("第二次弹框");
+        });
+        jQUery(window).ready(function () {
+            alert("第sam次弹框");
+        });
+        jQUery(window).ready(function () {
+            alert("第四次弹框");
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

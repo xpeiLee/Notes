@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function client() {
+        //标准；浏览器 除了ie678
+        if(window.innerWidth != null){
+            return {width:window.innerWidth,height:window.innerHeigh}
+        }else if(document.compatMode === "CSS1Compat"){
+            //判断是不是怪异浏览器 CSS1Compat 标准浏览器
+            return {
+                width:document.documentElement.clientWidth,
+                height:document.documentElement.clientHeight
+            }
+        }
+//        怪异模式
+        return {
+            width:document.body.clientWidth,
+            height:document.body.clientHeight
+        }
+    }
+    console.log(client().width);
+</script>
+</body>
+</html>

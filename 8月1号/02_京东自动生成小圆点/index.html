@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style: none;}
+        .box{
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .circle{
+            bottom: 10px;
+            left:40%;
+            position: absolute;
+        }
+        .circle ul li {
+            float: left;
+            margin: 5px;
+        }
+        .circle ul li span{
+            display: block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: pink;
+            text-align: center;
+            line-height: 18px;
+            cursor: pointer;
+        }
+        .circle span.current{
+            background-color: purple;
+        }
+    </style>
+    <script>
+    window.onload = function () {
+        var scroll = document.getElementById("scroll");
+        var circle = document.createElement("div");
+        circle.className = "circle";
+        scroll.appendChild(circle);
+
+        var ulCircle = document.createElement("ul");
+        circle.appendChild(ulCircle);
+        var sliderLis = document.getElementById("slider-li").children;
+//        alert(sliderLis.length);
+
+        for(var i = 0; i < sliderLis.length; i++){
+            var newli = document.createElement("li");
+            var newSpan = document.createElement("span");
+            if(i == 0){
+                newSpan.className = "current";
+            }
+            newSpan.onmouseover= function () {
+               var spans = document.getElementsByTagName("span");
+                for (var i = 0; i < spans.length;i++){
+                    spans[i].className = "";
+                }
+                    this.className = "current";
+            }
+            newSpan.innerHTML = i+1;
+            newli.appendChild(newSpan);
+            ulCircle.appendChild(newli);
+        }
+
+
+
+    }
+    </script>
+</head>
+<body>
+<div class="box" id="scroll">
+    <div class="slider">
+        <ul id="slider-li">
+            <li><img src="images/11.jpg" alt=""></li>
+            <li><img src="images/22.jpg" alt=""></li>
+            <li><img src="images/33.jpg" alt=""></li>
+            <li><img src="images/44.jpg" alt=""></li>
+            <li><img src="images/55.jpg" alt=""></li>
+            <li><img src="images/66.jpg" alt=""></li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

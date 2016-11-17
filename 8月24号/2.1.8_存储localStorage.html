@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea  id="text_val" cols="30" rows="10"></textarea>
+<input type="button" value="SETDATA"/>
+<input type="button" value="GETDATA"/>
+<input type="button" value="REMOVE"/>
+<input type="button" value="CLEAR"/>
+<script>
+    var setBtn = document.querySelector("input");
+    var getBtn = document.querySelectorAll("input")[1];
+    var removeBtn = document.querySelectorAll("input")[2];
+    var clearBtn = document.querySelectorAll("input")[3];
+    var textVal = document.querySelector("#text_val");
+//    localStorage 永久性存储
+    if (localStorage["fengchao"]){
+        /*取数据
+        * */
+        textVal.value = localStorage["fengchao"];
+
+    }
+    setBtn.addEventListener("click",function () {
+        //存储数据到本地
+        //第一种方式存储到本地
+//        localStorage["fengchao"] = textVal.value;
+        //第二种方式存储到本地
+        localStorage.setItem("fengchao123",textVal.value);
+
+    });
+    getBtn.addEventListener("click",function () {
+//        textVal.value = localStorage["fengchao"];
+//        取本地数据两种方式
+        textVal.value = localStorage.getItem("fengchao123");
+
+    });
+    /*
+    * 删除数据
+    * */
+    removeBtn.addEventListener("click",function () {
+
+        //从存储里边删除指定的数据
+        localStorage.removeItem("fengchao123");
+    });
+    clearBtn.addEventListener("click",function () {
+        //清空全部数据
+        localStorage.clear();
+    });
+
+
+</script>
+
+</body>
+</html>

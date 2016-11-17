@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 200px;
+            /*width: 200px;*/
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+
+
+        $(function () {
+
+            //Dom对象转换成jQuery
+
+            var btn = document.getElementById("btn");
+//            btn.onclick = function () {
+//                var div = document.getElementsByTagName("div")[0];
+//                div.style.display = "none";
+//
+//            }
+//
+//            var btn1 = document.getElementsByTagName("button")[1];
+//            btn1.onclick = function () {
+//                btn.click();
+//
+//            }
+//            $(btn).click(function () {
+//                $("div").hide();
+//            });
+
+            //jquery对象转化为dom对象
+//            $("button")[1].onclick = function () {
+//
+//                alert("我是阿妹");
+//
+//            }
+
+            $("button").get(1).onclick = function () {
+                alert("我是阿妹");
+            }
+            $("#btn")[0].onclick = function () {
+                alert("我是阿牛");
+            }
+        });
+
+
+    </script>
+</head>
+<body>
+<button id="btn">我是阿牛</button>
+<button>阿妹</button>
+
+<div>
+    
+</div>
+
+</body>
+</html>

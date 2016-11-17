@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            console.log("代码执行不执行");
+            var nums = [1,55,3,22,12,22,33,22,44,12,11,0];
+            for (var i = 0,len = nums.length; i <len;i++){
+                console.log("第"+ i +"次循环");
+                if (nums[i] == 22){
+                    if (nums[i] == 22){
+                        console.log(i);
+//                        continue; 跳出本次循环进行下一次循环
+                        break;//提前结束循环
+                    }
+                }
+                console.log("想疯");
+                console.log("sb");
+            }
+//            拿到document文档下面所有button
+            var btns = document.getElementsByTagName("button");
+
+            for(var i = 0,len = btns.length;i < len; i++){
+                console.log(btns[i].innerHTML);
+
+            }
+//            console.log(typeof  btns);
+
+//            拿到div下面的button
+            var div = document.getElementById("myid");
+            var divBtns = div.getElementsByTagName("button");
+            console.log(divBtns);
+            console.log(divBtns[0].innerHTML);
+
+
+            btns[0].onclick = function () {
+                var inputBox = document.getElementById("txt");
+                var txt = inputBox.value;
+//                alert(txt);
+//                if (txt == "苹果"){
+//                    alert("苹果五毛一斤");
+//                }else if(txt == "梨"){
+//                    alert("梨三毛一斤");
+//                }else if(txt == "西瓜"){
+//                    alert("西瓜免费送");
+//                }else {
+//                    alert("此水果没有进货！！");
+//                }
+
+
+                switch (txt){
+                    case "苹果":
+                        alert("苹果五毛一斤");
+                        break;
+                    case "梨":
+                        alert("梨三毛一斤");
+                        alert("梨统统不要钱");
+                        break;
+                    case "西瓜":
+                        alert("西瓜免费送");
+                        break;
+                    default:
+                            alert("此水果暂无进货！！");
+                        break;
+                }
+
+            }
+
+
+        }
+    </script>
+
+</head>
+<body>
+
+    <h3>查询水果的价格，我的水果真的很便宜</h3>
+    <input type="text" id="txt"/>
+    <button>查询</button>
+
+<div id="myid">
+    <button>傻了吧</button>
+</div>
+
+</body>
+</html>

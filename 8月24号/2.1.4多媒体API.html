@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video src="fun.mp4" controls id="video" loop preload="metadata"></video>
+<button>play</button>
+<button>pause</button>
+<button id="load">load</button>
+<script>
+    var playBtn = document.querySelector("button");
+    var video = document.getElementById("video");
+    playBtn.addEventListener("click", function () {
+        //手动让视频播放
+//       video.paused ?  video.play():video.pause();
+        video.play();
+    });
+    var pausBtn = document.querySelectorAll("button")[1];
+    pausBtn.addEventListener("click", function () {
+        //手动暂停视频播放
+        video.pause();
+    });
+    video.addEventListener("play",function () {
+        alert("安静啦开始播放了！！！");
+    });
+    video.addEventListener("pause",function () {
+        alert("播放停止啦!!!");
+    });
+    var loadBtn = document.querySelectorAll("#load")[0];
+    loadBtn.addEventListener("click",function () {
+       video.src = "movie.ogg";
+        /*
+        * 更换资源文件，换一个视频播放
+        * */
+        video.load();
+    });
+//    var timer = setInterval(function () {
+//        //视频当前播放的进度
+//        console.log(video.currentTime);
+//        //视频总长度
+//        console.log(video.duration);
+//        console.log("##########################");
+//    },500);
+//    video.addEventListener("load",function () {
+//        alert("视频加载!!!");
+//    });
+
+//    video.ontimeupdate = function () {
+//        console.log(video.currentTime);
+//    };
+//    通过该事件来报告当前的播放进度.
+    video.addEventListener("timeupdate",function () {
+        console.log(video.currentTime);
+
+    });
+
+    //视频加载完之后会判断该视频能否播放
+    video.addEventListener("canplay",function () {
+//        alert("我可以播放了");
+    });
+
+    video.onended = function () {
+        alert("哥哥，视频播放完了，下一步动作请指示");
+    };
+//    video.addEventListener("ended",function () {
+//       alert("哥哥，视频播放完了，下一步动作请指示");
+//    });
+    video.addEventListener("seeking",function () {
+        console.log("我在拖拽");
+    });
+
+</script>
+
+</body>
+</html>

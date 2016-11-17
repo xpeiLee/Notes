@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">开始</button>
+<div id="box"></div>
+
+<script>
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+
+    var target = 419;
+//    缓动动画运动的原理 box.style.left = box.offsetleft + 步长(不断变化的)
+    var timer = null;
+    btn.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            /*
+            *
+            * box.offsetLeft 它的是取整数的
+            * */
+            var step = (target - box.offsetLeft)/10; // step值不断变化的
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            box.style.left = box.offsetLeft + step + "px";
+            if(target == box.offsetLeft){
+                clearInterval(timer);
+            }
+
+
+
+        },30);
+
+    }
+
+
+</script>
+</body>
+</html>

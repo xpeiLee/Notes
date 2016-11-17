@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //.eq()
+            //类比eq（index）选择器
+//            $("span").eq(2).css("font-size","50px");
+            //.first() 选择器
+//            $("span").first().css("font-size","50px");
+            //.last() 选择器
+//            $("span").last().css("font-size","50px");
+
+            //.parent()
+//            $("p").parent().css("font-size","50px");
+
+//            $("p").parent("#div").css("font-size","50px");
+//.siblings()
+//            $("#li04").siblings().css("font-size","50px");
+//            $("#li04").siblings(".liitem").css("font-size","50px");
+
+            //从父类找找子类id是li04的元素
+
+            $("ul").find("#li04").css("font-size","50px");
+
+            alert("hello");
+        });
+    </script>
+</head>
+<body>
+<div>
+    <span>我是span</span>
+    <span id="sp">我是span</span>
+    <span>我是span</span>
+</div>
+
+<div id="div">
+    <p>Hello</p>
+</div>
+
+<div id="demo">
+    <p>helloAgain</p>
+</div>
+
+
+<ul>
+    <li>我是li01</li>
+    <li>我是li02</li>
+    <li>我是li03</li>
+    <li id="li04">我是li04</li>
+    <li>我是li05</li>
+    <li class="liitem">我是li06</li>
+    <li>我是li07</li>
+    <li>我是li08</li>
+</ul>
+
+</body>
+</html>

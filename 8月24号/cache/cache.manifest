@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#version 1.0.0
+
+CACHE:
+    index.html
+    cache.css
+    cache.js
+
+NETWORK:
+    *
+
+
+FALLBACK:

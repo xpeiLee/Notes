@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 5px dashed red;
+            padding: 50px;
+            background-color: yellow;
+            background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+            /*让背景从边框开始*/
+            background-origin: border-box;
+            /*让背景从内容开始*/
+            background-origin: content-box;
+            /*让背景从padding开始*/
+            background-origin: padding-box;
+
+            /*background-origin: ; 修改的是背景的定位原点*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

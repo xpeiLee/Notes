@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>拖放操作</title>
+  <meta name="author" content="王峰">
+
+  <style>
+    #target {
+      padding: 20px;
+      height: 300px;
+      border: 5px dashed #c0c0c0;
+      color: #e0e0e0;
+      font-size: 40px;
+      line-height: 260px;
+      text-align: center;
+      -webkit-user-select: none;
+      cursor: pointer;
+    }
+    
+    #target.actived {
+      border-color: #888;
+      color: #fafafa;
+      box-shadow: 0 0 80px #e0e0e0 inset;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Drag&Drop</h1></div>
+    <div class="jumbotron">
+      <p>你好啊，你今年几岁啊，哈哈，我的今天在哪里</p>
+      <img src="toy.png" alt="">
+    </div>
+    <ul id="result" class="list-group"></ul>
+    <div id="target">
+      Drag something into here
+    </div>
+  </div>
+  <script>
+    (function () {
+      var source = document.querySelector(".jumbotron");
+      source.addEventListener("dragstart",function (e) {
+
+//        e.dataTransfer.setData("key","hello!!!!!");
+//        e.dataTransfer.effectAllowed = "link";
+//      alert("拖拽开始");
+      });
+      var target = document.querySelector("#target");
+      target.addEventListener("dragenter",function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.classList.add("actived");
+      });
+      target.addEventListener("dragleave",function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.classList.remove("actived");
+      });
+      target.addEventListener("dragover",function (e) {
+        //一定要阻止默认行为发生
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      target.addEventListener("drop",function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        alert(e.dataTransfer.getData("key"));
+        this.classList.remove("actived");
+        this.innerHTML = "";
+
+        if(e.dataTransfer.files.length){
+          var len = e.dataTransfer.files.length;
+          for (var i = 0; i < len;i++){
+            var file = e.dataTransfer.files.item(i);
+            var li = document.createElement("li");
+//            li.innerHTML = "<h4>"+file.name +"</h4>";
+
+            li.innerHTML = "<h5>"+file.name +"</h5>" +
+            "<p>"+ file.lastModifiedDate.toDateString() +"   " +
+            file.lastModifiedDate.toLocaleTimeString() + "   " +
+            (file.size/1024).toFixed(2)+"kb"+"</p>";
+
+            var ul = document.querySelector("#result");
+            ul.appendChild(li);
+          }
+          this.innerHTML = "Drag something into here";
+         return true;
+        }
+
+        //以下逻辑是处理拖拽页面上的元素
+        //
+        var data = e.dataTransfer.getData("text/plain");
+
+        //取出是一个地址
+        var img = e.dataTransfer.getData("text/uri-list");
+
+       if(img){
+         var imgEle = document.createElement("img");
+         imgEle.src = img;
+         target.appendChild(imgEle);
+       }else {
+         target.innerHTML = "<h4>"+ data +"</h4>";
+       }
+      });
+
+    })();
+    
+  </script>
+
+</body>
+
+</html>

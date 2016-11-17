@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function outFun() {
+        var num = 10;//outFun的一个变量
+        function inFun() {
+            var key = 3;
+            console.log(num);//外部函数的变量可以被内部函数所使用
+        }
+//        console.log(key); // 内部函数的变量不可以被外部函数所使用
+        inFun(); //在函数内部声明的函数只能在函数内部使用
+    }
+
+    outFun();
+
+
+</script>
+
+</body>
+</html>

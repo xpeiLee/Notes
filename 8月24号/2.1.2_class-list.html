@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .activity{
+            color: teal;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<header class="container">
+    <h1 class="page-header">Element.classlist</h1>
+</header>
+
+<div class="container">
+    <nav class="navabar navdefault">
+        <a href="#" class="navbar-band">fengchao</a>
+        <a href="#" class="navbar-nav nav">fengchao111</a>
+        <ul class="nav navbar-nav">
+            <li class="activity abc"><a href="#">Home</a></li>
+            <li class="ab cd efg"><a href="#">contact</a></li>
+            <li><a href="#">about</a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
+<script>
+    (function () {
+        //获取界面上的每一个li
+        var liEles = document.querySelectorAll(".nav li");
+//        console.log(liEles);
+        for(var i = 0; i < liEles.length; i++){
+
+/*
+* classList 获取dom对象的所有类名
+* */
+            liEles.item(i).addEventListener("mouseover",function () {
+
+                for(var m = 0; m < liEles.length; m++){
+                    liEles[m].classList.remove("activity");
+                }
+                this.classList.add("activity");
+                console.log(this.classList);
+            });
+        }
+    })();
+</script>

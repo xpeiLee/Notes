@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>sessionStorage</h1>
+<textarea  id="text_val" cols="30" rows="10"></textarea>
+<input type="button" value="SETDATA"/>
+<input type="button" value="GETDATA"/>
+<script>
+    var setBtn = document.querySelector("input");
+    var getBtn = document.querySelectorAll("input")[1];
+    var textVal = document.querySelector("#text_val");
+    if (sessionStorage["fengchao"]){
+        textVal.value = sessionStorage["fengchao"];
+    }
+    /*sessionStorage 短时间存储 只要session存在数据就存在session周期结束数据清除*/
+    setBtn.addEventListener("click",function () {
+        //存储数据到本地
+        sessionStorage["fengchao"] = textVal.value;
+
+    });
+    getBtn.addEventListener("click",function () {
+        textVal.value = sessionStorage["fengchao"];
+
+    });
+
+</script>
+
+</body>
+</html>

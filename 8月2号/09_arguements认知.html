@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var num = 5;
+//    function  fn(a,b,c) {
+//        alert(arguments.length);//获取实参的个数
+//        alert(fn.length);//fn.length获取形参的个数
+//        console.log(num);
+//        alert(arguments.callee);
+//        num--;
+//        if (num >=0){
+//            setTimeout(arguments.callee(3,4,5,6),1000);
+//        }
+//    }
+//    setTimeout(fn(1,2,3),1000);
+//自己调自己的函数都叫递归函数
+//递归函数
+//你得明确一个递归函数结束的条件，不然就是一个死循环
+var num = 10;
+    function func() {
+        console.log(num);
+//        console.log("sb");
+        num--;
+        if (num >=0){
+            func();
+
+        }
+    }
+    func();
+</script>
+
+</body>
+</html>

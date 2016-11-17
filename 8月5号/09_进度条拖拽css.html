@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .scroll{
+            width: 400px;
+            height: 8px;
+            background-color: #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        .bar{
+            width: 10px;
+            height: 22px;
+            background-color: #369;
+            position: absolute;
+            left:0;
+            top:-7px;
+        }
+        .mask{
+            width: 0;
+            height: 100%;
+            background-color: #369;
+            position: absolute;
+            left:0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="scrollbar" class="scroll">
+    <div id="bar" class="bar"></div>
+    <div class="mask"></div>
+</div>
+
+</body>
+</html>

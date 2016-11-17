@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3-透明度</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+            background-color: #f7f7f7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #ddd;
+            background-color: #fff;
+        }
+        .wrapper > header {
+            text-align: center;
+            /*line-height: ;*/
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+        .wrapper section > header {
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        /*颜色的表达方式 red rgb() #fff rgba*/
+        section:nth-child(2) div:first-of-type{
+            opacity: 0.1;
+        }
+        section:nth-child(2) p:first-of-type{
+            background-color: red;
+
+        }
+        .parent{
+            width: 200px;
+            height: 200px;
+            background-color: transparent; /*完全透明类似于玻璃一样*/
+            /*background-color: rgba(100,100,100,.1);*/
+
+        }
+        
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-透明度</header>
+    <section>
+        <header>opacity</header>
+        <div class="wrap-box">
+            <p>我是一个段落,子类会继承父类的透明度</p>
+
+        </div>
+    </section>
+    <section>
+        <header>transparent</header>
+        <div class="wrap-box">
+            <div class="parent">
+                <div class="child">
+                    我是一个孩子
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

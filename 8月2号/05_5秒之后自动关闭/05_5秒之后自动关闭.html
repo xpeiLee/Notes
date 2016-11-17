@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{
+            width: 150px;
+            height: 440px;
+
+        }
+        .left{
+            background: url("images/1.gif");
+            float: left;
+        }
+        .right{
+            background: url("images/2.gif");
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="left"></div>
+<div class="right"></div>
+<script>
+    setTimeout(function () {
+        var divs = document.getElementsByTagName("div");
+        for (var i = 0; i < divs.length;i++){
+            divs[i].style.display = "none";
+        }
+    },5000);
+</script>
+</body>
+</html>
