@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>笔记</title>
+    <meta name="description" content="笔记" />
+    <meta name="keywords" content="笔记" />
+</head>
+<body>
+<div>
+    一选择题
+    1.以下代码中，当foo是什么值的时候，会执行alert？(D F G H I J )
+    if(!foo){alert("foo!")}
+    A "false"	B "true"	C 1		D 0
+    E -1		F ""	G undefined	H null
+    I NaN		Jfalse		K[]		L{}
+    2.以下哪几种方式可以删除节点elm？(AB)
+    A elm.parentNode.removeChild(elm);
+    B var frag = document.createElement('fragment'); frag.appendChild(elm);
+    C elm.parentNode.deleteChild(elm);
+    D elm.parentNode.remove(elm);
+    3.下面哪个事件不能冒泡？(D)
+    A click		B mousemove		C change 	D blur
+    4.下列关于本地存储和cookie的描述哪些是正确的？()
+    A 本地存储没有容量限制，cookie有容量限制
+    B 本地存储不随着http请求发送，cookie随着http请求发送
+    C 本地存储不能跨域，cookie可以有条件的跨域
+    D 本地存储在IE7以上（含）浏览器都可以使用，cookie全浏览器兼容
+    5.下列表达式的结果是真的有(A B C D)
+    A typeof(null) === "object"
+    B "" == false
+    C Function instanceof Object
+    D [].constructor ===Array
+    6.有以下样式表的定义，泽尔<span class="a3 a2 a1">测试</span>的颜色是：(C)
+    .a1{color:red}
+    .a2{color:blue}
+    .a3{color:yellow}
+    A red 		B blue		C yellow 	D不确定
+    7.正则表达式/^d+[^d]+/能匹配下列哪些字符串？(C)
+    A 123	B 123a		C d123	D 123def
+    8.以下代码运行后，控制台数出的结果是：(D)
+    var num = 100;
+    function fn(){
+    var num = num + 1;
+    return num;
+    }
+    console.log( fn());
+    A 101	B 1		C undefined		D NaN
+    9.以下CSS中，哪个是错误的？(A)
+    A .a.b.c{font:12px; color:rgb(0,0,0);}
+    B .a,.b,.c{overflow:visible; visibility:visible;}
+    C .a .b > .c{float:none;clear:none;}
+    D .a::before{border:none;display:none;}
+    10.以下代码运行后，控制台输出的结果是：(B)
+    var Core = {
+    title : "Core",
+    show : function(){
+    return this.title;
+    }
+    },
+    title = "window",
+    fn = Core.show
+    fn();
+    A Core		B window	C 不确定
+
+    二填空题
+    1.在javascript中，表达式""||"abc"的运算结果是：（"abc"）
+    2.判断bar属性来自于foo对象本身而非原型对象的方法是：（hasOwnProperty）
+    3.JS函数中call和apply的区别是：（）
+    4.freeMaker中获取当前服务器时间的方法是：（）
+    5.以下代码运行后，控制台输出的内容是：（3）
+    var f = (function(f){
+    function f(){return 1}
+    return f();
+    function f(){return 3}
+    f =2;
+    })(4);
+    console.log(f);
+    6.常用的前端性能优化方法有哪些？
+    7.举例以下移动端前端开发中经常遇到的坑（包括浏览器，内核webview）。
+    8.以下代码运行后，控制台会输出什么结果，为什么？
+    <script type="text/javascript">
+        var getFn = function(){
+            var arrs = [];
+            for(var i = 0; i<3; i++){
+                arrs.push(function(){
+                    return i;
+                });
+            }
+            return arrs;
+        };
+        var fns = getFn();
+        console.log( fn[0]() + fns[1]() );
+    </script>
+    9.前端跨域解决方案有哪些？
+    通过jsonp
+    10.常见的前端集成部署方案有哪些？各自的优缺点是什么？
+    三编程题
+    1编写一个javascript函数fn，该函数有一个参数n（数字类型），其返回值是一个数组，该数组内是n个随机且不重复的整数，且整数取值范围是[2,32].
+    <script>
+        function random(start,end) {
+            var max = start > end ? start:end;
+            var min = start > end ? end:start;
+            return Math.round(Math.random()*(max-min) + min);
+        }
+        //判断数组存不存在这个数
+        function isExist(arr,num) {
+            var flag = false;
+            for(var j =0;j<arr.length;j++){
+                if(num==arr[j]){
+                    return !flag
+                } }
+                return flag
+        }
+        function reTryRandom(arr) {
+            var ran = random(2,32);
+            if(isExist(arr,ran)){
+                return ran= reTryRandom(arr)
+            }
+            return ran;
+        }
+        function fn(n) {
+            var arr = [];
+            for (var i = 0; i<n;i++){
+                var ran = random(2,32)
+                if(isExist(arr,ran)){
+                   ran = reTryRandom(arr)
+                }
+                   arr.push(ran)
+                    }
+            return arr
+        }
+        console.log(fn(31))
+
+
+        function retryNum(json) {
+            var ran = random(2,32);
+            var done = json[ran];
+            if(done != null){
+                return retryNum(json);
+            }
+            json[ran] = " ";
+            return ran;
+        }
+
+        function fn1(n) {
+            var arr =[],json={};
+            for(var i=0;i<n;i++){
+                var ran =  retryNum(json);
+               arr.push(ran);
+                }
+            return arr;
+        }
+        console.log(fn1(5));
+    </script>
+    2.扩展jQuery原型，增加一个bindNumberCheck方法，该方法要求如下：
+    /*
+    仅仅对于input元素处理，处理后的input仅仅能够输入数字([\d])
+    非法字符在输入的时候被自动过滤
+    超多指定范围自动调整：小于最小值，修改为最小值，大于最大值，修改为最大值
+    参数：
+    min		[可选][数字]用户可以输入的最小数字
+    max		[可选][数字]用户可以输入的最大数字
+    如果仅仅传递一个数字，则当做最大值处理
+    */
+    $.fn.bindNumberCheck = function(min,max){
+    //函数代码
+    };
+    <script type="text/javascript">
+        function checkNumber(value, min, max) {
+            var value = new String(value).replace(/\D/g, '');
+            return Math.min(max, Math.max(min, value));
+        }
+
+        console.log( checkNumber('我今年20了', 10, 15) );
+    </script>
+</div>
+</body>
+</html>

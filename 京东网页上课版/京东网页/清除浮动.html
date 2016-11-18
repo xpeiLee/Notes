@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+            width: 600px;
+            border: 1px dashed red;
+            /*overflow: hidden;*/
+        }
+        .xiongda,.xionger{
+            float: left;
+            width:200px;
+            height:100px;
+            background-color: pink;
+
+        }
+        .clearfix:before,.clearfix:after{
+            display: table;
+            content: "";
+
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="father clearfix">
+    <div class="xiongda">熊大</div>
+    <div class="xionger">熊二</div>
+</div>
+
+</body>
+</html>

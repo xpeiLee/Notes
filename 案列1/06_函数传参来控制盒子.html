@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 50px;
+            display: none;
+        }
+    </style>
+    <script>
+        onload = function () {
+//            var btn1 = document.getElementById("btn1");//事件源
+//            var box1 = document.getElementById("demo1");
+////            事件源.事件 = 事件处理程序
+//            btn1.onclick = function () {
+//                box1.style.display = "block";
+//            }
+//
+//            var btn2 = document.getElementById("btn2");//事件源
+//            var box2 = document.getElementById("demo2");
+////            事件源.事件 = 事件处理程序
+//            btn2.onclick = function () {
+//                box2.style.display = "block";
+//            }
+//
+//            var btn3 = document.getElementById("btn3");//事件源
+//            var box3 = document.getElementById("demo3");
+////            事件源.事件 = 事件处理程序
+//            btn3.onclick = function () {
+//                box3.style.display = "block";
+//            }
+//
+//            var btn4 = document.getElementById("btn4");//事件源
+//            var box4 = document.getElementById("demo4");
+////            事件源.事件 = 事件处理程序
+//            btn4.onclick = function () {
+//                box4.style.display = "block";
+//            }
+        }
+
+        function fn(obj) {
+            var box = document.getElementById(obj);
+            box.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+<button onclick="fn('demo1')">显示 1个盒子</button>
+<button onclick="fn('demo2')">显示 2个盒子</button>
+<button onclick="fn('demo3')">显示 3个盒子</button>
+<button onclick="fn('demo4')">显示 4个盒子</button>
+<div id="demo1">1</div>
+<div id="demo2">2</div>
+<div id="demo3">3</div>
+<div id="demo4">4</div>
+
+</body>
+</html>

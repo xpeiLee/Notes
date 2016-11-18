@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'weijinsuo';
+  src:  url('fonts/weijinsuo.eot?933a5d');
+  src:  url('fonts/weijinsuo.eot?933a5d#iefix') format('embedded-opentype'),
+    url('fonts/weijinsuo.ttf?933a5d') format('truetype'),
+    url('fonts/weijinsuo.woff?933a5d') format('woff'),
+    url('fonts/weijinsuo.svg?933a5d#weijinsuo') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'weijinsuo' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+  content: "\e900";
+}
+.icon-weijinsuo:before {
+  content: "\e901";
+}
+.icon-home:before {
+  content: "\e902";
+}
+.icon-home2:before {
+  content: "\e903";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+

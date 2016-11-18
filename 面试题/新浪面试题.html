@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>新浪面试题</title>
+	<meta name="description" content="笔记" />
+	<meta name="keywords" content="笔记" />
+</head>
+<body>
+	<div>
+		1.如果一个网页上需要同时多种语言文字，那么网页需要用（utf-8）编码格式。
+		2.请区分括号内的对象默认哪些是内联对象，哪些是快对象，并分别填写在对应的表内
+			(div,span,p,form,img,ul,li,strong,a,input,h1,textarea)\
+			内联对象：span,strong,a,
+			块对象：div,p,form,ul,li,h1，textarea
+		3.一个div对象的CSS样式为"width:100px;border:1px; solid #000;padding:50px;",请问，在IE6中这个div实际所占用的宽度为（202）px。如果该文档没有DTD，那么IE6中它实际所占用的宽度为（100）px,FireFox(1.5+)中它实际所占用的宽度为（202）px.
+		4.请简化这段CSS代码：
+		 .abc{padding-left:10px;padding-top:20px;padding-bottom:5px;padding-right:10px;}
+		答：.abc{padding:20px 10px 5px;}
+		5.当内部容器使用了float:left后，你会用哪些方法对父容器清除浮动?
+		答： 方法一：添加新的元素 、应用 clear：both；
+			.clear{clear:both; height: 0; line-height: 0; font-size: 0}
+			方法二：父级div定义 overflow: auto（注意：是父级div也就是这里的  div.outer）
+			.over-flow{ overflow: auto; zoom: 1; //zoom: 1; 是在处理兼容性问题}
+			方法三： 据说是最高大上的方法  :after 方法：（注意：作用于浮动元素的父亲）
+			.clearfix:after {clear:both;content:'.';display:block;width: 0;height: 0;visibility:hidden;} 
+		6.请问display:none和visibility:hidden的作用是什么，他们有什么区别？
+		答：display:none  隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，就当他从来不存在。
+
+			visibility:hidden  隐藏对应的元素，但是在文档布局中仍保留原来的空间。
+		二、Javascript
+		1.请写出如下javascript代码的运行结果
+			<script type="text/javascript">
+				var name = "zhangsan";
+				function GetName(){
+					var arr =[1,2,3];
+					var name = "lisi "+ arr;
+					alert(name);
+					document.write(name+"<br />");
+				}
+				GetName();
+				document.write(name);
+				//  lisi 1,2,3
+				// zhangsan 
+			</script>
+		2.如何使在某个<textarea></textarea>中按下回车，不换行，而显示"<enter>"(注：不影响其他按键的正常输入)。
+		答：<script>
+		     
+		        window.onload = function(){
+		             
+		            document.getElementById('area').addEventListener('keydown',function(e){
+		             
+		                if(e.keyCode!=13) return;
+		                 
+		                e.preventDefault();
+		                 
+		                this.value += '<enter>';
+		             
+		            });
+		         
+		        };
+		     
+		    </script>
+		    <textarea name="" id="area" cols="30" rows="10"></textarea>
+
+		3.请写出如下javascript代码片段的运行结果。
+			<script type="text/javascript">
+				var my_arr = [];
+				for (var i = 0; i <= 5; i++) {
+					my_arr.push(i*(i+1));
+				};
+				var val = 0;
+				while(val = my_arr.pop()){
+					document.write(val +"");
+				}
+				//  30201262 
+			</script>
+	</div>
+	<script type="text/javascript">
+		function flexisum(a){
+			var total = 0;
+			for (var i = 0; i < arguments.length; i++) {
+				var element = arguments[i];
+				var n;
+				switch(typeof element){
+					case "number":
+						n = element;
+						break;
+					case "object":
+						if (element instanceof Array) {
+							n= flexisum.apply(this,element);
+						}else{
+							n=element.valueOf();
+						}
+						break;
+					case "string":
+						n = parseFloat(element);
+						break;
+					case "boolean":
+						n = NaN;
+						break;
+				}
+				if (typeof n=="number" && !isNaN(n)) {
+					total +=n;
+				}else if(isNaN(n)){
+					total++;
+				}else{
+					throw new Error("sum():cant't convert" + element +"to number");
+				}
+			};
+			return total;
+		}
+
+		document.write(flexisum(5,[1,2,3,4],false,"24fsf"));
+		//40
+	</script>
+	<div>
+		一、选择题
+		1.下面有关HTML叙述错误的是(D).
+			A 一个HTML文件可以用记事本来编辑
+			B HTML的意思是超文本标记语言
+			C 一个HTML文件必须是一个以htm或html为拓展名的文件
+			D HTML区分大小写，如<b>写成<B>是错误的	
+		2.在页面中看不见的表单元素是哪种？（B）
+			A<input type="password" ></input>	B<input type="hidden" ></input>
+			C<input type="radio" ></input>		D<input type="reset" ></input>
+		3.在HTML页面中制作一个图像，想要在鼠标指向这个图像时浮出一条提示信息，应该使用的参数是（C）
+			A POP 	B SRC 	C ALT 	D MSG
+		4.下面的标记用于使HTML文档中表格里的单元格在同行进行合并的是（A）
+			A colspan	B cellpadding	C rowspan	D cellspacing
+		5.A文件夹与B文件夹是统计文件夹，其中A下有a.html,B下有b.html文件夹，现在我们希望在a.html文件中创建超链接，连接到b.htm,应该在a.html页面代码中如何描述连接内容（C）
+			A）b.htm                           B）././././B/b.htm 
+			C）../B/b.htm                        D../../b.htm 
+		6.下面关于CSS表述不正确的是（B）
+			A) CSS是一种制作网页的新技术，现在已经为大多数的浏览器所支持，成为网页设计必不可少的工具之一。 
+			B) 层叠样式表是HTML的辅助工具，缺点是设计者设计的网页缺少动感，网页内容的排版布局上也有很多困难 
+			C) 使用CSS能够简化网页的格式代码，加快下载显示的速度，也减少了需要上传的代码数量，大大减少了重复劳动的工作量。 
+			D) CSS是Cascading Stylesheets的缩写，中文意思是层叠样式表
+		7.CSS样式表根据所在网页的位置，可分为（B）
+			A行内样式表、内嵌样式表、混合样式表
+			B行内样式表、内嵌样式表、外部样式表
+			C外部样式表、内嵌样式表、导入样式表
+			D外部样式表、混合样式表、导入样式表
+		8.ID位left的DIV标签，用CSS设置DIV的左边为红色实战，下面设置正确的是（C）
+			A style="border-top:#ff0000 1 nolid;"
+			B style="border-left:1 #ff0000 .solid;"
+			C style="border-left:1 #ff0000 solid;"
+			D style="border-right:1 #ff0000 dashed;"
+		9.下面代码片段，说法正确的是（）
+			.DIV1{position:absolute;line-height:22px;height:58px;background-color:#f00;}
+			A position:absolute;表示绝对定位，被定为的元素位置固定 
+			B line-height:22px;修改文本字体大小
+			C height:58px;表示被修饰的元素距离别的元素的距离
+			D background-color:#f00; 表示被修饰的元素的背景图像
+		10.分析下面代码
+			<html>
+				<head>
+					<script type="text/javascript">
+						function writeIt(value){document.myfm.frist_text.value = value;}
+					</script>
+				</head>
+				<body bfcolor="#ffffff">
+					<form name="myfm">
+						<input type="text" name="first_text">
+						<input type="text" name="second_text" onchange="writeIt(value)">
+					</form>
+				</body>
+			</html>
+			以下说法正确的是（）
+			A 在页面的第二个文本框中输入内容后，当鼠标离开第二个文本框时，第一个文本框的内容不变
+			B 在页面的第一个文本框中输入内容后，当鼠标离开第一个文本框时，将在第二个文本框中复制第一个文本框的内容
+			C 在页面的第二个文本框中输入内容后，当鼠标离开第二个文本框时，将在第一个文本框中复制第二个文本框的内容
+			D 以下说法都不正确
+		二、简答题
+		1.form中的input可以设置redonly和disable，请问这两项属性有什么区别？
+		2.JS中的三种弹出式消息提醒（警告窗口、确认窗口、信息输入窗口）的命令是什么？
+		3.请简述下ajax技术？同步和异步有何区别？
+		4.请写出几种常用前端开发的优化解决方法（至少三种）。
+		三、程序设计题
+		1.用javascript编码实现截取字符串abcdefg的efg。
+		2.请编写一个javascript函数parseQueryString,他的用途是吧URL参数解析为一个对象，如var url = "http://witmax.cn/index.php?key0=0&key 1 =1 &key2=2"
+		答：var parseQueryString = function (url) {
+		    var reg = /([^\?\=\&]+)\=([^\?\=\&]*)/g;
+			var obj = {};
+			   while (reg.exec (url)) {
+			       obj[RegExp.$1] = RegExp.$2;
+			   }
+			   return obj;
+			}
+			var url = "http://wiatcmdax.cn/index.php?key0=0&key1=1&key2=2";
+			var obj = parseQueryString (url);
+			console.warn (obj);
+		</div>
+</body> 
+</html>

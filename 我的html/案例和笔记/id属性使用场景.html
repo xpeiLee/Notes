@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+<style type="text/css">
+    
+p{width:60px;
+height: 60px;
+background-color: orange}
+.move{border:10px solid red}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+   
+<p>我是段落1</p>
+<p class="move">我是段落2</p>
+<p>我是段落3</p>
+<script type="text/javascript">
+var a:0;
+setInterval(function(){
+var box = document.getElementById("box")
+a+=1;
+box.style.marginLeft =a+"px";
+
+},30);
+</script>
+
+
+
+
+</body>
+</html>

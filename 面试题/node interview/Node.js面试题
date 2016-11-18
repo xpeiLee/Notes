@@ -1,0 +1,14 @@
+基础篇：
+1、你了解JavaScript语法吗？他与例如php & java语言有什么区别？
+2、你觉得 Node.js 与PHP比较，在做一个博客网站，你觉得谁更适合，又为什么？
+3、Node.js更适合什么项目中的应用，也就是简单说说其应用场景？
+4、你觉得异步编程会带来哪些困扰，那异步代码又有哪些优点？
+5、Node.js的模块包管理require的使用，exports与module.exports之前区别与联系。
+进阶篇：
+1、你了解Node.js的内存泄漏吗？
+2、你觉得Node.js项目，一般如何保证其正常的运作？
+3、Node.js中require的机制。
+4、是否了解简单的Node.js C++扩展实现，同步扩展和异步扩展实现？
+实践篇：
+1、代码举例说明同步和异步的区别，使用Node.js中的setTimeout与while循环判断。
+2、实现一个简单的web server，该sever需要返回一个带css样式的html页面。

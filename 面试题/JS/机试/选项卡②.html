@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项卡①</title>
+<style>
+div{ width:200px; height:200px; background:#f1f1f1; text-align:center; line-height:200px; display:none; }
+div.show{ display:block}
+input.on{ background:red; }
+</style>
+<script>
+	window.onload=function(){
+	var aInput=document.getElementsByTagName('input');
+	var aDiv=document.getElementsByTagName('div');
+		for(var i=0;i<aInput.length;i++){
+			(function(index){
+				aInput[index].onclick=function()
+					{for(var i=0;i<aInput.length;i++){
+						aInput[i].className='';
+						aDiv[i].className='';
+					}
+					aInput[index].className='on';
+					aDiv[index].className='show';
+				};	
+			})(i);
+		}
+	};
+</script>
+</head>
+<body>
+	<input class="on" type="button" value="aaa" />
+    <input type="button" value="bbb" />
+    <input type="button" value="ccc" />
+    <div class="show">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</body>
+</html>

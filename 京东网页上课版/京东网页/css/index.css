@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+.banner604 {
+    width: 100%;
+}
+
+.banner604 a {
+    position: absolute;
+    /*display: block;*/
+    /*float: left;*/
+    height: 604px;
+    width: 100%;
+    background: url("../images/banner.jpg") no-repeat top center;
+    z-index:-1;
+}
+
+.jd-main {
+    height: 466px;
+    /*background-color: pink;*/
+    position: relative;
+    overflow: hidden;
+}
+#jd-arrow{
+    display: none;
+}
+.jd-main .slide a {
+    display: block;
+    width: 730px;
+    height: 454px;
+}
+
+.jd-main .slide {
+    width: 730px;
+    margin: 12px 0 0 220px;
+    position: relative;
+    float: left;
+}
+
+.jd-main .slide ul {
+    list-style: none;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -66px;
+}
+
+.jd-main .slide li {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 0 2px;
+    background-color: #3e3e3e;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    font: 12px/150% "Microsoft YaHei";
+    cursor: pointer;
+}
+.jd-main .slide li:hover{
+    background-color:#b61b1f ;
+}
+/*.jd-main .slide .current {*/
+    /*background-color: #b61b1f;*/
+/*}*/
+
+.jd-main .slide .arrow a {
+    width: 28px;
+    height: 62px;
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    /*rgba内的a是控制透明度*/
+    background-color: rgba(88, 88, 88, 0.3);
+    text-align: center;
+    font: 400 22px/62px "宋体";
+    color: #fff;
+}
+
+.jd-main .slide .arrow .arrow-r {
+    right: 0;
+}
+
+.jd-main .kjrk {
+    float: right;
+}
+
+.jd-main .kjrk .jd-server {
+    width: 248px;
+    height: 372px;
+    border: 1px solid #e4e4e4;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.jd-main .kjrk .jd-server .jd-paper .dt {
+    height: 32px;
+    border-bottom: 1px dotted #e8e8e7;
+    padding: 0 15px;
+}
+
+.jd-main .kjrk .jd-server .jd-paper h3 {
+    float: left;
+    font: 400 16px/32px "Microsoft YaHei";
+    color: #666
+}
+
+.jd-main .kjrk .jd-server .jd-paper .dt a {
+    float: right;
+    color: #666;
+    font: 12px/32px "consolas";
+}
+
+.jd-main .kjrk .jd-server .jd-paper .dd ul {
+    padding: 5px 0 5px 15px;
+    line-height: 24px;
+    border-bottom: 1px solid #e8e8e7;
+}
+
+
+.jd-main .kjrk .jd-server .jd-paper .dd span {
+    font-weight: 700;
+    margin-right: 5px;
+}
+.jd-main .kjrk .jd-lifestyle ul{
+    width: 260px;
+    list-style:none;
+}
+.jd-main .kjrk .jd-lifestyle li{
+    width: 62px;
+    height: 70px;
+    border:1px solid #e8e8e7;
+    float: left;
+    margin-top: -1px;
+    margin-left: -1px;
+    position: relative;;
+}
+.jd-main .kjrk .jd-lifestyle li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+.jd-main .kjrk .jd-lifestyle li i{
+    position:absolute;
+    background: url("../images/life.png") no-repeat right top;
+    width: 25px;
+    height: 25px;
+    top:10px;
+    left:18px;
+}
+.jd-main .kjrk .jd-lifestyle li span{
+    position: absolute;
+    bottom:10px;
+    left:18px;
+}
+/*.jd-main .kjrk .jd-lifestyle li .icon1{*/
+    /*background-position: right -25px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon2{*/
+    /*background-position: right -50px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon3{*/
+    /*background-position: right -75px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon4{*/
+    /*background-position: right -100px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon5{*/
+    /*background-position: right -125px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon6{*/
+    /*background-position: right -150px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon7{*/
+    /*background-position: right -175px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon8{*/
+    /*background-position: right -200px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon9{*/
+    /*background-position: right -225px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon10{*/
+    /*background-position: right -250px;*/
+/*}*/
+/*.jd-main .kjrk .jd-lifestyle li .icon11{*/
+    /*background-position: right -275px;*/
+/*}*/
+.jd-main .jd-ad{
+    margin-top: 5px;
+}
+.dayinfo{
+    height: 164px;
+    margin:10px 0 20px;
+
+
+}
+.dayinfo .clock img{
+    float: left;
+}
+.dayinfo .pic{
+    width: 110%;
+}
+.dayinfo .pic a{
+    margin-left: -2px;
+}

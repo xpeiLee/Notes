@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义排序</title>
+<script>
+	var arr=[123,123412345,1234123,1234123,1234,12341234123,2143,23432];
+	function findImaxIndex(start){
+	var iMax=-999999999999999999999;
+	var iMaxIndex;
+		for(var i=start;i<arr.length;i++){
+			if(arr[i]>iMax){
+				iMax=arr[i];
+				iMaxIndex=i;
+			}
+		}
+		return iMaxIndex;
+	}	
+	for(i=0;i<arr.length;i++){
+		iMaxIndex=findImaxIndex(i);
+		var car=0;
+		car=arr[i];
+		arr[i]=arr[iMaxIndex];
+		arr[iMaxIndex]=car;
+	}
+	alert(arr);
+</script>
+</head>
+<body>
+</body>
+</html>

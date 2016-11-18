@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        #box{
+            height: 70px;
+            padding-top: 360px;
+            width: 360px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            background: url(images/01big.jpg) no-repeat center top;
+            overflow: hidden;
+        }
+        ul{
+            list-style:none;
+            border-top: 1px solid #ccc;
+        }
+        #box ul li{
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById("box");
+
+            function func(liid,imageurl) {
+                var  libox = document.getElementById(liid);
+                libox.onmouseover = function () {
+                    box.style.backgroundImage = imageurl;
+                }
+            }
+
+            func("li01","url(images/01big.jpg)");
+            func("li02","url(images/02big.jpg)");
+            func("li03","url(images/03big.jpg)");
+            func("li04","url(images/04big.jpg)");
+            func("li05","url(images/05big.jpg)");
+
+//            function func(liid,imageNum) {
+//                var  libox = document.getElementById(liid);
+//                libox.onmouseover = function () {
+//                    box.style.backgroundImage = "url(images/0"+imageNum+"big.jpg)";
+//                }
+//            }
+//            func("li01","1");
+//            func("li02","2");
+//            func("li03","3");
+//            func("li04","4");
+//            func("li05","5");
+//
+//            var a = 10;
+//            console.log(a);
+//            console.log("a");
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li id="li01"><img src="images/01.jpg" alt=""/></li>
+        <li id="li02"><img src="images/02.jpg" alt=""/></li>
+        <li id="li03"><img src="images/03.jpg" alt=""/></li>
+        <li id="li04"><img src="images/04.jpg" alt=""/></li>
+        <li id="li05"><img src="images/05.jpg" alt=""/></li>
+    </ul>
+</div>
+</body>
+</html>

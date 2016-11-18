@@ -1,0 +1,41 @@
+/*hello world*/
+
+//声明一个变量
+@mainColor: #e92322;
+@h:200px;
+body{
+  background-color: @mainColor;
+}
+.container{
+  width: 1000px;
+  background-color: #ff0;
+  .row{
+    height: @h;
+    div{
+      border-left:1px solid @mainColor;
+      a{
+        color:red;
+        &:hover{
+          color:green;
+        }
+      }
+    }
+  }
+}
+
+//定义代码段，()里面的内容是参数，参数中：后面的参数是默认值(没有传参数就用默认值)
+.roundedCorners(@radius:5px){
+  border-radius: @radius;
+}
+//定义一个类应用到另一个类中
+#header{
+  .roundedCorners();
+}
+#footer{
+  .roundedCorners(10px);
+}
+@import url("less/_p.less");
+
+#main{
+  background-color: lighten(#000,10%);
+}

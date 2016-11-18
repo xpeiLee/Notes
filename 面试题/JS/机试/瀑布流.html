@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>瀑布流</title>
+<style>
+*{ margin:0; padding:0; }
+div{ width:1096px; margin:0 auto; }
+ul{ width:250px; border:2px solid red; margin:0 10px; float:left; }
+li{ width:100%; margin-bottom:8px; list-style:none; }
+</style>
+<script>
+	function rnd(m,n){
+		return parseInt(m+Math.random()*(n-m));
+	}
+	window.onload=function(){
+	var oBox=document.getElementById('box');	
+	var aUl=oBox.children;
+	var aLi=document.getElementsByTagName('li');
+		function createLis(){
+			for(var i=0;i<32;i++){
+				var oLi=document.createElement('li');
+				oLi.style.height=rnd(200,301)+'px';
+				oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				var arr=[];
+				for(var j=0;j<aUl.length;j++){
+					arr.push(aUl[j]);
+				}
+				arr.sort(function(ul1,ul2){
+					return 	ul1.offsetHeight-ul2.offsetHeight;
+				});
+				arr[0].appendChild(oLi);
+			}	
+		}
+		createLis();
+		window.onscroll=function(){
+			if(aLi.length>=128){
+				return;
+			}
+			createLis();	
+		};	
+	};
+</script>
+</head>
+<body>
+	<div id="box">
+    	<ul></ul>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+</body>
+</html>

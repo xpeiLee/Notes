@@ -1,0 +1,1242 @@
+@charset "UTF-8";
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+a{
+    text-decoration: none;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+body{
+    min-width: 1150px;
+    max-width: 2560px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    font: 14px/1.5 arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+    background: #fff;
+}
+.header-bg{
+    background: #fff0dd
+}
+.container {
+    width: 1008px;
+    margin: 0 auto;
+}
+.header-bg .anibox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 900px;
+    z-index: 1;
+    overflow: hidden;
+}
+.header-bg .anibox .layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.header-bg .anibox .layer .aniicon{
+    position: absolute;
+    left: 50%;
+    background: url(images/header-ani-icon.png) no-repeat;
+    z-index: 1;
+}
+.header-bg .anibox .layer .aniicon.ani-icon-1{
+    width: 36px;
+    height: 32px;
+    top: 100px;
+    margin-left: -330px;
+    background-position: 0 -53px;
+}
+.header-bg .anibox .layer .aniicon.ani-icon-2{
+    width: 57px;
+    height: 53px;
+    top: 230px;
+    margin-left: 220px;
+}
+.header-bg .anibox .layer .aniphone{
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+}
+.header-bg .anibox .layer .aniphone.ani-phone-white{
+    width: 572px;
+    height: 821px;
+    top: 80px;
+    margin-left: -700px;
+    background: url(images/header-mi5-white.png) no-repeat;
+}
+.header-bg .anibox .layer .aniphone.ani-phone-black{
+    width: 400px;
+    height: 626px;
+    top: 120px;
+    margin-left: 240px;
+    background: url(images/header-mi5-black.png) no-repeat;
+}
+.header-bg .header-main {
+    height: 590px;
+    position: relative;
+    z-index: 5;
+}
+.header-bg .header-main .content {
+    padding-top: 85px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+.header-bg .header-main .content .logo{
+width: 69px;
+height: 69px;
+background: url(images/logo.png) no-repeat;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.header-bg .header-main .content .links {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    text-align: right;
+}
+.header-bg .header-main .content .links a {
+    margin-left: 15px;
+    color: #e2ad8e;
+}
+.header-bg .header-main .content .sub-title {
+    margin: 0;
+    font-size: 24px;
+    color: #fc6d27;
+}
+.header-bg .header-main .content .title {
+    display: inline-block;
+    width: 465px;
+    height: 90px;
+    margin: 0;
+    background: url(images/816slogan.png) no-repeat center 0;
+}
+.header-bg .header-main .content .desc {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+}
+.header-bg .header-main .content .mi5-content {
+    padding-top: 30px;
+}
+.header-bg .header-main .content .mi5-content .tit {
+    margin: 0 0 3px;
+    font-size: 38px;
+    font-family: "微软雅黑";
+    color: #424242;
+    font-weight: 700;
+}
+.header-bg .header-main .content .mi5-content .price {
+    color: #fc6d27;
+}
+.header-bg .header-main .content .mi5-content .price em {
+    font-size: 24px;
+    font-family: 'Avenir';
+    font-style: normal;
+}
+.header-bg .header-main .content .actions {
+    margin-top: 30px;
+}
+.header-bg .header-main .content .actions .btn {
+    display: inline-block;
+    width: 148px;
+    height: 44px;
+    line-height: 44px;
+    margin: 0 5px;
+}
+.header-bg .header-main .content .actions .btn-buy {
+    background-color: #fc6d27;
+    border-color: #fc6d27;
+    color: #fff;
+}
+.header-bg .header-main .content .actions .btn-go {
+    border:1px solid #fc6d27;
+    color: #fc6d27;
+}
+.header-bg .header-main .nav {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1150px;
+    height: 88px;
+    margin-left: -575px;
+    z-index: 10;
+}
+.header-bg .header-main .nav ul {
+    margin: 0 0 0 -6px;
+    padding: 0;
+}
+.header-bg .header-main .nav ul li {
+    float: left;
+    width: 185px;
+    height: 88px;
+    margin-left: 6px;
+    cursor: pointer;
+    color: #ff822d;
+    position: relative;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.header-bg .header-main .nav ul li .icon {
+    position: absolute;
+    top: 26px;
+    left: 16px;
+    width: 36px;
+    height: 36px;
+    background: url(images/nav-icons.png)no-repeat;
+}
+.header-bg .header-main .nav ul li .txt {
+    display: block;
+    margin-left: 60px;
+    margin-top: 24px;
+}
+.header-bg .header-main .nav ul li.item-new .icon{
+    background-position:0 -72px;
+}
+.header-bg .header-main .nav ul li.item-star .icon{
+    background-position:0 -36px;
+}
+.header-bg .header-main .nav ul li.item-mitv .icon{
+    background-position:0 -108px;
+}
+.header-bg .header-main .nav ul li.item-smart .icon{
+    background-position:0 -144px;
+}
+.header-bg .header-main .nav ul li.item-lucky .icon{
+    background-position:0 -180px;
+}
+.section .section-hd {
+    text-align: center;
+    overflow: hidden;
+}
+.section .section-hd .title {
+    margin: 0;
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: normal;
+}
+.section .section-hd .desc {
+    line-height: 24px;
+    font-size: 16px;
+}
+.section-mi5{
+    background: url(images/bg-3.jpg) no-repeat center 0 #e2ad8e;
+    padding-top: 80px;
+    position: relative;
+}
+.section-mi5 .section-hd{
+    height: 200px;
+}
+.section-mi5 .section-hd .title{
+    margin-top: 90px;
+    color: #333;
+}
+.section-mi5 .section-hd .title span{
+    color: #f24d41;
+}
+.section-mi5 .section-hd .desc{
+    color: #885536;
+}
+.section-mi5  .section-bd .container .phone-package{
+    height: 300px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.section-mi5  .section-bd .container .phone-package-1 {
+    background-color: #fcdcbd;
+    background: url(images/mi5-package2.jpg) no-repeat center 0;
+}
+
+.section-mi5  .section-bd .container .phone-package .content {
+    margin: 80px 0 0 192px;
+}
+.section-mi5  .section-bd .container .phone-package .content-right{
+    margin-left: 500px;
+}
+.section-mi5  .section-bd .container .phone-package .title {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: #333;
+    line-height: 30px;
+    font-weight: normal;
+}
+.section-mi5  .section-bd .container .phone-package .desc {
+    margin: 0 0 30px;
+    color: #333;
+}
+.section-mi5  .section-bd .container .phone-package .btn {
+    display: inline-block;
+    width: 154px;
+    height: 56px;
+    margin-right: 10px;
+    border-color: #e84c3a;
+    background-color: #e84c3a;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+}
+.section-mi5  .section-bd .container .phone-package .btn em {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 16px;
+}
+.section-mi5  .section-bd .container .phone-package .btn del {
+    margin-left: 5px;
+    color: #910707;
+}
+.section-mi5  .section-bd .container .phone-package-2{
+    background: url(images/mi5-package3.jpg) no-repeat center 0 #fdf1df;
+}
+.section-mi5  .section-bd .container .phone-package-3{
+    background: url(images/mi5-package4.jpg) no-repeat center 0 #fcdcbd;
+}
+.section-mi5 .section-bd .container .list{
+    margin: 0 0 0 -10px;
+    padding: 0;
+    overflow: hidden;
+}
+.section-mi5 .section-bd .container .list li{
+    float: left;
+    width: 499px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    background-color: #fff;
+}
+.section-mi5 .section-bd .container .list li .pic{
+    height: 545px;
+    cursor: pointer;
+}
+.section-mi5 .section-bd .container .list li .pic-white{
+    background: url(images/mi5-ver-white.jpg)no-repeat;
+}
+.section-mi5 .section-bd .container .list li .pic-gold{
+    background: url(images/mi5-ver-gold.jpg)no-repeat;
+}
+.section-mi5 .section-bd .container .list li .pic-red{
+    background: url(images/mi5-ver-red.jpg)no-repeat;
+}
+.section-mi5 .section-bd .container .list li .pic-black{
+    background: url(images/mi5-ver-black.jpg)no-repeat;
+}
+.section-mi5 .section-bd .container .list li .actions{
+    padding: 12px 0;
+}
+.section-mi5 .section-bd .container .list li .actions .btn{
+    float: left;
+    width: 232px;
+    height: 110px;
+    margin-left: 10px;
+    border:1px solid #f24d41;
+    color: #333;
+    line-height: 1;
+    text-align: center;
+    position: relative;
+}
+.section-mi5 .section-bd .container .list li .actions .btn-disable {
+    border-color: #ccc;
+    color: #ccc;
+    cursor: default;
+}
+
+.section-mi5 .section-bd .container .list li .actions .btn span{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 2px;
+    font-size: 24px;
+    color: #f24d41;
+}
+.section-mi5 .section-bd .container .list li .actions .btn-disable span{
+    color: #ccc;
+}
+.section-mi5 .section-bd .container .list li .actions .btn span em{
+    font-style: normal;
+    font-size: 34px;
+    line-height: 1;
+}
+.section-mi5 .section-bd .container .list li .actions .btn-disable
+.sq {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    list-style: none;
+}
+
+.section-mitv .section-hd{
+    height: 245px;
+    background-color: #fff0dd;
+}
+.section-mitv .section-hd .title{
+    margin-top: 60px;
+    color: #333;
+}
+.section-mitv .section-hd .desc{
+    color:#666
+}
+.section-mitv .section-bd{
+    background: url(images/bg-2.jpg)no-repeat center 0 #e2ad8e;
+    position: relative;
+    overflow: hidden;
+}
+.section-mitv .section-bd .slide-box{
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    width: 1008px;
+    height: 650px;
+    margin-left: -504px;
+}
+.section-mitv .section-bd .slide-box .slide-mitv60{
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top:90px;
+    left:0;
+    background:url("images/slide-mitv60.png")no-repeat center 0;
+}
+.section-mitv .section-bd .slide-box .slide-mitv43{
+    display: inline-block;
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    top:80px;
+    left:50px;
+    opacity:0;
+    background:url("images/slide-mitv43.png")no-repeat center 0;
+}
+ .section-bd .slide-box .control {
+    position: absolute;
+    top: 0;
+    width: 27px;
+    height: 100%;
+    background:url(images/slide-control.png) no-repeat;
+    z-index: 3;
+    cursor: pointer;
+}
+ .section-bd .slide-box .control-prve{
+    left: 0;
+    background-position: 0 45%;
+}
+ .section-bd .slide-box .control-next{
+    right: 0;
+    background-position: -27px 45%;
+}
+.section-mitv .container {
+    padding-top: 480px;
+}
+.section-mitv .section-bd .container .pro-box{
+    position: relative;
+    margin-bottom: 9px;
+    overflow: hidden;
+}
+.section-mitv .section-bd .container .pro-mitv55{
+    background: url("images/mitv55.jpg")no-repeat center 0 #333;
+    height: 453px;
+}
+.section-mitv .section-bd .container .pro-mitv55 .content{
+    margin: 120px 0 0 140px;
+}
+.section-mitv .pro-box .title {
+    margin: 0 0 8px;
+    font-size: 26px;
+    line-height: 32px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.section-mitv .pro-mitv55 .title span {
+    color: #f24d41;
+}
+.section-mitv .pro-mitv55 .desc {
+    color: #666;
+}
+.section-mitv .pro-box .desc {
+    margin: 0;
+    line-height: 20px;
+}
+.section-mitv .pro-mitv55 .price {
+    margin: 35px 0 20px;
+    color: #f24d41;
+}
+.section-mitv .pro-box .price em {
+    font-size: 28px;
+}
+.section-mitv .pro-mitv55 .price del {
+    color: #666;
+}
+.section .price em {
+    font-family: 'Avenir';
+    font-style: normal;
+    line-height: 1;
+}
+.btn-primary {
+    border-color: #f24d41;
+    background-color: #f24d41;
+    /*color: #eaeaea;*/
+}
+.btn {
+    display: inline-block;
+    width: 154px;
+    height: 44px;
+    line-height: 46px;
+    /*border: 1px solid #fff;*/
+    text-align: center;
+}
+.section-mitv .pro-mitv55 .btn-primary {
+    color: #666;
+}
+.section-mitv .pro-mitv43 {
+    background: url(images/mitv43.jpg) no-repeat center 0 #eaeaea;
+    height: 453px;
+}
+.section-mitv .pro-mitv43 .content {
+    margin: 120px 0 0 596px;
+    overflow: hidden;
+}
+.section-mitv .pro-mitv43 .title {
+    color: #333;
+}
+.section-mitv .pro-mitv43 .title span {
+    color: #f24d41;
+}
+.section-mitv .pro-mitv43 .price {
+    color: #f24d41;
+    margin:14px 0;
+}
+.section-mitv .pro-mitv43 .price del {
+    color: #999;
+}
+.section-mitv .pro-mitv43 .btn-primary{
+    color:#fff;
+}
+.section-mitv .pro-mitv65 {
+    float: left;
+    width: 499px;
+    height: 595px;
+    background:url(images/mitv65.jpg) no-repeat center 0 #0c121b;
+
+}
+.section-mitv .pro-mitv65 .content,.section-mitv .pro-mitv70 .content {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+.section-mitv .pro-mitv65 .title {
+    color: #fff;
+}
+.section-mitv .pro-mitv65 .desc {
+    color: #666;
+}
+.section-mitv .pro-mitv65 .price,.section-mitv .pro-mitv70 .price {
+    margin: 30px 0 20px;
+    color: #f24d41;
+}
+.section-mitv .pro-mitv65 .btn-primary {
+    color: #333;
+}
+.section-mitv .pro-mitv70 {
+    float: left;
+    display: block;
+    width: 500px;
+    height: 595px;
+    margin-left: 9px;
+    background:url(images/mitv70.jpg) no-repeat center 0 #fff;
+    overflow: hidden;
+}
+.section-mitv .pro-mitv70 .title {
+    color: #333;
+}
+.section-mitv .pro-mitv70 .actions .btn-primary{
+    color: #fff;
+}
+.section-mitv .pro-mitv48, .section-mitv .pro-hezi3, .section-mitv .pro-hezimini {
+    float: left;
+    width: 330px;
+    height: 465px;
+    margin-bottom: 0;
+    background-position: center bottom;
+}
+.section-mitv .pro-hezi3, .section-mitv .pro-mitv48 {
+    margin-right: 9px;
+}
+.section-mitv .pro-mitv48 {
+    background-image: url(images/mitv48.jpg);
+}
+.section-mitv .pro-mitv48 .content, .section-mitv .pro-hezi3 .content, .section-mitv .pro-hezimini .content {
+    margin-top: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+.section-mitv .pro-mitv48 .title, .section-mitv .pro-hezi3 .title, .section-mitv .pro-hezimini .title {
+    color: #333;
+}
+.section-mitv .pro-mitv48 .desc, .section-mitv .pro-hezi3 .desc, .section-mitv .pro-hezimini .desc {
+    color: #666;
+}
+.section-mitv .pro-mitv48 .price, .section-mitv .pro-hezi3 .price, .section-mitv .pro-hezimini .price {
+    margin: 30px 0 20px;
+    color: #f24d41;
+}
+.section-mitv .pro-mitv48 .btn-primary, .section-mitv .pro-hezi3 .btn-primary, .section-mitv .pro-hezimini .btn-primary {
+
+    color: #fff;
+}
+.section-mitv .pro-hezi3 .price del, .section-mitv .pro-hezimini .price del {
+    color: #333;
+}
+.section-mitv .pro-mitv48 {
+    background-image: url(images/mitv48.jpg);
+}
+.section-mitv .pro-hezi3 {
+    background-image: url(images/hezi3.jpg);
+}
+.section-mitv .pro-hezimini {
+    background-image: url(images/hezomini.jpg);
+}
+.section-phone{
+    overflow: hidden;
+}
+
+.section-phone .section-hd{
+    height: 180px;
+    background-color: #e2ad8e;
+}
+.section-phone .section-hd .title {
+    margin-top: 50px;
+    color: #333;
+}
+.section-phone .section-hd .title span {
+    color: #f24d41;
+}
+.section-phone .section-hd .desc {
+    color: #666;
+}
+.section-phone .section-bd {
+    background: url(images/bg-1.jpg) no-repeat center 0 #fff0dd;
+    overflow: hidden;
+}
+.section-phone .pro-box {
+    position: relative;
+    height: 453px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.section-phone .pro-hm3x {
+    background: url(images/hm3x.jpg) no-repeat center 0 #333;
+    width: 100%;
+    height: 435px;
+}
+.section-phone .section-bd .pro-box .content {
+    margin: 130px 0 0 560px;
+}
+.section-phone .pro-box .title {
+    margin: 0 0 8px;
+    font-size: 26px;
+    line-height: 32px;
+}
+.section-phone  .section-bd .pro-box .title {
+    color: #fff;
+}
+.section-phone .pro-hm3x .title span {
+    color: #f24d41;
+}
+.section-phone .pro-box .desc {
+    margin: 0;
+    line-height: 20px;
+}
+.section-phone .pro-hm3x .desc {
+    color: #fff;
+}
+.section-phone .pro-box .price {
+    margin: 35px 0 20px;
+    color: #f24d41;
+}
+.section-phone .pro-box .price em {
+    font-size: 28px;
+}
+.section-phone .pro-hm3x .price del {
+    color: #eaeaea;
+}
+.section-phone .pro-hm3x .btn-primary {
+    color: #333;
+}
+.section-phone .pro-box .btn-primary {
+    margin-bottom: 6px;
+}
+.section .price del {
+    margin-left: 6px;
+}
+.section .title {
+    font-weight: normal;
+}
+.section-phone .pro-mimax {
+    background: url(images/mimax.jpg)no-repeat center 0 #eaeaea;
+}
+.section-phone .pro-mimax .desc{
+    color: #666;
+}
+.section-phone .pro-mimax .actions .btn-primary{
+    color: #fff;
+}
+.section-phone .pro-item {
+    float: left;
+    width: 499px;
+    height: 598px;
+    margin-bottom: 10px;
+}
+.section-phone .pro-mi5 .pic {
+    background: url(images/mi5.jpg) no-repeat;
+    display: inline-block;
+    width: 499px;
+    height: 470px;
+}
+.section-phone .pro-item .content {
+    height: 102px;
+    padding: 26px 60px 0;
+    background-color: #fff;
+}
+.section-phone .pro-item .l {
+    float: left;
+    width: 230px;
+}
+.section-phone .pro-item .title {
+    margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 32px;
+}
+.section-phone .pro-item .desc {
+    margin: 0;
+    color: #666;
+}
+.section-phone .pro-item .r {
+    float: right;
+    width: 142px;
+}
+.section-phone .pro-item .price {
+    margin: 0 0 5px;
+    color: #f24d41;
+}
+.section-phone .pro-item .price em {
+     font-size: 22px;
+     line-height: 32px;
+ }
+.section-phone .pro-item .price del {
+    color: #666;
+}
+.section-phone .pro-item .btn {
+    width: 140px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+}
+.section-phone .pro-hmpro,.pro-hm3s {
+    margin-left: 10px;
+}
+.section-phone .pro-hmpro .pic {
+    background: url(images/hmpro.jpg) no-repeat;
+    display: inline-block;
+    width: 499px;
+    height: 470px;
+}
+.section-phone .pro-hmnote3 .pic {
+    background: url(images/hmnote3.jpg) no-repeat;
+    display: inline-block;
+    width: 499px;
+    height: 470px;
+}
+.section-phone .pro-hm3s .pic {
+    background: url(images/hm3s.jpg) no-repeat;
+    display: inline-block;
+    width: 499px;
+    height: 470px;
+}
+.section-phone .pro-mi5gp {
+    background: url(images/mi5gp.jpg) no-repeat #f7c63a;
+    float: left;
+    width: 100%;
+    height: 435px;
+}
+.section-phone .section-bd .pro-mi5gp .content {
+    margin: 100px 0 0 114px;
+}
+.section-phone .pro-mi5gp .price del {
+    color: #666;
+}
+.section-phone .pro-mi5gp .btn-primary{
+    color:#fff
+}
+.section-gift6 {
+    padding-top: 400px;
+    margin-top: -400px;
+    background:url("images/bg-2.jpg")no-repeat center 0 #e2ad8e;
+    overflow: hidden;
+}
+.section-gift6 .gift-box {
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.section-gift6 .gift-2 {
+    background: url(images/gift1.jpg) no-repeat #ffbd98;
+    height: 435px;
+}
+.section-gift6 .gift-2 .content {
+    margin: 140px 0 0 638px;
+}
+.section-gift6 .gift-2 .title {
+    margin: 0 0 5px;
+    font-size: 26px;
+}
+.section-gift6 .gift-2 .title span {
+    margin-left: 5px;
+    color: #f24d41;
+}
+.section-gift6 .gift-2 .desc {
+    margin: 0 0 30px;
+}
+.section-gift6 .gift-2 .btn {
+    color: #ffdb98;
+}
+.section-gift6 .gift-1 {
+    background: url(images/gift6.png) no-repeat #f5f5f5;
+    text-align: center;
+    height: 476px;
+}
+.section-gift6 .gift-1 .title {
+    margin: 60px 0 6px;
+    font-size: 26px;
+    color: #333;
+}
+.section-gift6 .gift-1 .title span {
+    color: #f24d41;
+}
+.section-gift6 .gift-1 .desc {
+    margin: 0 0 40px;
+    color: #999;
+}
+.section-gift6 .gift-1 .desc span {
+    color: #f24d41;
+}
+.section-gift6 .gift-1 .actions a {
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+    margin: 0 15px;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ff963e;
+    text-align: center;
+}
+.section-gift6 .gift-1 .actions a em {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 2px;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 1;
+}
+.section-gift6 .mimobile {
+    background-image: url(images/mimobilev2.jpg);
+}
+.section-gift6 .mimobile a {
+    display: block;
+    height: 244px;
+}
+.section-flash {
+    background-color: #e2ad8e;
+    overflow: hidden;
+}
+.section-flash .section-hd {
+    height: 190px;
+}
+.section-flash .section-hd .title {
+    margin-top: 45px;
+    color: #fff;
+}
+.section-flash .section-hd .desc {
+    color: #885536;
+}
+.section-flash .flash-box {
+    height: 453px;
+    margin-bottom: 8px;
+    background:url(images/quantieerji.png)no-repeat 500px 0 #ffffff;
+    overflow: hidden;
+}
+.section-flash .flash-box .content {
+    margin: 85px 0 0 140px;
+    /*position: relative;*/
+    /*z-index: 2;*/
+}
+.section-flash .flash-box .content .countdown{
+    line-height: 30px;
+    font-size: 26px;
+}
+.section-flash .flash-box .title {
+    margin: 30px 0 2px;
+    color: #333;
+    font-size: 26px;
+}
+.section-flash .flash-box .title {
+    margin: 30px 0 2px;
+    color: #333;
+    font-size: 26px;
+}
+.section-flash .flash-box .title {
+    margin: 30px 0 2px;
+    color: #333;
+    font-size: 26px;
+}
+.section-flash .flash-box .price {
+    margin: 30px 0 15px;
+    color: #ff6324;
+}
+.section-flash .flash-box .price {
+    margin: 30px 0 15px;
+    color: #ff6324;
+}
+.section-flash .flash-box .price del {
+    color: #666;
+}
+.section-flash .flash-box .btn {
+    border:1px solid #ff6324;
+    color: #ff6324;
+    cursor: default;
+}
+/*.section .list-box {*/
+    /*overflow: hidden;*/
+/*}*/
+.section-flash .list-box {
+    overflow: hidden;
+}
+.section-flash .list-box ul {
+    margin: 0 0 0 -8px;
+    padding-bottom: 10px;
+    list-style: none;
+    /*overflow: hidden;*/
+}
+.section-flash .list-box ul li {
+    float: left;
+    width: 246px;
+    height: 312px;
+    margin-left: 8px;
+    background-color: #fff;
+    text-align: center;
+    /*overflow: hidden;*/
+}
+.section-flash .list-box .time {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #ab7352;
+    overflow: hidden;
+}
+.section-flash .list-box .title {
+    margin: 20px 10px;
+    color: #333;
+    font-size: 18px;
+}
+.section-flash .list-box img{
+    width: 180px;
+}
+.section-everyday .section-hd {
+    height: 180px;
+    background-color: #e2ad8e;
+}
+.section-everyday .section-hd .title {
+    margin-top: 50px;
+    color: #fff;
+}
+.section-everyday .section-hd .desc {
+    color: #885536;
+}
+.section-everyday .section-bd {
+    background: url(images/bg-1.jpg) no-repeat center 0 #fff0dd;
+    overflow: hidden;
+}
+.section-everyday .pro-box {
+    float: left;
+    width: 499px;
+    height: 598px;
+    margin-bottom: 10px;
+}
+.section-everyday .pro-mi5zx .pic {
+    display: block;
+    background: url(images/mi5zx.jpg) no-repeat;
+    height: 470px;
+}
+.section-everyday .pro-box .content {
+    height: 102px;
+    padding: 26px 60px 0;
+    background-color: #fff;
+}
+.section-everyday .pro-box .l {
+    float: left;
+    width: 230px;
+}
+.section-everyday .pro-box .title {
+    margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 32px;
+}
+.section-everyday .pro-box .title span {
+    color: #f24d41;
+}
+.section-everyday .pro-box .desc {
+    margin: 0;
+    color: #666;
+}
+.section-everyday .pro-box .r {
+    float: right;
+    width: 142px;
+}
+.section-everyday .pro-box .price {
+    margin: 0 0 5px;
+    color: #f24d41;
+}
+.section-everyday .pro-box .price em {
+    font-size: 22px;
+    line-height: 32px;
+}
+.section-everyday .pro-box .price del {
+    color: #666;
+}
+.section-everyday .pro-box .btn {
+    width: 140px;
+    height: 38px;
+    line-height: 38px;
+    color:#fff
+}
+.section-everyday .pro-mibookair13 .pic {
+    display: block;
+    height: 470px;
+    background: url(images/mibookair13.jpg) no-repeat;
+}
+.section-everyday .pro-mibookair .pic {
+    display: block;
+    height: 470px;
+    background: url(images/mibookair.jpg) no-repeat;
+}
+.section-everyday .pro-hmpro, .section-everyday .pro-mipad, .section-everyday .pro-mibookair13, .section-everyday .pro-shuihu {
+    margin-left: 10px;
+}
+.section-everyday .pro-mipad .pic {
+    display: block;
+    height: 470px;
+    background: url(images/mipad2.jpg) no-repeat;
+}
+.section-everyday .pro-mipad .pic {
+    display: block;
+    height: 470px;
+    background: url(images/mipad2.jpg) no-repeat;
+}
+.section-everyday .pro-shouhuan2 .pic {
+    display: block;
+    height: 470px;
+    background: url(images/shouhuan2.jpg) no-repeat;
+}
+.section-everyday .pro-shuihu .pic {
+    display: block;
+    height: 470px;
+    background: url(images/dianshuihu.jpg) no-repeat;
+}
+.section-footer {
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #e2ad8e;
+}
+.section-smart .section-hd {
+    height: 180px;
+    background-color: #fff0dd;
+}
+.section-smart .section-hd .title {
+    margin-top: 60px;
+    color: #333;
+}
+.section-smart .section-hd .desc {
+    color: #666;
+}
+.section-smart .section-bd {
+    background: url(images/bg-2.jpg) no-repeat center 0 #e2ad8e;
+}
+.section-smart .slide-box {
+    width: 1008px;
+    height: 430px;
+    margin: 0 auto;
+    position: relative;
+}
+.section-smart .slide-box .slide-miwifi3c{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/slide-miwifi3c.png") no-repeat center 0;
+}
+.section-smart .slide-box .slide-pinghengche{
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: url("images/slide-pinghengche.png") no-repeat center 0;
+}
+.section-rank {
+    background-color: #e2ad8e;
+    position: relative;
+}
+.section-rank .rank-hd {
+    height: 82px;
+    color: #fff;
+    text-align: center;
+    background-color: #f24d41;
+    position: relative;
+}
+.section-rank .rank-hd .more {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    color: #fff;
+}
+.section-rank .rank-hd .title {
+    margin: 0;
+    line-height: 82px;
+    font-size: 26px;
+}
+.section-rank .rank-bd {
+    background-color: #fff;
+}
+.section-rank .rank-bd .mi5 {
+    width: 100%;
+    height: 357px;
+    background: url(images/mi5-rank.jpg)no-repeat #827058;
+    overflow: hidden;
+}
+.section-rank .rank-bd .mi5 .content {
+    margin: 60px 0 0 100px;
+}
+.section-rank .rank-bd .mi5 .title {
+    margin: 0 0 10px;
+    font-size: 26px;
+    line-height: 32px;
+}
+.section-rank .rank-bd .mi5 .title span {
+    color: #f24d41;
+}
+.section-rank .rank-bd .mi5 .desc {
+    margin: 0 0 30px;
+    color: #333;
+    line-height: 20px;
+}
+.section-rank .rank-bd .mi5 .price {
+    margin: 0 0 20px;
+    color: #f24d41;
+}
+.section-rank .rank-bd .mi5 .price em {
+    font-size: 22px;
+}
+.section-rank .rank-bd .mi5 .price del {
+    color: #333;
+}
+.section-rank .rank-bd .mi5 .btn{
+    color:#fff;
+}
+.section-rank .rank-bd ul {
+    margin: 0;
+    padding: 36px 0;
+    overflow: hidden;
+}
+.section-rank .rank-bd li {
+    float: left;
+    width: 50%;
+}
+.section-rank .rank-bd li .img {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 0 28px 0 52px;
+}
+.section-rank .rank-bd li .img img{
+    width: 120px;
+    height: 120px;
+}
+.section-rank .rank-bd li .icon {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 5px;
+    background: url(images/rank-icons.png)no-repeat;
+    overflow: hidden;
+}
+.section-rank .rank-bd li .title {
+    margin: 0;
+    font-size: 20px;
+    color: #666;
+}
+.section-rank .rank-bd li .desc {
+    margin: 0;
+    color: #999;
+}
+.section-rank .rank-bd li .icon-acc {
+    background-position: -34px 0;
+}
+.section-lucky{
+    overflow: hidden;
+    background-color: #fff0dd;
+}
+.section-lucky .section-hd {
+    height: 180px;
+
+}
+.section-lucky .section-hd .title {
+    margin-top: 66px;
+    color: #333;
+}
+.section-lucky .miui {
+    margin-bottom: 9px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.section-lucky .miui .title {
+    margin: 50px 0 5px;
+    font-size: 26px;
+}
+.section-lucky .miui .desc {
+    margin-bottom: 20px;
+}
+.section-lucky .miui .btn-primary {
+    width: 180px;
+    color: #fff;
+    background-color: #fe4f33;
+    border-color: #fe4f33;
+}

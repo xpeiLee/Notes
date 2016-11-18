@@ -1,0 +1,496 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+     *zoom:1;/*IE/7/6*/
+ }
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1210px;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+#jd-mask{
+    display: none;
+    position: fixed;
+    height:100%;
+    width: 100%;
+    background-color: rgba(88,88,88,.3);
+    z-index:999;
+    top:0;
+    left:0;
+}
+#jd-close{
+    display: none;
+    width:400px;
+    height:400px;
+    background-color: #fff;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    z-index:9999;
+}
+#jd-close span{
+    width: 20px;
+    height: 20px;
+    font: 16px/20px "Microsoft YaHei";
+    position: absolute;
+    top:5px;
+    right:5px;
+    cursor: pointer;
+}
+/*头部导航开始 shortcut*/
+.shortcut {
+    background-color: #f1f1f1;
+    line-height: 30px;
+    height: 30px;
+}
+.shortcut .dt,.fr .fore{
+    position: relative;
+    padding:0 25px 0 10px;
+}
+.shortcut .dt:hover,.fr .fore:hover{
+    background-color: #fff;
+    color:#C81623
+}
+#layer1,#layer2,#layer3,#layer4 {
+    width:280px;
+    position: absolute;
+    top:30px;
+    left:0;
+    background-color: #fff;
+    border:1px solid #ddd;
+    line-height:24px;
+    z-index:20;
+    display: none;
+}
+ .spacer{
+    position: absolute;
+    left:0;
+    top:-7px;
+    width: 82px;
+    height:10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+#layer1 .userinfo{
+    padding:10px 0 10px 15px;
+    overflow: hidden;
+}
+#layer1 .u-pic{
+    float: left;
+    margin-right: 10px;
+}
+#layer1 .u-pic img{
+    width: 60px;
+    height: 60px;
+}
+#layer1 .u-name{
+    padding:6px 0 0;
+    font-weight:700;
+}
+#layer1 .otherlist{
+    width: 255px;
+    padding:0 0 0 15px;
+    margin:5px 0;
+    overflow: hidden;
+    margin-bottom:10px;
+}
+#layer1 .otherlist .list{
+    float: left;
+    width: 126px;
+}
+#layer1 .otherlist .list a{
+    display: block;
+}
+#layer2 .dd-inner{
+    background: url(../images/5784c1c3Ne10698a9.png)no-repeat;
+    width: 250px;
+    height: 195px;
+    overflow: hidden;
+    position: relative;
+}
+#layer2 .dd-inner .nnn{
+    position: absolute;
+    left: 99px;
+    top: 23px;
+    width:136px;
+    color: #c21a21;
+    cursor: default;
+}
+#layer2 .dd-inner .mmm{
+    position: absolute;
+    top:120px;
+    left:99px;
+    width: 136px;
+    color: #c21a21;
+    cursor: default;
+}
+#layer3{
+    width:100%;
+}
+#layer4{
+    width:170px;
+    padding-bottom: 8px;
+}
+#layer4 .client{
+    font-weight: 700;
+    padding-left: 10px;
+    color: #666;
+}
+#layer4 a{
+    float: left;
+    padding-left: 10px;
+    width: 70px;
+}
+#layer4 .busness{
+    float: left;
+    width:170px;
+    border-top: 1px dotted #ccc;
+    padding-top: 5px;
+    margin-top: 5px;
+    font-weight: 700;
+    padding-left: 10px;
+   height:24px;
+    color: #666;
+}
+.dt i,.fore i{
+    width:15px;
+    height:8px;
+    position: absolute;
+    top:12px;
+    right:3px;
+    font:400 15px/15px Consolas;
+    overflow: hidden;
+}
+.dt s,.fore s{
+    position: absolute;
+    top:-8px;
+    left:0;
+}
+.fr li{
+    float: left;
+    padding:0 10px;
+}
+.fr .line{
+    width:1px;
+    height:12px;
+    background-color: #ddd;
+    margin-top:9px;
+    padding: 0;
+}
+.fr .tel-jd{
+    padding:0 20px 0 25px;
+}
+.tel{
+    position: absolute;
+    width: 15px;
+    height:20px;
+    background: url(../images/sprite.png) no-repeat;
+    top:5px;
+    left:5px;
+}
+/*topbanner开始*/
+.topbanner{
+    background-color: #0A1026;
+}
+.topbanner .close-topbanner{
+    width: 19px;
+    height: 19px;
+    display: block;
+    background: url(../images/close.png) no-repeat;
+    position: absolute;
+    top:5px;
+    right:5px;
+}
+.tp{
+    position: relative;
+}
+.close-topbanner:hover{
+ background-position:bottom;
+}
+.logo-2014{
+    float: left;
+    width:362px;
+    height: 60px;
+    padding:20px 0;
+    /*background-color: darkred;*/
+}
+.logo{
+    display: block;
+    width: 270px;
+    height: 60px;
+    background: url(../images/logo.png) no-repeat 0 0;
+}
+.search-2014{
+    /*background-color: red;*/
+    width: 538px;
+    height: 35px;
+    padding-top: 25px;
+    float: left;
+}
+.search-2014 input{
+    float: left;
+    width:450px;
+    height: 32px;
+    border: 2px solid #B61D1D;
+    padding-left: 4px;
+    font: 14px/32px "Microsoft YaHei";
+    border-right:none;
+    color: #999;
+
+}
+.search-2014 button{
+    float: left;
+    width: 82px;
+    height: 36px;
+    background-color: #B61D1D;
+    color: #fff;
+    font:16px/36px "Microsoft YaHei";
+    cursor: pointer;
+
+}
+.shoping-car{
+    width: 139px;
+    height: 34px;
+    margin: 25px 65px 0  0;
+    float: right;
+    border: 1px solid #DFDFDF;
+    background-color: #f9f9f9;
+    position: relative;
+
+}
+.shoping-car a{
+    height:34px;
+    /*line-height:34px;*/
+    padding-left: 43px;
+    font: 12px/34px Arial,Verdana,"\5b8b\4f53";
+    color: #666;
+}
+.shoping-car a:hover{
+     color: #C81623;
+ }
+.shoping-car .icon1{
+    display: block;
+    width:18px;
+    height: 16px;
+    background: url(../images/sprite.png) no-repeat 0px -58px;
+    position: absolute;
+    top:9px;
+    left:18px;
+}
+.shoping-car .icon2{
+    position: absolute;
+    top:11px;
+    right:10px;
+    font:400 13px/13px simsun;
+    color:#999;
+}
+.shoping-car .icon3{
+    width:12px;
+    position: absolute;
+    background-color: #C81623;
+    text-align: center;
+    color: #fff;
+    top:-4px;
+    left:104px;
+    /*css3*/
+    border-radius: 7px 7px 7px 0;
+    line-height: 12px;
+    padding: 1px 2px;
+}
+.hotwords-2014 {
+    float: left;
+    width: 518px;
+    padding-top: 7px;
+}
+.hotwords-2014 a{
+    margin-right: 10px;
+}
+/*topbanner结束*/
+/*导航开始*/
+.jd-nav{
+    height:44px;
+    border-bottom: 2px solid #b1191a;
+}
+.jd-nav .dropdown{
+    width:210px;
+    height: 44px;
+    position: relative;
+    /*一般给父类加*/
+    z-index:10;
+
+}
+.jd-nav .dropdown .dt{
+    height: 44px;
+    background-color: #b1191a;
+    color:#fff;
+    font:400 15px/44px "Microsoft YaHei";
+    padding:0 10px;
+}
+.jd-nav .dropdown .dd{
+    width: 209px;
+    background-color: #C81623;
+    border-bottom:1px solid #C81623;
+    border-left:1px solid #C81623;
+    margin-top: 2px;
+
+}
+.jd-nav .dropdown .dd div{
+    width:190px;
+    height:31px;
+    font:400 14px/31px "Microsoft YaHei";
+    color:#fff;
+}
+.jd-nav .dropdown .dd div:hover{
+    background-color: #fff;
+    color:#C81623;
+}
+.jd-nav .dropdown .dd h3{
+    float: left;
+}
+.jd-nav .dropdown .dd h3 a{
+    color:#fff;
+}
+.jd-nav .dropdown .dd h3 a:hover{
+    color: #C81623;
+}
+.jd-nav .dropdown .dd i{
+    float: right;
+}
+.jd-nav .navitems-2016 li{
+    float: left;
+
+}
+.jd-nav .navitems-2016 li a{
+    width: 88px;
+    height: 44px;
+    font:400 16px/44px "microsoft yahei";
+    padding:0 20px;
+    color:#333;
+}
+.jd-nav .navitems-2016 li a:hover{
+    color:#C81623
+}
+
+.jd-footer  .slogen{
+    height:54px;
+    padding: 20px 0;
+    background-color: #F5F5F5;
+    position: relative;
+    margin-bottom: 14px;
+}
+.slogen .item{
+    position: absolute;
+    width: 302px;
+    left:50%;
+    top:20px;
+}
+.slogen1{
+    margin-left: -604px;
+}
+
+.slogen2{
+    margin-left: -302px;
+}
+.slogen3{
+    margin-left: 0px;
+}
+.slogen4{
+    margin-left: 302px;
+}
+.shoppingcare dl{
+    width:196px;
+    float: left;
+}
+.shoppingcare dt,.coverage .dt{
+    padding-top: 6px;
+    font: 400 16px/24px "microsoft yahei";
+    margin-bottom: 5px;
+}
+.shoppingcare dd{
+    height:20px;
+}
+
+.coverage{
+    float:right;
+    width: 190px;
+    height:165px;
+    background: url(../images/china.png) no-repeat left bottom;
+    padding-left: 20px;
+}
+.coverage .dd p {
+    line-height: 18px;
+    width: 190px;
+}
+.looklook {
+    text-align: right;
+    margin-top: 5PX;
+}
+.againw{
+    border-top: 1px solid #E5E5E5;
+    margin-top: 20px;
+    padding: 20px 0 30px;
+    text-align: center;
+    font:12px/150% Arial,Verdana,"\5b8b\4f53"
+}
+.links{
+    height:25px;
+}
+.links a{
+    padding:0 6px;
+}
+.copyright{
+    line-height: 18px;
+}
+.authentication{
+    height: 32px;
+    margin-top: 12px;
+
+}
+.authentication a{
+    margin: 0px 5px;
+}

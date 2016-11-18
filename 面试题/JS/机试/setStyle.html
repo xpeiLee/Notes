@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>setStyle</title>
+<style>
+
+</style>
+<script>
+	window.onload=function(){
+	var oBox=document.getElementById('box');
+	function setStyle(){
+		if(arguments.length==2){
+			for(var i in arguments[1]){
+				arguments[0].style[i]=arguments[1][i];
+			}
+		}else{
+			arguments[0].style[arguments[1]]=arguments[2];			
+		}
+	}	
+		
+	setStyle(oBox,{"width":"300px","height":"300px","background":"red"});
+	//setStyle(oBox,'width','300px');
+	};	
+</script>
+</head>
+<body>
+	<div id="box">
+    </div>
+</body>
+</html>

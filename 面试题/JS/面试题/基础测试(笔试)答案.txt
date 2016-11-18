@@ -1,0 +1,143 @@
+8.
+function getStyle(obj,name){
+	return obj.currentStyle?obj.currentStyle[name]:getComputedStyle(obj,false)[name];
+}
+
+9
+funciton rnd(m,n){
+     return parseInt(m+Math.random()*(n-m));
+}
+
+14 var oDate = new Date();oDate.setFullYear(2017,0,1);
+15
+	function sum(){
+		var result = 0;
+		for(var i = 0;i<arguments.length;i++){
+			result+=arguments[i];
+		}
+		return result;
+	}
+
+16	
+	var str = 'aoisola.avi';
+	str.substring(str.lastIndexOf('.')+1);
+17		
+	if(window.navigator.userAgent.indexOf('MSIE 6.0')!=-1){		
+	}
+20
+for(var i=0; i<aBtn.length; i++){
+	(function(index){
+		    aBtn[i].onclick=function(){
+		         alert(index);
+		    }
+	})(i);
+}
+24.
+	var  arr = [12,5,8,45,34,100,-100];
+	要想排序
+	1.比较
+		先假设 arr[0]是最大的，最大数的位置 0
+	2.交换
+30
+var str = 'welcome to zhinengshe';
+var arr = str.split(' ');
+var arr2 = [];
+for(var i = 0;i<arr.length;i++){
+	arr2.push(str.split(' ')[i].charAt(0).toUpperCase()+str.split(' ')[i].substring(1));
+}
+arr2.join(' ');
+alert(str2);
+---------------------------------------------------------------------------------------------------------------------
+BOM
+运行代码
+各种框
+alert弹出框
+confirm确认框
+prompt 提示框
+---------------------------------------------------------------------------------------------------------------------
+DOM
+上移下移的另一种方法
+	不推荐	如果页面改动，那么程序存在改动隐患
+---------------------------------------------------------------------------------------------------------------------
+右下角悬浮框
+	1.position:absolute; 
+		屏幕带滚动条就不行
+	2.position:fixed
+		高版本浏览器良好，IE6挂了 IE6不支持 fixed定位
+
+	需求：
+		鼠标滚动的时候，div一直悬浮右下角
+
+	1.滚动事件
+		window.onscroll 当鼠标滚动的时候
+	2. 	fixed  ie6不支持
+		position:absolute; 位置不对 ，改位置
+		top:1-032
+		right:0;	
+
+---------------------------------------------------------------------------------------------------------------------
+滚动距离
+	FF IE
+	document.documentElement.scrollTop
+	chrome
+	0
+	document.body.scrollTop
+
+获取可视区 高度
+	document.documentElement.clientHeight
+	document.documentElement.clientWidth
+
+物体的高
+
+		style    height      200px
+
+		物体实际显示高  
+	对比：
+		height   纯高度
+	
+		offsetHeight = height+padding+border    302
+	为什么颤抖？
+		onscroll 频繁触发  	
+			频繁触发计算   scrollTop+cH - oH 消耗性能
+
+	右下角悬浮框js 是解决IE6下 fixed不兼容的问题
+
+---------------------------------------------------------------------------------------
+总结
+	初衷：IE6不支持 fixed所以用js去模拟，但是 高版本没必要这么做直接用fixed更好，因为不抖动
+	
+	实现：
+		通过更改top值
+		top = 滚动距离+可视区距离 - 物体的高度
+	技术：
+		1）事件
+			onload onresize onscroll
+		2) 获取各种距离、高
+			滚动距离：document.documentElement.scrollTop||document.body.scrollTop
+			可视区高：document.documentElement.clientHeight
+			物体的高度：
+				指的是物体实际的高 = height+padding+border
+		3) 计算top
+			oDiv.style.top  = scrollTop+cH - oH +'px';
+		4)判断浏览器
+			如果IE6 执行js
+			如果高版本 使用 css实现  IE6 兼容写法_下划线
+
+---------------------------------------------------------------------------------------
+1.模拟bootstrap
+	http://v3.bootcss.com/css/#grid-options
+	/* 移动设备布局: 480px 及更低。 */
+		1列
+	/* 平板电脑布局: 481px 至 768px。样式继承自: 移动设备布局。 */
+		4列
+	/* 桌面电脑布局: 769px 至最高 1232px。样式继承自: 移动设备布局和平板电脑布局。 
+	6列
+	
+提示：clientWith	
+2.根据 不同情况 浏览器换背景色
+3.今天的课件看一遍
+
+
+
+
+

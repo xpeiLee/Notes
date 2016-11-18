@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,html{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            height: 1000px;
+            background-color: #f40;
+        }
+        .container{
+            width: 100%;
+        }
+        /*媒体查询当使用 min-width作为判断条件一定要从小到大，其原因是css从上往下执行*/
+        @media (min-width: 960px){
+            /*这里的代码只有当(min-width: 960px)满足时才会执行*/
+            .container{
+                width: 750px;
+                background-color: blue;
+            }
+        }
+        @media (min-width:992px){
+            .container{
+                width: 972px;
+                background-color: lightcoral;
+            }
+        }
+        @media(min-width:1200px){
+            .container{
+                width: 1170px;
+                background-color: lightgreen;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container"></div>
+</body>
+</html>

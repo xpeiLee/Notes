@@ -1,0 +1,40 @@
+/*hello world*/
+body {
+  background-color: #e92322;
+}
+.container {
+  width: 1000px;
+  background-color: #ff0;
+}
+.container .row {
+  height: 200px;
+}
+.container .row div {
+  border-left: 1px solid #e92322;
+}
+/*hello world*/
+body {
+  background-color: #e92322;
+}
+.container {
+  width: 1000px;
+  background-color: #ff0;
+}
+.container .row {
+  height: 200px;
+}
+.container .row div {
+  border-left: 1px solid #e92322;
+}
+.container .row div a {
+  color: red;
+}
+.container .row div a:hover {
+  color: green;
+}
+#header {
+  border-radius: 5px;
+}
+#footer {
+  border-radius: 10px;
+}

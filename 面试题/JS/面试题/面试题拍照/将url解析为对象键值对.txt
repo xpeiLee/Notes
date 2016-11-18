@@ -1,0 +1,58 @@
+display: inline-block; 有些时候可以替代float实现相同的效果.
+position: absolute|relative; 要配合top,left等定位;
+
+position: absolute会导致元素脱离文档流，被定位的元素等于在文档中不占据任何位置，在另一个层呈现，可以设置z-index。PS的图层效果就是position: absolute。
+
+float也会导致元素脱离文档流，但还在文档或容器中占据位置，把文档流和其它float元素向左或向右挤，并可能导致换行。图片的文字环绕布局效果就是float。
+
+display的inline-block不脱离文档流，将block元素当作大型字符嵌入文档流内，类似于img或者input默认效果。
+
+
+
+1、alt属性是在你的图片因为某种原因不能加载时在页面显示的提示信息，它会直接输出在原本加载图片的地方，
+而title属性是在你鼠标悬停在该图片上时显示一个小提示，鼠标离开就没有了，有点类似jQuery的hover，你可以自己试试，
+另外，HTML的绝大多数标签都支持title属性，title属性就是专门做提示信息的
+2、
+class 选择器 .inner{ width:100px;}
+id 选择器 #demo{ width:100px;}
+标签 选择器 p{ width:100px;}
+后代选择器 p a{ color: #f60;}
+伪类选择器 a:hover{ color: #f00;}
+伪元素选择器 a:after{ clear: both;}
+属性选择器 input[type=checkbox]{ margin-left: 10px;}
+3、visibility: hidden----将元素隐藏，但是在网页中该占的位置还是占着。
+display: none----将元素的显示设为无，即在网页中不占任何的位置。
+例如有三个table，将中间的一个table hidden掉，你会发现在那个被hidden的table看不见了，但是，中间会留有很大的一空白，
+而这个空白就是这个table没有被隐藏时所占的位置 而none的作用更像是把元素从网页中“去除”（当然不是真的去除，只是效果是如此）
+例如有三个table，将中间的一个table none掉，你会发现在剩下的两个table中间不会有任何的空白。就好像中间的那个table从来不存在
+过一样。
+
+
+var parseQueryString = function( url ){
+    var reg_url =/^[^\?]+\?([\w\W]+)$/,
+        reg_para=/([^&=]+)=([\w\W]*?)(&|$)/g, //g is very important
+        arr_url = reg_url.exec( url ),
+        ret        = {};
+    if( arr_url && arr_url[1] ){
+        var str_para = arr_url[1],result;
+        while((result = reg_para.exec(str_para)) != null){
+            ret[result[1]] = result[2];
+        }
+    }
+    return ret;
+}
+
+
+这个是只把？后面的存成对象了
+
+ cT.queryUrlPar = function (url) {
+        url = url || window.location.href;
+        var reg = /([^?=&]+)=([^?=&]+)/g;
+        var obj = {};
+        url.replace(reg, function () {
+            obj[arguments[1]] = arguments[2];
+        });
+        return obj;
+    }
+
+

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>腾讯首页</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+
+
+    <script>
+        window.onload = function () {
+
+
+            function $(id) {
+                return document.getElementById(id)
+            }
+
+            function getA(m, n) {
+                return m.onclick = function () {
+                    n.style.display = "block"
+                }
+            }
+
+            function getB(m, n) {
+                return m.onmouseover = function () {
+                    n.style.display = "block"
+                }
+            }
+
+            function getC(m, n) {
+                return m.onmouseout = function () {
+                    n.style.display = "none"
+                }
+            }
+
+            function getD(m, n) {
+                return m.onclick = function () {
+                    n.style.display = "none"
+                }
+            }
+
+            function getE(m, n) {
+                return m.onmouseover = function () {
+                    n.style.display = "none"
+                }
+            }
+
+            getA($("productBtn"), $("productFloat"))
+            getB($("productFloat"), $("productFloat"))
+            getC($("productFloat"), $("productFloat"))
+            getD($("productN"), $("productFloat"))
+//            getB($("newsInfo"), $("newsInfo"))
+//            $("hnNews").onmouseover = function () {
+//                $("yw").className = "";
+//                $("newsInfo").style.display = "block";
+//                $("hnNews").className = "ywa"
+//            }
+//            $("yw").onmouseover = function () {
+//                $("yw").className = "ywa";
+//                $("newsInfo").style.display = "none";
+//                $("hnNews").className = ""
+//            }
+            getB($("gd"), $("navMore"));
+            getB($("navMore"), $("navMore"));
+            getC($("navMore"), $("navMore"));
+            getC($("gd"), $("navMore"));
+            $("tx-login").onclick = function () {
+                $("tx-mask").style.display = "block";
+
+            }
+            $("close-All").onclick = function () {
+                $("tx-mask").style.display = "none";
+            }
+
+
+//            $("productBtn").onclick = function () {
+//                $("productFloat").style.display = "block"
+//            }
+//            $("productFloat").onmouseover = function () {
+//                $("productFloat").style.display = "block"
+//            }
+//            $("productFloat").onmouseout = function () {
+//                $("productFloat").style.display = "none"
+//            }
+//            $("productN").onclick = function () {
+//                $("productFloat").style.display = "none"
+//            }
+//
+            var b = document.getElementById("divs").getElementsByTagName("a");
+            var  c= document.getElementById("contents").getElementsByTagName("ul");
+            for(var i = 0; i < b.length;i++){
+                b[i].index = i;
+                b[i].onclick = function () {
+                    for(var j = 0;j<b.length;j++){
+                        b[j].className = "";
+                    }
+                    this.className = "ywa";
+                    for(var m = 0;m < c.length;m++){
+                        c[m].style.display = "none";
+                    }
+                    c[this.index].style.display = "block";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="soso">
+    <div class="logo"><a href="#"></a></div>
+    <div class="mask" id="tx-mask">
+    <div id="tx-close">
+        <span id="close-All"> × </span>
+        <h3>快速安全登录</h3>
+        <p>使用 <a href="#">QQ手机版</a>扫描二维码， </p>
+        <p>或点击头像授权登录。 </p>
+        <img src="images/ptqrshow.png" alt=""/>
+        <div class="tx-foot">
+            <a href="#" class="h1">账号密码登录 | </a>
+            <a href="#" class="h2">注册新账号 | </a>
+            <a href="#" class="h3">意见反馈 </a>
+        </div>
+    </div></div>
+    <div class="search">
+        <div class="searchTxt">
+            <div class="searchMenu">网页</div>
+            <input type="text">
+            <div class="sougo"><img src="images/sogouSearchLogo.png" alt="sogou"></div>
+        </div>
+        <div class="sgSearch"></div>
+    </div>
+
+    <a href="javascript:;" class="denglu" id="tx-login"></a>
+
+    <a href="javascript:;" class="icon dy"></a>
+    <a href="javascript:;" class="icon mail"></a>
+    <a href="javascript:;" class="icon qz"></a>
+    <a href="javascript:;" class="icon wb"></a>
+
+</div>
+<div class="nav">
+    <ul>
+        <li><a href="#" class="strong">新闻</a><a href="#">图片</a><a href="#">军事</a></li>
+        <li><a href="#" class="strong">视频</a><a href="#">热剧</a><a href="#">综艺</a></li>
+        <li><a href="#" class="strong">娱乐</a><a href="#">明星</a><a href="#">电影</a></li>
+        <li><a href="#" class="strong">汽车</a><a href="#">车型</a><a href="#">购物</a></li>
+        <li><a href="#" class="strong">科技</a><a href="#">数码</a><a href="#">手机</a></li>
+        <li><a href="#" class="strong">教育</a><a href="#">课程</a><a href="#">出国</a></li>
+        <li class="you"><a href="#" class="strong">公益</a><a href="#">佛学</a></li>
+        <li><a href="#" class="strong">财经</a><a href="#">证券</a><a href="#">理财</a></li>
+        <li><a href="#" class="strong">体育</a><a href="#">NBA</a><a href="#">中超</a></li>
+        <li><a href="#" class="strong">时尚</a><a href="#">健康</a><a href="#">育儿</a></li>
+        <li><a href="#" class="strong">房产</a><a href="#">家居</a><a href="#">家电</a></li>
+        <li><a href="#" class="strong">游戏</a><a href="#">儿童</a><a href="#">星座</a></li>
+        <li><a href="#" class="strong">文化</a><a href="#">大家</a><a href="#">文学</a></li>
+        <li class="you"><a href="#" class="strong">拍客</a>
+            <div id="gd">更多 <i></i></div>
+            <div id="navMore">
+                <a href="#">快报</a>
+                <a href="#">天气</a>
+                <a href="#">谷雨</a>
+                <a href="#">科普</a>
+                <a href="#">港股</a>
+                <a href="#">德甲</a>
+                <a href="#">音乐</a>
+                <a href="#">美容</a>
+                <a href="#">动漫</a>
+                <a href="#">全部</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="w">
+    <a href="#"><img src="images/Ot_QNEV.jpg"/></a>
+    <a href="#" class="jubao"><img src="images/jubaoFocus.png" alt=""></a>
+</div>
+<div class="w">
+    <div class="layouLeft">
+        <div class="leftNews">
+            <div class="news-hd">
+                <div class="newsTab" id="divs">
+                    <a href="javascript:;" id="yw" class="ywa">要闻</a>
+                    <a href="javascript:;" id="hnNews">河南新闻 </a>
+                </div>
+
+                <div class="weather">
+                    郑州 <img src="images/cloudynight.png"/>32℃
+                </div>
+                <div class="qq-content1" id="contents">
+                    <ul>
+                        <li><a href="#" class="n1">习近平会见美国总统国家安全事务助理赖斯</a><a href="#" class="n1">国平</a></li>
+                        <li><a href="#">习近平会见世卫组织总干事陈冯富珍</a> <a href="#">治国理正</a> <a href="#">漫评</a></li>
+                        <li><a href="#">李克强会商六大国际组织“掌门人”把脉中国经济</a></li>
+                        <li><a href="#">张德江与柬埔寨客人会谈</a>
+                            <a href="#">俞正声会客</a><a href="#">张高丽会客</a></li>
+                        <li><a href="#" class="n1">中央军委原副主席郭伯雄被判无期 剥夺上将军衔</a></li>
+                        <li><a href="#">受贿额特别巨大 认罪悔罪当庭表示不上诉</a> <a href="#">军网评论</a></li>
+                        <li><a href="#">辽宁省政法委原书记苏宏章搞钱色交易被开除党籍</a></li>
+                        <li><a href="#">浙大原副校长羁押3年延审5次 辩方坚持做无罪辩护</a></li>
+                    </ul>
+
+
+                    <ul id="newsInfo">
+                        <li><a href="#" class="n1">强降雨致河南40万人受灾 今明局地仍有大雨或暴雨</a></li>
+                        <li><a href="#">中央环保督察组进驻河南一周，郑州12人受处分</a></li>
+                        <li><a href="#">“7·19”生死大营救 危房中战士们救出130多人</a></li>
+                        <li><a href="#" class="n1">南阳25人入北大清华 一学生被两国外大学同时录取</a></li>
+                        <li><a href="#">安阳一明代古村落成孤岛 49小时后迎来救援队</a></li>
+                        <li><a href="#">“80后”月薪多少才算佼佼者 看看你拖后腿没</a></li>
+                        <li><a href="#">“郑漂”的辛酸 26人男女混住合租120平房子</a></li>
+                        <li><a href="#">组图：老家河南里的三伏天 我们曾这样度过</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="leftHt">
+            <div class="news-hd">
+                <h2><a href="#">今日话题</a></h2>
+            </div>
+            <div class="ht">
+                <h3><a href="#">逃过一劫，俄罗斯何以险被禁止参加奥运会？</a></h3>
+                <ul>
+                    <li><a href="#" class="fleft">中国再无县城？撤县设市要提防虚假城市化</a> <a href="#" class="fright">往期</a></li>
+                    <li><a href="#" class="fleft">签责任书为何成了打白条</a><a href="#" class="fright">评论</a></li>
+                    <li><a href="#" class="fleft">华人在墨西哥被杀，清廷出动军舰讨回公道？</a><a href="#" class="fright">历史</a></li>
+                    <li><a href="#" class="fleft">美国的“世界经济解体战略”阳谋</a><a href="#" class="fright">Miss Money</a></li>
+                    <li><a href="#" class="fleft">武侠小说后继无人？金庸、梁羽生怎么看</a><a href="#" class="fright">思想</a></li>
+                    <li><a href="#" class="fleft">吃喝玩乐如何增值艺术品位？</a><a href="#" class="fright">入流</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="layouRight">
+        <div class="product">
+            <div class="line1">
+                <a href="#">QQ</a>
+                <a href="#">邮箱</a>
+                <a href="#">会员</a>
+                <a href="#">电脑管家</a>
+                <a href="#">软件</a>
+            </div>
+            <div class="line1">
+                <a href="#">微信</a>
+                <a href="#">空间</a>
+                <a href="#">课堂</a>
+                <a href="#">好莱坞</a>
+                <a href="#">腾讯云</a>
+            </div>
+            <div class="line2">
+                <a href="#" class="q-red">快报</a>
+                <a href="#" class="q-red">新闻APP</a>
+                <a href="#">自选股</a>
+                <a href="#">体育APP</a>
+                <a href="#">视频</a>
+                <a href="#">手机管家</a>
+                <a href="#">浏览器</a>
+                <a href="#">应用宝</a>
+            </div>
+            <div class="line2">
+                <a href="#">LOL</a>
+                <a href="#">CF</a>
+                <a href="#">DNF</a>
+                <a href="#">征途</a>
+                <a href="#">天刀</a>
+                <a href="#">爱玩</a>
+                <a href="#">逆战</a>
+                <a href="#">皇室战争</a>
+                <a href="#">火影OL</a>
+                <a href="#">剑侠</a>
+            </div>
+            <div class="line1">
+                <a href="#">京东</a>
+                <a href="#">理财通</a>
+                <a href="#">企鹅FM</a>
+                <a href="#">q币</a>
+                <a href="#">全部</a>
+            </div>
+
+            <div id="productFloat">
+                <div class="spacer"></div>
+                <div class="floatBtn" id="productN"></div>
+                <div class="line1">
+                    <a href="#">更多</a>
+                    <a href="#">微云</a>
+                    <a href="#">QQ影像</a>
+                    <a href="#">QQ影音</a>
+                    <a href="#">QQ拼音</a>
+                    <a href="#">QQ旋风</a>
+                </div>
+                <div class="line1">
+                    <a href="#">星钻</a>
+                    <a href="#">黄钻</a>
+                    <a href="#">绿钻</a>
+                    <a href="#">红钻</a>
+                    <a href="#">腾讯网</a>
+                    <a href="#">QQ秀</a>
+                    <a href="#">企鹅</a>
+                </div>
+                <div class="line2">
+                    <a href="#">手游宝</a>
+                    <a href="#">手机QQ空间</a>
+                    <a href="#">全民K歌</a>
+                    <a href="#">QQ音乐</a>
+                    <a href="#">QQ阅读</a>
+                    &nbsp<a href="#">同步助手</a>
+                    <a href="#">路宝</a>
+                    <a href="#">黄钻活动</a>
+                    <a href="#">QQ团购</a>
+                    <a href="#">QQ旅游</a>
+                </div>
+                <div class="line2">
+                    <a href="#">CF手游</a>
+                    <a href="#">保卫萝卜3</a>
+                    <a href="#">飞车</a>
+                    <a href="#">FIFA</a>
+                    <a href="#">剑灵</a>
+                    <a href="#">王者</a>
+                    <a href="#">御龙</a>
+                    <a href="#">火影手游</a>
+                    <a href="#">QQ游戏</a>
+                    <a href="#">洛克</a>
+                    <a href="#">炫舞</a>
+                    <a href="#">英魂之刃</a>
+                </div>
+                <div class="line1">
+                    <a href="#">易迅网</a>
+                    <a href="#">美食</a>
+                    <a href="#">高朋网</a>
+                    <a href="#">QQ电影票</a>
+                    <a href="#">彩贝</a>
+                    <a href="#">QQ彩票</a>
+                </div>
+            </div>
+            <div id="productBtn"></div>
+
+        </div>
+    </div>
+</div>
+<div class="w shehui">
+    <div class="contentMod">
+        <div class="hd">
+            <h2><a href="#">社会</a></h2>
+        </div>
+        <div class="bd">
+            <div class="imgArea"><a href="#"><img src="images/asdf.jpg" alt=""/></a></div>
+            <div class="txtArea">
+                <h3><a href="#">他们生活在世界最大垃圾场上</a></h3>
+            </div>
+            <ul>
+                <li><a href="#" class="ico-img">北极熊高温天商场内“接客”</a></li>
+                <li><a href="#">儿媳先于婆婆产下婴儿 公公笑称谁的老婆谁照顾</a></li>
+                <li><a href="#" class="ico-img">男子向前女友索要2788.5元分手费 5毛是什么？</a></li>
+                <li><a href="#">少年16天打赏主播3万余元 务工父母欲哭无泪</a></li>
+                <li><a href="#" class="ico-play">街头测试掉钱时路人反应 乞讨者举动感动众人</a></li>
+                <li><a href="#" class="ico-img">男子与网友一夜情后疑患艾滋 将女子推下楼顶</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="contentMod">
+        <div class="hd">
+            <h2><a href="#">儒学</a> /
+                <a href="#">佛学</a> /
+                <a href="#">道学</a></h2>
+        </div>
+        <div class="bd">
+            <div class="imgArea"><a href="#"><img src="images/ninja146948939041487.jpg" alt=""/></a></div>
+            <div class="txtArea">
+                <h3><a href="#">科学实证：禅定正念与幸福感密不可分</a></h3>
+            </div>
+            <ul>
+                <li><a href="#">儒学</a> | <a href="#">这些老祖宗传下的规矩 你还知道多少？</a></li>
+                <li><a href="#">宋朝是如何进入盛世的？真相令人吃惊！</a></li>
+                <li><a href="#">佛学</a> | <a href="#">问佛情为何物 佛说…</a><a href="#">藏传佛教吉祥八宝图</a></li>
+                <li><a href="#">父母过世多年还能做超度吗</a><a href="#">忏悔是为你的人生减负</a></li>
+                <li><a href="#">道学</a><a href="#">看了这篇文章 就知道为何中草药能之病了</a></li>
+                <li><a href="#">龙何时开始掌管下雨之事 摇身一变当“龙王”</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="guanggao">
+        <img src="images/2016-07-26_200047.png" alt=""/>
+    </div>
+</div>
+<div class="w henan">
+    <div class="leftArea">
+        <div class="food">
+            <div class="hd">
+                <h2><a href="#">河南</a>·<a href="#">美食</a>
+                </h2>
+            </div>
+            <div class="bd">
+                <div class="imgArea">
+                    <a href="#"><img src="images/ninja.jpg"
+                    /></a>
+                </div>
+                <div class="txtArea">
+                    <h3><a href="#">几步搞定香喷喷 分享18种花式米饭</a></h3>
+                </div>
+            </div>
+            <div class="ft">
+                <ul>
+                    <li><a href="#">美食</a> | <a href="#">正宗咖喱鸡饭做法大揭秘 简约的美味</a></li>
+                    <li><a href="#">资讯</a> | <a href="#">看完后，你的早餐还会选择豆腐脑吗？</a></li>
+                    <li><a href="#">分享</a> | <a href="#">懒癌患者福音 记忆中的油酥饼</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="life">
+            <div class="hd">
+                <h2><a href="#">河南</a>·<a href="#">生活</a>
+                </h2>
+            </div>
+            <div class="bd">
+                <div class="imgArea">
+                    <a href="#"><img src="images/life.jpg"
+                    /></a>
+                </div>
+                <div class="txtArea">
+                    <h3><a href="#">郑大建筑系美女88平美式风格小三房空间100%利用</a></h3>
+                </div>
+            </div>
+            <div class="ft">
+                <ul>
+                    <li><a href="#">娱乐</a> | <a href="#">贾静雯咘咘试亲子婚纱 大小公主美呆众人</a></li>
+                    <li><a href="#">旅游</a> | <a href="#">河南古装帐篷节 七夕相约地平线下看星空</a></li>
+                    <li><a href="#">婚嫁</a> | <a href="#">结婚必看 梨型身材小肚腩咋拍婚照才好看</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="rightArea">
+        <div class="hd">
+            <h2><a href="#">腾讯动态</a>
+            </h2>
+        </div>
+        <div class="bd2">
+            <ul>
+                <li><a href="#">腾讯公布2016年第一季度业绩</a></li>
+                <li><a href="#">腾讯公布2015年第四季度及全年业绩</a></li>
+                <li><a href="#">腾讯公布2015年第三季度业绩</a></li>
+                <li><a href="#">腾讯公布2015年第二季度业绩</a></li>
+                <li><a href="#">腾讯公布2015年第一季度业绩</a></li>
+                <li><a href="#">腾讯公布2014年第四季度及全年业绩</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="w kuaibao">
+    <div class="hd">
+        <h2><a href="#">视觉焦点</a> / <a href="#">快报</a>
+        </h2>
+    </div>
+    <ul>
+        <a href="#" class="left"></a>
+        <a href="#" class="right"></a>
+        <li>
+            <a href="#"><img src="images/1.jpg"/></a>
+            <p><a href="#">北京全城看海 故宫无积水</a></p>
+        </li>
+        <li>
+            <a href="#"><img src="images/2.jpg"/></a>
+            <p><a href="#">郑州女主戴浴帽直播暴雨</a></p>
+        </li>
+        <li>
+            <a href="#"><img src="images/3.jpg"/></a>
+            <p><a href="#">杭州举办吃辣大赛</a></p>
+        </li>
+        <li>
+            <a href="#"><img src="images/4.jpg"/></a>
+            <p><a href="#">世界校服大比拼 越南完胜了</a></p>
+        </li>
+        <li>
+            <a href="#"><img src="images/5.jpg"/></a>
+            <p><a href="#">刘雯用借来的扇子美炸古堡</a></p>
+        </li>
+        <li>
+            <a href="#"><img src="images/6.jpg"/></a>
+            <p><a href="#">神秘恐怖的东南亚降头术 </a></p>
+        </li>
+    </ul>
+
+</div>
+<div class="w ad">
+    <a href="#"><img src="images/sh.jpg"/><i></i></a>
+</div>
+<div class="w foot">
+    <div class="zi">
+        <a href="#">关于腾讯</a>|<a href="#">About Tencent</a>|<a href="#">服务协议</a>|<a href="#">隐私政策</a>|<a
+            href="#">开放平台</a>|<a href="#">广告服务</a>|<a href="#">商务洽谈</a><a href="#">腾讯招聘</a>|<a href="#">腾讯公益</a>|<a
+            href="#">客服中心</a>|<a href="#">网站导航</a>|<a href="#">客户端下载</a>|<a href="#">版权所有</a>
+        <p>
+            <a href="#">深圳举报中心</a>|<a href="#">深圳公安局</a>|<a href="#">抵制违法广告承诺书</a>|<a href="#" class="red">阳光 •
+            绿色网络工程</a>|<a href="#">版权保护投诉指引</a>|<a href="#">网络法制和道德教育基地</a>|<a href="#">广东省通管局</a>|<a
+                href="#">新闻信息服务许可证</a>|<a href="#">互联网出版许可证</a></p></div>
+    <a href="#">粤府新函[2001]87号</a>
+    <a href="#">粤网文[2014]0633-233号</a>
+    <a href="#">网络视听许可证1904073号</a>
+    增值电信业务经营许可证：
+    <a href="#">粤B2-20090059</a>
+    <a href="#">B2-20090028</a>
+    违法和不良信息举报电话：0755-83767606
+    <p>Copyright © 1998 - 2016 Tencent. All Rights Reserved</p>
+</div>
+<div class="w footer">
+    <div class="box b2">
+        <a href="#" class="tu "><img src="images/a1.gif"/></a>
+        <a href="#" class="jc">深圳网络警<br>察报警平台</a>
+    </div>
+    <div class="box">
+        <a href="#" class="tu"><img src="images/a2.jpg"/></a>
+        <a href="#" class="jc">公共信息安<br>全网络监察</a>
+    </div>
+    <div class="box">
+        <a href="#" class="tu"><img src="images/a3.gif"/></a>
+        <a href="#" class="jc">经营性网站<br>备案信息</a>
+    </div>
+    <div class="box">
+        <a href="#" class="tu"><img src="images/a4.png"/></a>
+        <a href="#" class="jc j1">中国互联网<br>举报中心</a>
+    </div>
+    <div class="box">
+        <a href="#" class="tu"><img src="images/a5.gif"/></a>
+        <a href="#" class="jc j1">中国文明网<br>传播文明</a>
+    </div>
+    <div class="box b1">
+        <a href="#"><img src="images/a6.png"/></a>
+    </div>
+    <div class="box">
+        <a href="#" class="tu"><img src="images/a7.jpg"/></a>
+        <a href="#" class="jc">工商网监<br>电子标识</a>
+    </div>
+</div>
+</body>
+</html>

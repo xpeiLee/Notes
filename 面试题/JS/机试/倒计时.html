@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>倒计时</title>
+<script>
+	window.onload=function(){
+	function change(){
+		var oDate=new Date();
+		iNow=oDate.getTime();	
+		var oTarget=new Date();	
+		oTarget.setFullYear(2017,0,1);
+		oTarget.setHours(0,0,0,0);
+		iTarget=oTarget.getTime();
+		var S=parseInt((iTarget-iNow)/1000);
+		//alert(S);	
+		D=parseInt(S/86400);
+		S%=86400;
+		H=parseInt(S/3600);
+		S%=3600;
+		M=parseInt(S/60);
+		S%=60;
+		var oS=document.getElementsByTagName('span')[0];
+		oS.innerHTML='距离2017.01.01还有'+D+'天'+H+'小时'+M+'分钟'+S+'秒';		
+	}
+	change();
+	setInterval(change,1000);	
+	};
+</script>
+</head>
+<body>
+	<span>距离2017.01.01还有天小时分钟秒</span>
+</body>
+</html>
